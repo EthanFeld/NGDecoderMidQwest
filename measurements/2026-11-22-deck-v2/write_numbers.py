@@ -8,6 +8,8 @@ import csv
 import hashlib
 import json
 import math
+import os
+import shutil
 import sys
 from collections import defaultdict
 from dataclasses import dataclass
@@ -18,6 +20,8 @@ from types import ModuleType
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = Path(__file__).resolve().parent
+EXPORT_DIR = None
+LINK_ROOT = ROOT
 RATES = [.001, .002, .003, .004, .005, .006, .007, .0075, .008, .009, .010]
 BOARD_RATES = [.001, .003, .005, .007]
 TIMING_POINTS = [(15, .005), (7, .003), (7, .0075), (15, .003), (15, .0075)]
@@ -40,7 +44,7 @@ def digest(path):
 
 
 def link(path, label=None):
-    return f"[{label or path.name}]({path.relative_to(ROOT).as_posix()})"
+    return f"[{label or path.name}]({Path(os.path.relpath(path, LINK_ROOT)).as_posix()})"
 
 
 def number(value, places=3):
@@ -152,7 +156,7 @@ def load_model():
 
 def write_board_csv(board):
     """Export only completed, full-population physical cohorts; missing timing stays blank."""
-    output = BASE / "board_summary.csv"
+    output = (EXPORT_DIR or BASE) / "board_summary.csv"
     fields = [
         "distance", "p", "seed", "source", "mode", "shots", "errors", "ler", "ci95_low", "ci95_high",
         "accepted", "defers", "coverage", "defer_rate", "capture_run_index", "timing_complete", "timed_shots",
@@ -228,16 +232,28 @@ def write_board_csv(board):
 
 
 def main():
+    global EXPORT_DIR, LINK_ROOT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--export-dir", type=Path, help="write all regenerated outputs into this directory without modifying stored measurements")
     parser.add_argument("--require-complete", action="store_true")
     parser.add_argument("--interim", action="store_true", help="write an explicitly IN PROGRESS draft under measurements while runs finish")
     args = parser.parse_args()
     if args.require_complete and args.interim:
         parser.error("--require-complete and --interim are mutually exclusive")
+    if args.export_dir:
+        if args.output or args.interim:
+            parser.error("--export-dir cannot be combined with --output or --interim")
+        EXPORT_DIR = args.export_dir.resolve()
+        if EXPORT_DIR == BASE or BASE in EXPORT_DIR.parents:
+            parser.error("export destination must be outside the stored measurement directory")
+        EXPORT_DIR.mkdir(parents=True, exist_ok=True)
+        args.output = EXPORT_DIR / "results.md"
+        shutil.copyfile(BASE / "model/results.csv", EXPORT_DIR / "model_results.csv")
     if args.output is None:
         args.output = ((BASE / "TENSOR_TELESCOPE_DECK_V2_NUMBERS_IN_PROGRESS.md") if args.interim
                        else (ROOT / "TENSOR_TELESCOPE_DECK_V2_NUMBERS.md"))
+    LINK_ROOT = args.output.resolve().parent
     document, index, csv_count = load_model()
     source_paths = [BASE / "model/results.json", BASE / "model/results.csv",
                     BASE / "model/timing_scope.json",
@@ -459,15 +475,15 @@ def main():
                  "The requested model single-shot timing points are d15 at p = 0.003, 0.005 and 0.0075, and d7 at p = 0.003 and 0.0075. "
                  "The complete eleven-rate d15 LER sweep requires accuracy at every rate."]
     args.output.write_text("\n\n".join(sections) + "\n", encoding="utf-8")
-    manifest = {"generated_at": generated, "output": args.output.relative_to(ROOT).as_posix(), "output_sha256": digest(args.output),
+    manifest = {"generated_at": generated, "output": os.path.relpath(args.output, ROOT).replace(os.sep, "/"), "output_sha256": digest(args.output),
                 "complete": not incomplete and not args.interim, "interim": args.interim,
                 "standard_stim_incomplete": bool(standard_incomplete), "board_incomplete": board_incomplete,
                 "model_json_rows": len(document["results"]), "model_csv_rows": csv_count, "board_csv_rows": board_csv_rows,
                 "missing_model_points": missing, "model_timing_pending": timing_pending,
                 "requested_model_timing_points": TIMING_POINTS,
-                "sources": {path.relative_to(ROOT).as_posix(): digest(path) for path in source_paths if path.is_file()},
-                "source_constants": {path.relative_to(ROOT).as_posix(): digest(path) for path in [PACKAGE / "config.py", PACKAGE / "_small/policy.py", PACKAGE / "telescope/stencils.py", PROFILE7, PROFILE15]}}
-    (BASE / "numbers_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+                "sources": {os.path.relpath(path, ROOT).replace(os.sep, "/"): digest(path) for path in source_paths if path.is_file()},
+                "source_constants": {os.path.relpath(path, ROOT).replace(os.sep, "/"): digest(path) for path in [PACKAGE / "config.py", PACKAGE / "_small/policy.py", PACKAGE / "telescope/stencils.py", PROFILE7, PROFILE15]}}
+    ((EXPORT_DIR or BASE) / "numbers_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"output": str(args.output), "complete": not incomplete, "model_rows": len(document["results"]),
                       "missing_points": len(missing), "timing_pending": len(timing_pending)}))
 

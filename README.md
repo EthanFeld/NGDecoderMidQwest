@@ -3,7 +3,7 @@
 FPGA-assisted tensor decoders for rotated surface codes. The FPGA resolves local
 syndromes; the host tensor search completes deferred shots using both check bases.
 
-[Quick start](#quick-start) · [Performance](#performance) · [Decoders](#decoders) · [Full results](TENSOR_TELESCOPE_DECK_V2_NUMBERS.md)
+[Judge evaluation](#judge-evaluation) · [Quick start](#quick-start) · [Performance](#performance) · [Decoders](#decoders) · [Full results](TENSOR_TELESCOPE_DECK_V2_NUMBERS.md)
 
 ## Performance
 
@@ -60,6 +60,27 @@ The separate standard-Stim backend study measured **92 / 400,000 tensor errors
 
 Both preserve the full joint syndrome on a defer. NumPy, SciPy and Stim supply
 arrays and noise models. The independent matching engine uses in-repo C++.
+
+## Judge evaluation
+
+Regenerate all published numerical tables with **Python 3.11+**, using only the
+Python standard library. From the repository root:
+
+```shell
+python evaluate.py
+```
+
+Outputs are written to `evaluation/`:
+
+- `results.md`: complete numerical appendix, confidence bounds and speed ratios.
+- `model_results.csv`: the stored paired model/software comparison.
+- `board_summary.csv`: regenerated physical-board results.
+- `numbers_manifest.json`: completeness checks and SHA-256 provenance.
+
+Choose a different destination with `python evaluate.py --output-dir my-results`.
+The command reads the committed measurements; it does not rerun decoders,
+simulate new shots, or require FPGA hardware. Original measurement files remain
+unchanged. Missing or incomplete required cohorts cause a nonzero exit status.
 
 ## Quick start
 

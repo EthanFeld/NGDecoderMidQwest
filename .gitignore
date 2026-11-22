@@ -12,3 +12,5 @@
 
 # Duplicate distribution bundles remain local; source and raw results are versioned.
 *.zip
+
+/evaluation/
