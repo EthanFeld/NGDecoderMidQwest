@@ -1,6 +1,5 @@
 # Preserve source, binary and measurement bytes used by recorded SHA-256 identities.
 * -text
-*.md text eol=lf
 **/vendor/** -text
 *.dll binary
 *.npz binary
