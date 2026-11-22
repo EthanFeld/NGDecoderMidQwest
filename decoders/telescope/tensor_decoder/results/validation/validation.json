@@ -1,0 +1,149 @@
+{
+  "complete": true,
+  "shots": 400000,
+  "config": {
+    "ambiguous_gap": 8.0,
+    "min_margin": 3.0,
+    "iterations": 2,
+    "reverse_seed": true
+  },
+  "experiment": {
+    "distance": 15,
+    "rounds": 15,
+    "noise": 0.005,
+    "basis": "z",
+    "geometry": "rotated",
+    "noise_model": "circuit"
+  },
+  "streams": [
+    {
+      "seed": 2360427,
+      "shots": 100000,
+      "events_sha256": "8a4878f9ef8bb97c7a65b95b3d9504090a7b8151bed4b8590f9d7fb7aedf4f77",
+      "errors": {
+        "correlated_matching": 37,
+        "accuracy_v1": 23,
+        "candidate": 20
+      }
+    },
+    {
+      "seed": 2460427,
+      "shots": 100000,
+      "events_sha256": "31249baf11dcd5293b46f168b65b1f72d0983ece72a4a63fa482a9f640d54324",
+      "errors": {
+        "correlated_matching": 46,
+        "accuracy_v1": 26,
+        "candidate": 25
+      }
+    },
+    {
+      "seed": 2560427,
+      "shots": 100000,
+      "events_sha256": "be60472ca1ef3139818a1e7af9c23752dbb47204636424eed018348fb9cf56d4",
+      "errors": {
+        "correlated_matching": 33,
+        "accuracy_v1": 27,
+        "candidate": 22
+      }
+    },
+    {
+      "seed": 2660427,
+      "shots": 100000,
+      "events_sha256": "7598cc3b942a486001feb4187d579b8730720d0a6dffcac20e502bf10c009fa8",
+      "errors": {
+        "correlated_matching": 33,
+        "accuracy_v1": 22,
+        "candidate": 22
+      }
+    }
+  ],
+  "source_sha256": {
+    "optimized.py": "921d4ac8e7cbd35ee6e46ec1aae54bd28998dc4eccbba2613714ba67f9465554",
+    "latency_native.py": "0da04c3a24d590cc02ad02b9f1c7982bfbc8a711752599912da7ccfdf49b1605",
+    "latency_kernel.cc": "55a58da520a5f76c30837e9b51cf82ab57ad78a317b500962dc508394a077a08",
+    "accuracy.py": "0bd10cea63207e84034c3b385fcaaf1baafc646f5f678e0cf5026b200faebb63",
+    "conditioned.py": "df847d4e95893c5c9f71fafc62144e90d04ccc73e56e8509bb7b8786b07e9d7f",
+    "optimization_experiment.py": "3fbbc7d3bfba9c2578b61ddf5fb034930329e11d2bdb6230690c131ab86560a4"
+  },
+  "native_identity": {
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "environment": {
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0"
+  },
+  "reference_audited": 1577,
+  "reference_disagreements": 0,
+  "cm_disagreements": 0,
+  "routed": 59633,
+  "checked": 1200,
+  "lane_report_sha256": {
+    "validation_a.json": "a15f169119e64d0b9f7a97e700c51733fbcf625e370d6ea99211c3022a4e52fc",
+    "validation_b.json": "5e363e46dcfd78ba5a1c22061fab33f1a5045fe9b7cd28b41c003ab39bf1eb9b"
+  },
+  "development_data_included": false,
+  "results": {
+    "correlated_matching": {
+      "errors": 149,
+      "ler": 0.0003725,
+      "ci95": [
+        0.0003173064144641301,
+        0.00043728998571011135
+      ],
+      "wins_vs_correlated_matching": 0,
+      "losses_vs_correlated_matching": 0,
+      "paired_win_ci95_vs_correlated_matching": null,
+      "paired_exact_p_vs_correlated_matching": null,
+      "wins_vs_accuracy_v1": 17,
+      "losses_vs_accuracy_v1": 68,
+      "paired_win_ci95_vs_accuracy_v1": [
+        0.12878998144012688,
+        0.29715370884830405
+      ],
+      "paired_exact_p_vs_accuracy_v1": 2.1750638050848603e-08
+    },
+    "accuracy_v1": {
+      "errors": 98,
+      "ler": 0.000245,
+      "ci95": [
+        0.00020106207793558985,
+        0.00029853677114513133
+      ],
+      "wins_vs_correlated_matching": 68,
+      "losses_vs_correlated_matching": 17,
+      "paired_win_ci95_vs_correlated_matching": [
+        0.7028462911516961,
+        0.8712100185598731
+      ],
+      "paired_exact_p_vs_correlated_matching": 2.1750638050848603e-08,
+      "wins_vs_accuracy_v1": 0,
+      "losses_vs_accuracy_v1": 0,
+      "paired_win_ci95_vs_accuracy_v1": null,
+      "paired_exact_p_vs_accuracy_v1": null
+    },
+    "candidate": {
+      "errors": 89,
+      "ler": 0.0002225,
+      "ci95": [
+        0.00018083081169036633,
+        0.00027376846955032194
+      ],
+      "wins_vs_correlated_matching": 68,
+      "losses_vs_correlated_matching": 8,
+      "paired_win_ci95_vs_correlated_matching": [
+        0.805800536776795,
+        0.945688738171781
+      ],
+      "paired_exact_p_vs_correlated_matching": 5.632907524806409e-13,
+      "wins_vs_accuracy_v1": 11,
+      "losses_vs_accuracy_v1": 2,
+      "paired_win_ci95_vs_accuracy_v1": [
+        0.5776536898051745,
+        0.9567418216419186
+      ],
+      "paired_exact_p_vs_accuracy_v1": 0.0224609375
+    }
+  }
+}

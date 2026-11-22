@@ -1,0 +1,113 @@
+{
+  "frontend_sha256": "427880aa889da4c837106680369c22b7386f73f20f3b21621dfcc0dfd3e17965",
+  "telescope_sha256": "32a08c17b6b81f757ac362a88648d5fe21def36463426a9fcc2ce2f1a95ca76c",
+  "tensor": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "df277e78356a81049a367bef4c91787cf57b2141d937c8d002dd525a6f817480",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "stim": "1.16.0",
+  "numpy": "2.5.5",
+  "host": "Windows-11-10.0.26300-SP0",
+  "stage1_source": "cycle model",
+  "batch_size": 256,
+  "cuda_mode": null,
+  "accuracy_only": true,
+  "cohorts": [
+    {
+      "p": 0.005,
+      "seed": 51928032,
+      "shots": 12000,
+      "fpga_accepts": 832,
+      "fpga_accept_errors": 3,
+      "fpga_defers": 11168,
+      "selected_detectors": 1792,
+      "joint_detectors": 3360,
+      "deferred_raw_weight": {
+        "p50": 136.0,
+        "p99": 173.0,
+        "p999": 186.0
+      },
+      "deferred_residual_weight": {
+        "p50": 13.0,
+        "p99": 24.0,
+        "p999": 27.0
+      },
+      "fpga_core_us": {
+        "p50": 0.9629629629629629,
+        "p99": 0.9629629629629629,
+        "p999": 0.9629629629629629
+      },
+      "fpga_uart_us": null,
+      "quality": {
+        "tensor_cpu": {
+          "errors": 4,
+          "ler": 0.0003333333333333333,
+          "ci95": [
+            0.0001296342180783187,
+            0.0008568382258735926
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0
+        },
+        "telescope_cpu": {
+          "errors": 7,
+          "ler": 0.0005833333333333334,
+          "ci95": [
+            0.00028259972687702127,
+            0.001203712707513206
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 3,
+          "prediction_differences": 3,
+          "vs_plain": {
+            "errors": 7,
+            "ler": 0.0005833333333333334,
+            "ci95": [
+              0.00028259972687702127,
+              0.001203712707513206
+            ],
+            "paired_fixes": 0,
+            "paired_regressions": 0,
+            "prediction_differences": 0
+          },
+          "stage_counts": {
+            "prior_tilt": 832,
+            "residual_check": 0,
+            "tensor": 11168
+          }
+        },
+        "telescope_confirm_cpu": {
+          "errors": 4,
+          "ler": 0.0003333333333333333,
+          "ci95": [
+            0.0001296342180783187,
+            0.0008568382258735926
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "vs_plain": {
+            "errors": 4,
+            "ler": 0.0003333333333333333,
+            "ci95": [
+              0.0001296342180783187,
+              0.0008568382258735926
+            ],
+            "paired_fixes": 3,
+            "paired_regressions": 0,
+            "prediction_differences": 3
+          },
+          "stage_counts": {
+            "prior_tilt": 455,
+            "residual_check": 0,
+            "tensor": 11545
+          }
+        }
+      },
+      "timing": null
+    }
+  ]
+}

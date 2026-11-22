@@ -1,0 +1,12 @@
+{
+  "support": {
+    "file": "support.dll",
+    "source_sha256": "012f254dbbbbb45869fa02752e64cc7b99df1dd410609020e1c9154f4e0035db",
+    "binary_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84"
+  },
+  "matching": {
+    "file": "matching.dll",
+    "source_sha256": "0fac642f3505bf2587ac2ec50265c71e16ed2c17c512632189d9f167d0e03ca2",
+    "binary_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  }
+}

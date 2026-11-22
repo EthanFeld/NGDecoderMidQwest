@@ -1,0 +1,14 @@
+distances = [15]
+noise = [0.005]
+bases = ["z"]
+geometries = ["rotated"]
+rounds = "distance"
+noise_model = "circuit"
+decoders = ["tensor_decoder.baseline:build_decoder", "tensor_decoder:build_decoder"]
+shots = 400000
+max_errors = 0
+batch_size = 256
+warmup_shots = 16
+workers = 1
+seed = 2360427
+output = "tensor_decoder/results/runs/qecbench"

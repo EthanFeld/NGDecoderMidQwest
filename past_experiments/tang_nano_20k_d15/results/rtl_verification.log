@@ -1,0 +1,5 @@
+46329 RTL reference vectors matched. Direct framing, tags, stalls, and reset passed.
+Empty-frame result took 123 clocks from first word and 8 from final CRC word.
+p=.005 accepted clocks from first word 1210 samples, median 599, p99 932, max 1007.
+8718 GPIO vectors matched. 1856 single-bit corruptions rejected. Timeout and reset recovery passed.
+UART RTL wire test passed all result classes, CRC, bad stop bits, timeout, and recovery.

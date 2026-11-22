@@ -1,0 +1,197 @@
+{
+  "target": "GW2AR-LV18QN88C8/I7",
+  "fabric_clock_mhz": 135,
+  "physical_board_tested": false,
+  "yosys": "0.71",
+  "nextpnr-himbaechel": "0.11.1",
+  "apycula": "0.35",
+  "iverilog": "11.0",
+  "uart_reference_divider": 8,
+  "board_uart_divider": 135,
+  "stim_crosscheck": {
+    "version": "1.16.0",
+    "all_6_models_match_projected_faults_and_distance": true
+  },
+  "routes": {
+    "d3x": {
+      "routed_fmax_estimate_mhz": 261.506287,
+      "setup_pass": true,
+      "hold_violations": 0,
+      "resources": {
+        "LUT4": {
+          "available": 20736,
+          "used": 417
+        },
+        "DFF": {
+          "available": 15552,
+          "used": 253
+        },
+        "BSRAM": {
+          "available": 46,
+          "used": 4
+        },
+        "ALU": {
+          "available": 15552,
+          "used": 98
+        }
+      },
+      "setup_path_start": "endpoint.assembled_DFFE_Q",
+      "setup_path_end": "endpoint.core.rows[0]_DFFE_Q_1",
+      "worst_case_cycles": 2,
+      "worst_case_decode_us": 0.014814814814814815,
+      "native_reference_shots": 505,
+      "native_rescue_shots": 0,
+      "uart_reference_frames": 10
+    },
+    "d3z": {
+      "routed_fmax_estimate_mhz": 241.370987,
+      "setup_pass": true,
+      "hold_violations": 0,
+      "resources": {
+        "LUT4": {
+          "available": 20736,
+          "used": 415
+        },
+        "DFF": {
+          "available": 15552,
+          "used": 253
+        },
+        "BSRAM": {
+          "available": 46,
+          "used": 4
+        },
+        "ALU": {
+          "available": 15552,
+          "used": 98
+        }
+      },
+      "setup_path_start": "endpoint.incoming_DFFE_Q",
+      "setup_path_end": "endpoint.core.rows[0]_DFFE_Q_3",
+      "worst_case_cycles": 2,
+      "worst_case_decode_us": 0.014814814814814815,
+      "native_reference_shots": 505,
+      "native_rescue_shots": 0,
+      "uart_reference_frames": 10
+    },
+    "d7x": {
+      "routed_fmax_estimate_mhz": 199.242874,
+      "setup_pass": true,
+      "hold_violations": 0,
+      "resources": {
+        "LUT4": {
+          "available": 20736,
+          "used": 1597
+        },
+        "DFF": {
+          "available": 15552,
+          "used": 1028
+        },
+        "BSRAM": {
+          "available": 46,
+          "used": 1
+        },
+        "ALU": {
+          "available": 15552,
+          "used": 190
+        }
+      },
+      "setup_path_start": "endpoint.core.shot_mem.0.0",
+      "setup_path_end": "endpoint.raw_DFFE_Q_5",
+      "worst_case_cycles": 62,
+      "worst_case_decode_us": 0.45925925925925926,
+      "native_reference_shots": 772,
+      "native_rescue_shots": 10,
+      "uart_reference_frames": 24
+    },
+    "d7z": {
+      "routed_fmax_estimate_mhz": 199.282578,
+      "setup_pass": true,
+      "hold_violations": 0,
+      "resources": {
+        "LUT4": {
+          "available": 20736,
+          "used": 1587
+        },
+        "DFF": {
+          "available": 15552,
+          "used": 1028
+        },
+        "BSRAM": {
+          "available": 46,
+          "used": 1
+        },
+        "ALU": {
+          "available": 15552,
+          "used": 190
+        }
+      },
+      "setup_path_start": "endpoint.core.shot_mem.0.0",
+      "setup_path_end": "endpoint.raw_DFFE_Q_1",
+      "worst_case_cycles": 62,
+      "worst_case_decode_us": 0.45925925925925926,
+      "native_reference_shots": 772,
+      "native_rescue_shots": 5,
+      "uart_reference_frames": 24
+    },
+    "d15x": {
+      "routed_fmax_estimate_mhz": 161.368408,
+      "setup_pass": true,
+      "hold_violations": 0,
+      "resources": {
+        "LUT4": {
+          "available": 20736,
+          "used": 5179
+        },
+        "DFF": {
+          "available": 15552,
+          "used": 3252
+        },
+        "BSRAM": {
+          "available": 46,
+          "used": 4
+        },
+        "ALU": {
+          "available": 15552,
+          "used": 238
+        }
+      },
+      "setup_path_start": "endpoint.core.shot_mem.0.0",
+      "setup_path_end": "endpoint.raw_DFFE_Q_7",
+      "worst_case_cycles": 78,
+      "worst_case_decode_us": 0.5777777777777777,
+      "native_reference_shots": 772,
+      "native_rescue_shots": 82,
+      "uart_reference_frames": 24
+    },
+    "d15z": {
+      "routed_fmax_estimate_mhz": 170.38678,
+      "setup_pass": true,
+      "hold_violations": 0,
+      "resources": {
+        "LUT4": {
+          "available": 20736,
+          "used": 5185
+        },
+        "DFF": {
+          "available": 15552,
+          "used": 3252
+        },
+        "BSRAM": {
+          "available": 46,
+          "used": 4
+        },
+        "ALU": {
+          "available": 15552,
+          "used": 238
+        }
+      },
+      "setup_path_start": "endpoint.core.shot_mem.0.0",
+      "setup_path_end": "endpoint.raw_DFFE_Q_7",
+      "worst_case_cycles": 78,
+      "worst_case_decode_us": 0.5777777777777777,
+      "native_reference_shots": 772,
+      "native_rescue_shots": 79,
+      "uart_reference_frames": 24
+    }
+  }
+}

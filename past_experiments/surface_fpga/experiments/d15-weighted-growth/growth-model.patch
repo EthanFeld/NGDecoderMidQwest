@@ -1,0 +1,13 @@
+diff --git a/tools/growth_model.cpp b/tools/growth_model.cpp
+index 86fcf39..2a91064 100644
+--- a/tools/growth_model.cpp
++++ b/tools/growth_model.cpp
+@@ -76,7 +76,7 @@ Result decode(int sites, const std::vector<std::vector<Edge>>& by_slice,
+     Schedule clock(cap, short_updates);
+     bool label = false;
+     for (;;) {
+-        if (!clock.epoch()) return timeout;
++        if (!clock.epoch() || !clock.step(static_cast<int>(by_slice.size()))) return timeout;
+         before = age;
+         bool change = false;
+         for (int j = 0; j < sites; ++j) {

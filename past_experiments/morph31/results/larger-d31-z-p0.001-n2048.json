@@ -1,0 +1,282 @@
+{
+  "experiment": {
+    "distance": 31,
+    "rounds": 31,
+    "basis": "z",
+    "noise": 0.001
+  },
+  "seed": 3210,
+  "requested_shots": 2048,
+  "completed_shots": 2048,
+  "bounded_run_truncated": false,
+  "environment": {
+    "python": "3.12.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "source_sha256": "dbda25d3489d90ce461dab8924cc2943ec9ddbf4b3d758b8e82d46a178429685"
+  },
+  "cache_key": "401d6cc317241fb1bdbf",
+  "sample_sha256": "4539590be8ca05ed854d935a279776a68615faea5dfc6f4df07a77f0ea2d807a",
+  "num_detectors": 29760,
+  "num_observables": 1,
+  "data_qubits": 961,
+  "syndrome_ancillas": 960,
+  "stim_num_qubits_including_index_gaps": 2014,
+  "graph": {
+    "graph_rom_bytes": 5822,
+    "templates": 134,
+    "edge_descriptors": 210,
+    "weight_classes": 75,
+    "exception_table_bytes": 0,
+    "classifier_bytes": 1288,
+    "average_neighbor_generation_operations": 21.668682795698924,
+    "neighbor_operation_definition": "map accesses + interval comparisons + emitted edges; coordinate arithmetic excluded",
+    "weight_quantization_error": 0.0,
+    "coordinate_bits": 15,
+    "explicit_packed_bytes": 4693998,
+    "compression_ratio": 806.2518035039506,
+    "edges": 168358
+  },
+  "projection": {
+    "projection": "independent separator components; identical labels parity-merged",
+    "correlations_preserved": false,
+    "dem_error_instructions": 706250,
+    "correlated_error_instructions": 496026,
+    "projected_components": 1220986,
+    "zero_probability_instructions": 0,
+    "identity_components": 0,
+    "undetectable_logical_edges": 0
+  },
+  "prepare_seconds": 1.6890317000215873,
+  "reference": {
+    "shots": 2048,
+    "logical_errors": 0,
+    "logical_error_rate": 0.0,
+    "ci95_wilson": [
+      0,
+      0.0018722006050613785
+    ],
+    "decoder": "PyMatching, uncorrelated DEM mode",
+    "decode_seconds_full_requested_batch": 1.1291538999648765
+  },
+  "decoders": {
+    "conventional": {
+      "shots": 2048,
+      "logical_errors": 0,
+      "logical_error_rate": 0.0,
+      "ci95_wilson": [
+        0,
+        0.0018722006050613785
+      ],
+      "disagreements_with_pymatching": 0,
+      "paired_vs_pymatching": {
+        "added_failures": 0,
+        "removed_failures": 0,
+        "both_failed": 0,
+        "logical_error_rate_difference": 0.0,
+        "added_failure_rate_ci95_wilson": [
+          0,
+          0.0018722006050613785
+        ],
+        "mcnemar_exact_two_sided_p": 1.0,
+        "interpretation": "A large p-value does not establish non-inferiority; zero added failures still has a positive confidence bound."
+      },
+      "decode_seconds": 113.89213869918603,
+      "mean_operations": 41300.61572265625,
+      "mean_operation_counts": {
+        "neighbor_requests": 290.759765625,
+        "neighbor_generation": 9611.11865234375,
+        "edge_examinations": 411.35986328125,
+        "memory_reads": 16273.5654296875,
+        "memory_writes": 5617.90185546875,
+        "queue_operations": 2762.23193359375,
+        "cluster_merges": 293.28515625,
+        "find_steps": 584.1396484375,
+        "ml_lookups": 0.0,
+        "recovery_operations": 1165.78564453125,
+        "validation_operations": 4290.4677734375,
+        "total": 41300.61572265625
+      },
+      "peak_working_bytes": 30688,
+      "graph_rom_bytes": 5822,
+      "model_rom_bytes": 0,
+      "peak_total_packed_bytes": 36510,
+      "peak_records": {
+        "active": 675,
+        "clusters": 675,
+        "vertices": 850,
+        "frontier": 823,
+        "forest": 589,
+        "recovery": 850
+      },
+      "mean_ml_accepted": 0.0,
+      "cycles": {
+        "mean_cycles": 63389.37646484375,
+        "median_cycles": 63284.5,
+        "p95_cycles": 70315.5,
+        "worst_observed_cycles": 77328,
+        "mean_cycles_per_round": 2044.818595640121,
+        "estimated_us_per_round": 25.560232445501512,
+        "assumptions": {
+          "clock_mhz": 80.0,
+          "memory_ports": 1,
+          "read_latency": 2,
+          "coordinate_arithmetic_cycles_per_request": 20,
+          "overlap": false
+        },
+        "status": "software estimate, not measured FPGA latency or a worst-case bound"
+      },
+      "limits": {
+        "working_bytes": 65536,
+        "max_vertices": 8192,
+        "max_frontier": 8191,
+        "max_clusters": 4096,
+        "max_expansions": 100000,
+        "max_seconds": 10.0
+      },
+      "memory_note": "Analytical packed layout, not measured Python heap; growth storage is reused in recovery. Static ROMs are additional to working memory."
+    },
+    "motif": {
+      "shots": 2048,
+      "logical_errors": 0,
+      "logical_error_rate": 0.0,
+      "ci95_wilson": [
+        0,
+        0.0018722006050613785
+      ],
+      "disagreements_with_pymatching": 0,
+      "paired_vs_pymatching": {
+        "added_failures": 0,
+        "removed_failures": 0,
+        "both_failed": 0,
+        "logical_error_rate_difference": 0.0,
+        "added_failure_rate_ci95_wilson": [
+          0,
+          0.0018722006050613785
+        ],
+        "mcnemar_exact_two_sided_p": 1.0,
+        "interpretation": "A large p-value does not establish non-inferiority; zero added failures still has a positive confidence bound."
+      },
+      "decode_seconds": 74.21303739806172,
+      "mean_operations": 32499.24462890625,
+      "mean_operation_counts": {
+        "neighbor_requests": 378.76416015625,
+        "neighbor_generation": 8881.708984375,
+        "edge_examinations": 389.373046875,
+        "memory_reads": 16002.87841796875,
+        "memory_writes": 1326.5244140625,
+        "queue_operations": 485.314453125,
+        "cluster_merges": 37.833984375,
+        "find_steps": 76.134765625,
+        "ml_lookups": 337.39501953125,
+        "recovery_operations": 292.3515625,
+        "validation_operations": 4290.9658203125,
+        "total": 32499.24462890625
+      },
+      "peak_working_bytes": 23394,
+      "graph_rom_bytes": 5822,
+      "model_rom_bytes": 4096,
+      "peak_total_packed_bytes": 33312,
+      "peak_records": {
+        "active": 675,
+        "clusters": 118,
+        "vertices": 782,
+        "frontier": 395,
+        "forest": 989,
+        "recovery": 782
+      },
+      "mean_ml_accepted": 248.951171875,
+      "cycles": {
+        "mean_cycles": 56077.40625,
+        "median_cycles": 55646.0,
+        "p95_cycles": 64173.19999999999,
+        "worst_observed_cycles": 123256,
+        "mean_cycles_per_round": 1808.9485887096773,
+        "estimated_us_per_round": 22.611857358870967,
+        "assumptions": {
+          "clock_mhz": 80.0,
+          "memory_ports": 1,
+          "read_latency": 2,
+          "coordinate_arithmetic_cycles_per_request": 20,
+          "overlap": false
+        },
+        "status": "software estimate, not measured FPGA latency or a worst-case bound"
+      },
+      "limits": {
+        "working_bytes": 65536,
+        "max_vertices": 8192,
+        "max_frontier": 8191,
+        "max_clusters": 4096,
+        "max_expansions": 100000,
+        "max_seconds": 10.0
+      },
+      "memory_note": "Analytical packed layout, not measured Python heap; growth storage is reused in recovery. Static ROMs are additional to working memory."
+    }
+  },
+  "accuracy_note": "Full-circuit samples; small pilot intervals do not establish accuracy improvements or equivalence. Conventional is unweighted.",
+  "motif_comparison": {
+    "operation_reduction_fraction": 0.21310508184317067,
+    "operation_reduction_ci95_paired_delta": [
+      0.21113981369754756,
+      0.2150703499887938
+    ],
+    "operation_interval_note": "Approximate paired delta-method interval on fixed-size samples; not a worst-case or distribution-free bound.",
+    "added_failures": 0,
+    "removed_failures": 0,
+    "both_failed": 0,
+    "logical_error_rate_difference": 0.0,
+    "added_failure_rate_ci95_wilson": [
+      0,
+      0.0018722006050613785
+    ],
+    "mcnemar_exact_two_sided_p": 1.0,
+    "interpretation": "A large p-value does not establish non-inferiority; zero added failures still has a positive confidence bound.",
+    "default": "conventional",
+    "decision": "Keep conventional default; this pilot alone cannot establish accuracy preservation. Policy remains explicitly opt-in.",
+    "policy_metadata": {
+      "experiment": {
+        "distance": 31,
+        "rounds": 31,
+        "basis": "x",
+        "noise": 0.001
+      },
+      "seed": 3103,
+      "feature_version": "m31-neighbors12-v2",
+      "teacher": "PyMatching from decomposed DEM (uncorrelated mode)",
+      "pymatching": "2.4.0",
+      "shots": 64,
+      "training_data_sha256": "006aa541eaadcae62d27be1b88304758a9d0d089b57951d5de87c8eebd8d00ed",
+      "observed_signatures": 408,
+      "active_rom_entries": 20,
+      "exposures": 35084,
+      "min_support": 10,
+      "training_seconds": 6.42486759996973,
+      "min_confidence": 0.99,
+      "sha256": "17cc313add950c3175be58033fc504b2a5ec38e6f882fa6b67c57cc879467c68",
+      "rom_bytes": 4096,
+      "entry": "high nibble indexes confidence_levels; low nibble action+1; zero abstains",
+      "confidence_levels": [
+        0,
+        0.5,
+        0.75,
+        0.875,
+        0.9,
+        0.925,
+        0.95,
+        0.96,
+        0.97,
+        0.98,
+        0.985,
+        0.99,
+        0.995,
+        0.997,
+        0.999,
+        1
+      ]
+    },
+    "policy_sha256": "17cc313add950c3175be58033fc504b2a5ec38e6f882fa6b67c57cc879467c68"
+  },
+  "wall_seconds": 195.592830000096
+}

@@ -1,0 +1,14 @@
+# Small enough for an exact LUT. Use resource preflight before increasing sizes.
+distances = [3]
+rounds = 1
+noise = [0.001, 0.01]
+bases = ["x", "z"]
+geometries = ["rotated"]
+noise_model = "circuit"
+decoders = ["pymatching", "surface_decoders.ibm_relay_bp:build_fast_decoder", "surface_decoders.lut:build_decoder"]
+shots = 1024
+batch_size = 128
+warmup_shots = 16
+workers = 1
+seed = 123
+output = "past_experiments/decoder_testing/results/surface-decoders"

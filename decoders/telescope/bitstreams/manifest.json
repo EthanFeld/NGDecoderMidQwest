@@ -1,0 +1,23 @@
+[
+  {
+    "profile": "d15z-gap3-81mhz",
+    "distance": 15,
+    "basis": "z",
+    "rounds": 15,
+    "frontend": "rescue",
+    "p": 0.001,
+    "clock_mhz": 81,
+    "rescue_gap3_cuts": [
+      9,
+      9
+    ],
+    "image_tag": "39479c69",
+    "routed_fmax_mhz": 165.92,
+    "lut4": 5623,
+    "block_ram": 4,
+    "bitstream": "bitstreams/surface-d15z-gap3-81mhz.fs",
+    "bitstream_sha256": "466fcd1c8f59997cc2b4ddba15990e203b139e20d94aeb74f7f0fe7486da3f15",
+    "graph": "profiles/d15z-gap3-81mhz.json",
+    "graph_sha256": "427880aa889da4c837106680369c22b7386f73f20f3b21621dfcc0dfd3e17965"
+  }
+]

@@ -1,0 +1,130 @@
+{
+  "removed": [
+    {
+      "path": "decoder_testing/src/neural_tn",
+      "bytes": 728913
+    },
+    {
+      "path": "decoder_testing/results/neural_tn",
+      "bytes": 49874132
+    },
+    {
+      "path": "decoder_testing/results/archive/retired_multistart_20261122",
+      "bytes": 4556133
+    },
+    {
+      "path": "decoder_testing/build/lib/neural_tn",
+      "bytes": 422812
+    },
+    {
+      "path": "decoder_testing/NEURAL_TN.md",
+      "bytes": 11323
+    },
+    {
+      "path": "decoder_testing/FRONTIER_TN.md",
+      "bytes": 9403
+    },
+    {
+      "path": "decoder_testing/MEDIAN_TN.md",
+      "bytes": 8862
+    },
+    {
+      "path": "decoder_testing/SCALING_TN.md",
+      "bytes": 11272
+    },
+    {
+      "path": "decoder_testing/D15_TN.md",
+      "bytes": 12693
+    },
+    {
+      "path": "decoder_testing/LER_REFINEMENT.md",
+      "bytes": 10805
+    },
+    {
+      "path": "decoder_testing/RESTORED_D15.md",
+      "bytes": 4708
+    },
+    {
+      "path": "decoder_testing/ACCURACY_TN.md",
+      "bytes": 9837
+    },
+    {
+      "path": "decoder_testing/OPTIMIZED_TN.md",
+      "bytes": 9777
+    },
+    {
+      "path": "decoder_testing/configs/neural_tn.toml",
+      "bytes": 438
+    },
+    {
+      "path": "decoder_testing/configs/frontier_tn.toml",
+      "bytes": 517
+    },
+    {
+      "path": "decoder_testing/configs/median_tn.toml",
+      "bytes": 460
+    },
+    {
+      "path": "decoder_testing/configs/cascade_tn.toml",
+      "bytes": 475
+    },
+    {
+      "path": "decoder_testing/configs/d15_tn.toml",
+      "bytes": 462
+    },
+    {
+      "path": "decoder_testing/configs/accuracy_tn.toml",
+      "bytes": 472
+    },
+    {
+      "path": "decoder_testing/configs/optimized_tn.toml",
+      "bytes": 530
+    },
+    {
+      "path": "decoder_testing/configs/sector_tn.toml",
+      "bytes": 492
+    },
+    {
+      "path": "decoder_testing/configs/tree_tn.toml",
+      "bytes": 482
+    },
+    {
+      "path": "decoder_testing/tests/test_neural_tn.py",
+      "bytes": 6310
+    },
+    {
+      "path": "decoder_testing/tests/test_frontier_tn.py",
+      "bytes": 11084
+    },
+    {
+      "path": "decoder_testing/tests/test_cascade_tn.py",
+      "bytes": 6947
+    },
+    {
+      "path": "decoder_testing/tests/test_large_tn.py",
+      "bytes": 22955
+    },
+    {
+      "path": "decoder_testing/tests/test_accuracy_tn.py",
+      "bytes": 6372
+    },
+    {
+      "path": "decoder_testing/tests/test_optimized_tn.py",
+      "bytes": 6407
+    },
+    {
+      "path": "decoder_testing/tests/test_tn_certificates.py",
+      "bytes": 7241
+    },
+    {
+      "path": "decoder_testing/.build/organize_tensor.py",
+      "bytes": 9150
+    },
+    {
+      "path": "decoder_testing/.build/tensor_references.txt",
+      "bytes": 21588
+    }
+  ],
+  "bytes_removed": 55773052,
+  "unrelated_projects_untouched": true
+}

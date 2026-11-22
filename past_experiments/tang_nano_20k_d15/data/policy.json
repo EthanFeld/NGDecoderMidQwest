@@ -1,0 +1,33 @@
+{
+  "event_limit": 176,
+  "raw_event_limit": 480,
+  "standard_event_limit": 152,
+  "first_span": 9,
+  "second_span": 9,
+  "combined_boundary_depth": 6,
+  "dense_span": 8,
+  "dense_boundary_depth": 5,
+  "dense_crossing_limit": 10,
+  "boundary_extension": {
+    "max_span": 1,
+    "max_groups": 1,
+    "event_limit": 138,
+    "budget": 8
+  },
+  "wide_even": {
+    "max_span": 7,
+    "first_band": 2,
+    "last_band": 11,
+    "boundary_depth": 4,
+    "crossing_limit": 7
+  },
+  "repair": {
+    "first_band": 3,
+    "last_band": 10,
+    "band_difference": 2,
+    "boundary_depth": 5
+  },
+  "extended_span": 4,
+  "extended_crossing_limit": 9,
+  "boundary_order": [0, 3, 1, 2]
+}

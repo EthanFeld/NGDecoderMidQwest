@@ -1,0 +1,156 @@
+{
+  "upstream": "https://github.com/oscarhiggott/PyMatching",
+  "tag": "v2.4.0",
+  "tree_sha": "6f63b2b9474ba0fa7e511fe52bffdce858a06984",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/arena.h",
+      "git_blob_sha": "ed2e2e6f9a3830a1edf36787712ec22fa35be9e7"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/driver/implied_weights.h",
+      "git_blob_sha": "f652c6d8214ecc115a8169aa2df557eb99c1adad"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/detector_node.cc",
+      "git_blob_sha": "3e90c71f56599ceaefae5ad656422a7479b32109"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/detector_node.h",
+      "git_blob_sha": "446de586da5ceb13d1729074e349985d5f312b52"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/graph.cc",
+      "git_blob_sha": "5c1b8850dfa4bedeaedb99854b8b6273b9eaba9b"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/graph.h",
+      "git_blob_sha": "abfddfc25a787c3fbc6490dbb82f3a076ca89b35"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/graph_fill_region.cc",
+      "git_blob_sha": "8543fcc1c261c22abda6e835018ebd9d42d8fe2d"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/graph_fill_region.h",
+      "git_blob_sha": "df543d0773b55e65d6c200f729007b60a13cf115"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/graph_flooder.cc",
+      "git_blob_sha": "9bf2afde698fc34b1bef2eabd5db74a67f680a51"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/graph_flooder.h",
+      "git_blob_sha": "292cb9f039344d1520ec84c9fca7bd35fdb3676a"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/match.cc",
+      "git_blob_sha": "1682bff4a87e8797cd5a22d77c2f21b49047602e"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder/match.h",
+      "git_blob_sha": "e7b26f667bb9c45dbb7bb55eb6c7a43579e950d1"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/compressed_edge.cc",
+      "git_blob_sha": "7e37a3df1e5eaebda027940df244c5b651a8d16a"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/compressed_edge.h",
+      "git_blob_sha": "46458857d20746c0e82d9edf0d15c7dde5c3b1c7"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/mwpm_event.cc",
+      "git_blob_sha": "19141fa03f02ce301c414e357e25f9cf22bdfc45"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/mwpm_event.h",
+      "git_blob_sha": "1c29709d1c813cff33ccc6dd91c3b3595e0e199f"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/region_edge.cc",
+      "git_blob_sha": "5a79e1a23121a921038b719b543819d6ade450e9"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/region_edge.h",
+      "git_blob_sha": "8fba107b8f61507ad0854bad2e790906d77056a6"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/varying.h",
+      "git_blob_sha": "89282710c11021593821d6d02bed29c310aaaf33"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/ints.h",
+      "git_blob_sha": "2ff5fd174a9950809e54282c51c9b9ff35157ea9"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/matcher/alternating_tree.cc",
+      "git_blob_sha": "24b509b9f937f7d467aede7f6c3172987774d941"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/matcher/alternating_tree.h",
+      "git_blob_sha": "4d9fa52fb023fcedebd666147f96b1450bff40aa"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/matcher/mwpm.cc",
+      "git_blob_sha": "2dd7314355ffc01e72a4c8683132117de433d6c8"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/matcher/mwpm.h",
+      "git_blob_sha": "a2067101b84f48faa9c13b0b699b25c9d88aed05"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/search/search_detector_node.cc",
+      "git_blob_sha": "0be83c072b0dbd728fef10a7d3aec3b372cf5b0f"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/search/search_detector_node.h",
+      "git_blob_sha": "7cfc6d14c93916a060f03db72842930d626e2bd7"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/search/search_flooder.cc",
+      "git_blob_sha": "78534cde191f6fbc34eed3eb1bae3ef7c9536a61"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/search/search_flooder.h",
+      "git_blob_sha": "6f3f60b9bb0eec9b68d500f65384dc6e2654ac3b"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/search/search_graph.cc",
+      "git_blob_sha": "d4be3ae5d4da3c532f7cd0c68f6d5b4c1209197a"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/search/search_graph.h",
+      "git_blob_sha": "e57006c663406fa766307cfe278c418663c400b9"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/tracker/cyclic.h",
+      "git_blob_sha": "4d8672568b0e958329767758f143116044a6074c"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/tracker/flood_check_event.cc",
+      "git_blob_sha": "e7c3b52e053575c2a2369acb8382850c2c5cfb71"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/tracker/flood_check_event.h",
+      "git_blob_sha": "d7019ef3ee8755accc5b647a4a5d922f89650a53"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/tracker/queued_event_tracker.h",
+      "git_blob_sha": "0202d4ff2fa278edebd03265c5e6a10bd6f62994"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/tracker/radix_heap_queue.h",
+      "git_blob_sha": "70877eb3bcce68f10f0f5252c346a4821509c80e"
+    },
+    {
+      "path": "src/pymatching/sparse_blossom/flooder_matcher_interop/varying.inl",
+      "git_blob_sha": "4bf17097326c16d6d1038f3d0824ae7101ac885d"
+    }
+  ]
+}

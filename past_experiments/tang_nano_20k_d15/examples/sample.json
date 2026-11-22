@@ -1,0 +1,6 @@
+{
+  "shots": 64,
+  "seed": 42857,
+  "p": 0.005,
+  "layout": "Stim 1.15.0 rotated Z memory, distance 15, 15 rounds"
+}

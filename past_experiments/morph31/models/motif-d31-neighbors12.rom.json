@@ -1,0 +1,41 @@
+{
+  "experiment": {
+    "distance": 31,
+    "rounds": 31,
+    "basis": "x",
+    "noise": 0.001
+  },
+  "seed": 3103,
+  "feature_version": "m31-neighbors12-v2",
+  "teacher": "PyMatching from decomposed DEM (uncorrelated mode)",
+  "pymatching": "2.4.0",
+  "shots": 64,
+  "training_data_sha256": "006aa541eaadcae62d27be1b88304758a9d0d089b57951d5de87c8eebd8d00ed",
+  "observed_signatures": 408,
+  "active_rom_entries": 20,
+  "exposures": 35084,
+  "min_support": 10,
+  "training_seconds": 6.42486759996973,
+  "min_confidence": 0.99,
+  "sha256": "17cc313add950c3175be58033fc504b2a5ec38e6f882fa6b67c57cc879467c68",
+  "rom_bytes": 4096,
+  "entry": "high nibble indexes confidence_levels; low nibble action+1; zero abstains",
+  "confidence_levels": [
+    0,
+    0.5,
+    0.75,
+    0.875,
+    0.9,
+    0.925,
+    0.95,
+    0.96,
+    0.97,
+    0.98,
+    0.985,
+    0.99,
+    0.995,
+    0.997,
+    0.999,
+    1
+  ]
+}

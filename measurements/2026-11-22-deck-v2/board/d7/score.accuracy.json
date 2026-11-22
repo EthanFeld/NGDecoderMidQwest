@@ -1,0 +1,487 @@
+{
+  "format": "deck-board-measurements-v2",
+  "created_at": "2026-11-22T19:08:01.466111+00:00",
+  "source": "physical Tang Nano 20K replies; paired CPU replay uses original full joint syndromes",
+  "distance": 7,
+  "basis": "z",
+  "rounds": 7,
+  "capture": {
+    "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\raw_capture.json",
+    "sha256": "849a2e6b554351b4618b5938edcd973a72447c33c184fed2d0facd453e444a50",
+    "started_at": "2026-11-22T15:17:35.221Z"
+  },
+  "fixtures": {
+    "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\d7_fixtures.json",
+    "sha256": "d545d35e55a06175eba91fe2672e50783dfb7ea6d69045dc8b3925538ad9390d"
+  },
+  "joint": {
+    "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\d7_joint.npz",
+    "sha256": "b86a980fc3d1f4d43b09b70e339604f18ab62b0863a9837626168852bba596a8"
+  },
+  "profile": {
+    "path": "past_experiments\\surface_fpga\\profiles\\d7z-dual-p007-cut0-81mhz.json",
+    "sha256": "9e848066d6e2b5d497db4b39b86e61ee55173bcd2ac1b404b6360dcdbfda74c2",
+    "image_tag": 1097811436
+  },
+  "clock_hz": 81000000,
+  "baud_rate": 1000000,
+  "implementation": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "46d811d8c74d9be9009706005ae1de9971c8cafdbd06d1150a563000f4aa78b9",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "environment": {
+    "python": "3.12.5 (main, Aug 14 2024, 04:23:18) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0"
+  },
+  "cohorts": [
+    {
+      "p": 0.001,
+      "seed": 83127101,
+      "shots": 10000,
+      "complete": true,
+      "capture_run_index": 9,
+      "capture_run_started_at": null,
+      "accepted": 9998,
+      "deferred": 2,
+      "defer_rate": 0.0002,
+      "verification": {
+        "request_payloads_paired": 10000,
+        "truth_labels_paired": 10000,
+        "reply_frames_crc_verified": 10000,
+        "uart_retries": 0,
+        "hardware_status_model_mismatches": 0,
+        "hardware_cycle_model_mismatches": 0
+      },
+      "quality": {
+        "tensor": {
+          "shots": 10000,
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.00038399837067659573
+          ]
+        },
+        "pymatching": {
+          "shots": 10000,
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.00038399837067659573
+          ]
+        },
+        "correlated_pymatching": {
+          "shots": 10000,
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.00038399837067659573
+          ]
+        },
+        "telescope": {
+          "shots": 10000,
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.00038399837067659573
+          ]
+        }
+      },
+      "fpga_native_accepts": {
+        "shots": 9998,
+        "errors": 0,
+        "ler": 0.0,
+        "ci95": [
+          0.0,
+          0.00038407515621099113
+        ]
+      },
+      "fpga_forced_zero_on_defer": {
+        "shots": 10000,
+        "errors": 0,
+        "ler": 0.0,
+        "ci95": [
+          0.0,
+          0.00038399837067659573
+        ]
+      },
+      "fpga_core_us": {
+        "samples": 10000,
+        "mean": 0.6708962962962963,
+        "p50": 0.6172839506172839,
+        "p99": 1.691481481481484,
+        "p999": 2.6667530864197704
+      },
+      "uart_round_trip_us": {
+        "samples": 10000,
+        "mean": 17471.370000207426,
+        "p50": 16800.000071525574,
+        "p99": 35801.00007057192,
+        "p999": 58101.300023794436
+      },
+      "uart_delivery_us": {
+        "samples": 10000,
+        "mean": 17471.370000207426,
+        "p50": 16800.000071525574,
+        "p99": 35801.00007057192,
+        "p999": 58101.300023794436
+      },
+      "batch_seconds": {
+        "tensor": 0.1260441,
+        "pymatching": 0.0352697,
+        "correlated_pymatching": 0.0997179
+      },
+      "batch_size": 256,
+      "tensor_type": "pymatching_tensor_decoder._small.policy.CascadeTNDecoder",
+      "timing": null,
+      "paired_arrays": {
+        "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\score-p01000.npz",
+        "sha256": "11c72175eb891227bd9a53267185a356922688ea2e8022ff9110c1672589542a"
+      }
+    },
+    {
+      "p": 0.003,
+      "seed": 83127102,
+      "shots": 10000,
+      "complete": true,
+      "capture_run_index": 10,
+      "capture_run_started_at": null,
+      "accepted": 9965,
+      "deferred": 35,
+      "defer_rate": 0.0035,
+      "verification": {
+        "request_payloads_paired": 10000,
+        "truth_labels_paired": 10000,
+        "reply_frames_crc_verified": 10000,
+        "uart_retries": 0,
+        "hardware_status_model_mismatches": 0,
+        "hardware_cycle_model_mismatches": 0
+      },
+      "quality": {
+        "tensor": {
+          "shots": 10000,
+          "errors": 5,
+          "ler": 0.0005,
+          "ci95": [
+            0.00021358842616382576,
+            0.0011700259461420934
+          ]
+        },
+        "pymatching": {
+          "shots": 10000,
+          "errors": 15,
+          "ler": 0.0015,
+          "ci95": [
+            0.0009092618255931228,
+            0.002473584549971443
+          ]
+        },
+        "correlated_pymatching": {
+          "shots": 10000,
+          "errors": 8,
+          "ler": 0.0008,
+          "ci95": [
+            0.0004054337198968799,
+            0.0015779502533866333
+          ]
+        },
+        "telescope": {
+          "shots": 10000,
+          "errors": 14,
+          "ler": 0.0014,
+          "ci95": [
+            0.000834162028874972,
+            0.002348761146363729
+          ]
+        }
+      },
+      "fpga_native_accepts": {
+        "shots": 9965,
+        "errors": 12,
+        "ler": 0.0012042147516307074,
+        "ci95": [
+          0.0006890163268921271,
+          0.0021038316620844927
+        ]
+      },
+      "fpga_forced_zero_on_defer": {
+        "shots": 10000,
+        "errors": 25,
+        "ler": 0.0025,
+        "ci95": [
+          0.0016939976111583195,
+          0.0036880807676648924
+        ]
+      },
+      "fpga_core_us": {
+        "samples": 10000,
+        "mean": 1.1738876543209877,
+        "p50": 1.0864197530864197,
+        "p99": 3.506419753086425,
+        "p999": 5.320987654320987
+      },
+      "uart_round_trip_us": {
+        "samples": 10000,
+        "mean": 17591.3000005126,
+        "p50": 16899.999976158142,
+        "p99": 38199.99992966652,
+        "p999": 67699.99992847443
+      },
+      "uart_delivery_us": {
+        "samples": 10000,
+        "mean": 17591.3000005126,
+        "p50": 16899.999976158142,
+        "p99": 38199.99992966652,
+        "p999": 67699.99992847443
+      },
+      "batch_seconds": {
+        "tensor": 6.7414062,
+        "pymatching": 0.125058,
+        "correlated_pymatching": 0.6676794
+      },
+      "batch_size": 256,
+      "tensor_type": "pymatching_tensor_decoder._small.policy.CascadeTNDecoder",
+      "timing": null,
+      "paired_arrays": {
+        "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\score-p03000.npz",
+        "sha256": "e17806e823c41338aa5f8f991c68016cdfabd6405abd3f346f93202a1e7b6f62"
+      }
+    },
+    {
+      "p": 0.005,
+      "seed": 83127103,
+      "shots": 10000,
+      "complete": true,
+      "capture_run_index": 11,
+      "capture_run_started_at": null,
+      "accepted": 9837,
+      "deferred": 163,
+      "defer_rate": 0.0163,
+      "verification": {
+        "request_payloads_paired": 10000,
+        "truth_labels_paired": 10000,
+        "reply_frames_crc_verified": 10000,
+        "uart_retries": 0,
+        "hardware_status_model_mismatches": 0,
+        "hardware_cycle_model_mismatches": 0
+      },
+      "quality": {
+        "tensor": {
+          "shots": 10000,
+          "errors": 50,
+          "ler": 0.005,
+          "ci95": [
+            0.0037949010708382257,
+            0.006585257316131604
+          ]
+        },
+        "pymatching": {
+          "shots": 10000,
+          "errors": 112,
+          "ler": 0.0112,
+          "ci95": [
+            0.009316987490236137,
+            0.013458409316937302
+          ]
+        },
+        "correlated_pymatching": {
+          "shots": 10000,
+          "errors": 58,
+          "ler": 0.0058,
+          "ci95": [
+            0.004489676579576176,
+            0.00748986741000057
+          ]
+        },
+        "telescope": {
+          "shots": 10000,
+          "errors": 87,
+          "ler": 0.0087,
+          "ci95": [
+            0.007059092062941591,
+            0.010718224736085231
+          ]
+        }
+      },
+      "fpga_native_accepts": {
+        "shots": 9837,
+        "errors": 75,
+        "ler": 0.007624275693809088,
+        "ci95": [
+          0.006087186076388547,
+          0.009545771680775663
+        ]
+      },
+      "fpga_forced_zero_on_defer": {
+        "shots": 10000,
+        "errors": 151,
+        "ler": 0.0151,
+        "ci95": [
+          0.01288922549293397,
+          0.01768317612694819
+        ]
+      },
+      "fpga_core_us": {
+        "samples": 10000,
+        "mean": 1.7151333333333336,
+        "p50": 1.4814814814814814,
+        "p99": 5.16061728395062,
+        "p999": 5.320987654320987
+      },
+      "uart_round_trip_us": {
+        "samples": 10000,
+        "mean": 17266.289999568464,
+        "p50": 16800.000071525574,
+        "p99": 32701.000046730063,
+        "p999": 65802.89995241225
+      },
+      "uart_delivery_us": {
+        "samples": 10000,
+        "mean": 17266.289999568464,
+        "p50": 16800.000071525574,
+        "p99": 32701.000046730063,
+        "p999": 65802.89995241225
+      },
+      "batch_seconds": {
+        "tensor": 50.9321824,
+        "pymatching": 0.2458456,
+        "correlated_pymatching": 0.6778657
+      },
+      "batch_size": 256,
+      "tensor_type": "pymatching_tensor_decoder._small.policy.CascadeTNDecoder",
+      "timing": null,
+      "paired_arrays": {
+        "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\score-p05000.npz",
+        "sha256": "7d1f5dfd186687ae0d98ce0f13873ffc6cfeb3d0ff0aa6f1c8b97db4c51d50c2"
+      }
+    },
+    {
+      "p": 0.007,
+      "seed": 83127104,
+      "shots": 10000,
+      "complete": true,
+      "capture_run_index": 12,
+      "capture_run_started_at": null,
+      "accepted": 9518,
+      "deferred": 482,
+      "defer_rate": 0.0482,
+      "verification": {
+        "request_payloads_paired": 10000,
+        "truth_labels_paired": 10000,
+        "reply_frames_crc_verified": 10000,
+        "uart_retries": 0,
+        "hardware_status_model_mismatches": 0,
+        "hardware_cycle_model_mismatches": 0
+      },
+      "quality": {
+        "tensor": {
+          "shots": 10000,
+          "errors": 210,
+          "ler": 0.021,
+          "ci95": [
+            0.018368184046646134,
+            0.023999686392462048
+          ]
+        },
+        "pymatching": {
+          "shots": 10000,
+          "errors": 348,
+          "ler": 0.0348,
+          "ci95": [
+            0.03138280279392551,
+            0.038574469290151986
+          ]
+        },
+        "correlated_pymatching": {
+          "shots": 10000,
+          "errors": 229,
+          "ler": 0.0229,
+          "ci95": [
+            0.020146242156227716,
+            0.026020169089071888
+          ]
+        },
+        "telescope": {
+          "shots": 10000,
+          "errors": 315,
+          "ler": 0.0315,
+          "ci95": [
+            0.02825247103929171,
+            0.035107335434032244
+          ]
+        }
+      },
+      "fpga_native_accepts": {
+        "shots": 9518,
+        "errors": 253,
+        "ler": 0.02658121454086993,
+        "ci95": [
+          0.023535658390552192,
+          0.030008759569525808
+        ]
+      },
+      "fpga_forced_zero_on_defer": {
+        "shots": 10000,
+        "errors": 475,
+        "ler": 0.0475,
+        "ci95": [
+          0.04350198283479496,
+          0.05184553569066735
+        ]
+      },
+      "fpga_core_us": {
+        "samples": 10000,
+        "mean": 2.2767962962962964,
+        "p50": 2.037037037037037,
+        "p99": 5.320987654320987,
+        "p999": 5.320987654320987
+      },
+      "uart_round_trip_us": {
+        "samples": 10000,
+        "mean": 17129.979999983312,
+        "p50": 16899.999976158142,
+        "p99": 28601.0000240803,
+        "p999": 51799.99995243549
+      },
+      "uart_delivery_us": {
+        "samples": 10000,
+        "mean": 17129.979999983312,
+        "p50": 16899.999976158142,
+        "p99": 28601.0000240803,
+        "p999": 51799.99995243549
+      },
+      "batch_seconds": {
+        "tensor": 143.1660856,
+        "pymatching": 0.2010709,
+        "correlated_pymatching": 0.5980223
+      },
+      "batch_size": 256,
+      "tensor_type": "pymatching_tensor_decoder._small.policy.CascadeTNDecoder",
+      "timing": null,
+      "paired_arrays": {
+        "path": "measurements\\2026-11-22-deck-v2\\board\\d7\\score-p07000.npz",
+        "sha256": "cf49904e00542189437485fbc89aef1f674234bf7f1eadf2a7550ca909177d41"
+      }
+    }
+  ],
+  "run_selection": {
+    "first_run_index": 9,
+    "rule": "latest completed, nonempty, fault-free runs, one per configured cohort",
+    "selected_capture_run_indices": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "input_samples": "retained joint samples paired with newly captured FPGA telemetry"
+  },
+  "complete": true
+}

@@ -1,0 +1,17 @@
+# Larger quality/throughput sweep. Increase shots for rare logical failures.
+distances = [3, 5, 7, 9, 11, 13, 15, 17]
+noise = [0.0005, 0.001, 0.002, 0.003, 0.005, 0.007, 0.01]
+bases = ["x", "z"]
+geometries = ["rotated"]
+rounds = "distance"
+noise_model = "circuit"
+decoders = ["pymatching"]
+shots = 1000000
+min_shots = 10000
+max_errors = 1000
+batch_size = 8192
+memory_mib = 256
+warmup_shots = 64
+workers = 4
+seed = 123
+output = "past_experiments/decoder_testing/results/scaling"

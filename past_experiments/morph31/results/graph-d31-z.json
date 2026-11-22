@@ -1,0 +1,45 @@
+{
+  "experiment": {
+    "distance": 31,
+    "rounds": 31,
+    "basis": "z",
+    "noise": 0.001
+  },
+  "environment": {
+    "python": "3.12.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "source_sha256": "1941e1977f6dc62172db762afd71a04c292689646e6c4383ec9e89bc58f93f9e"
+  },
+  "num_detectors": 29760,
+  "graph": {
+    "graph_rom_bytes": 5822,
+    "templates": 134,
+    "edge_descriptors": 210,
+    "weight_classes": 75,
+    "exception_table_bytes": 0,
+    "classifier_bytes": 1288,
+    "average_neighbor_generation_operations": 21.668682795698924,
+    "neighbor_operation_definition": "map accesses + interval comparisons + emitted edges; coordinate arithmetic excluded",
+    "weight_quantization_error": 0.0,
+    "coordinate_bits": 15,
+    "explicit_packed_bytes": 4693998,
+    "compression_ratio": 806.2518035039506,
+    "edges": 168358
+  },
+  "projection": {
+    "projection": "independent separator components; identical labels parity-merged",
+    "correlations_preserved": false,
+    "dem_error_instructions": 706250,
+    "correlated_error_instructions": 496026,
+    "projected_components": 1220986,
+    "zero_probability_instructions": 0,
+    "identity_components": 0,
+    "undetectable_logical_edges": 0
+  },
+  "equivalence_verified": true,
+  "rom_roundtrip_verified": true,
+  "wall_seconds": 21.695519900065847
+}

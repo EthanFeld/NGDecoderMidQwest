@@ -1,0 +1,6 @@
+IO_LOC "board_clock" 4;
+IO_LOC "usb_receive" 70;
+IO_LOC "usb_transmit" 69;
+IO_PORT "board_clock" IO_TYPE=LVCMOS33;
+IO_PORT "usb_receive" IO_TYPE=LVCMOS33 PULL_MODE=UP;
+IO_PORT "usb_transmit" IO_TYPE=LVCMOS33;

@@ -1,0 +1,73 @@
+{
+  "target": "GW2AR-LV18QN88C8/I7",
+  "physical_board_tested": false,
+  "routing": [
+    {
+      "basis": "x",
+      "growth_p": 0.005,
+      "route": "route-x-005",
+      "lut4": 5936,
+      "block_ram": 6,
+      "worst_relevant_fmax_mhz": 107.65422058105469,
+      "target_clock_mhz": 90,
+      "setup_and_hold_closed": true
+    },
+    {
+      "basis": "x",
+      "growth_p": 0.007,
+      "route": "route-x-007",
+      "lut4": 5857,
+      "block_ram": 6,
+      "worst_relevant_fmax_mhz": 128.18869018554688,
+      "target_clock_mhz": 90,
+      "setup_and_hold_closed": true
+    },
+    {
+      "basis": "z",
+      "growth_p": 0.005,
+      "route": "route-z-005",
+      "lut4": 5828,
+      "block_ram": 6,
+      "worst_relevant_fmax_mhz": 128.10658264160156,
+      "target_clock_mhz": 90,
+      "setup_and_hold_closed": true
+    },
+    {
+      "basis": "z",
+      "growth_p": 0.007,
+      "route": "route-z-007",
+      "lut4": 5872,
+      "block_ram": 6,
+      "worst_relevant_fmax_mhz": 128.3861846923828,
+      "target_clock_mhz": 90,
+      "setup_and_hold_closed": true
+    }
+  ],
+  "rtl_simulation": {
+    "sim-x-005": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 36 reference frames"
+    ],
+    "sim-x-007": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 36 reference frames"
+    ],
+    "sim-z-005": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 37 reference frames"
+    ],
+    "sim-z-007": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 37 reference frames"
+    ],
+    "unit_and_stim": [
+      "OK",
+      "d3 X | Stim matched all 55 fault probabilities and distance",
+      "d3 Z | Stim matched all 55 fault probabilities and distance",
+      "d7 X | Stim matched all 883 fault probabilities and distance",
+      "d7 Z | Stim matched all 883 fault probabilities and distance",
+      "d15 X | Stim matched all 9451 fault probabilities and distance",
+      "d15 Z | Stim matched all 9451 fault probabilities and distance"
+    ]
+  }
+}

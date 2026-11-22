@@ -1,0 +1,35 @@
+{
+  "distance": 15,
+  "basis": "z",
+  "rounds": 15,
+  "shots_per_rate": 10000,
+  "rates": [
+    0.001,
+    0.003,
+    0.005,
+    0.007
+  ],
+  "seeds": [
+    94625701,
+    94625702,
+    94625703,
+    94625704
+  ],
+  "image_tag": "0x592e6076",
+  "clock_hz": 27000000,
+  "baud_rate": 500000,
+  "profile": "past_experiments/surface_fpga/experiments/d15-weighted-growth/d15z-growth-cap4000.json",
+  "profile_sha256": "e1ff9207f560041259c1d2694e560426569dea66d062032cff8530daa47def6f",
+  "bitstream": "past_experiments/surface_fpga/build/gowin-images/surface-d15z-tilt-growth-27mhz-debug-gowin.fs",
+  "bitstream_sha256": "dda305b761d7caa108b02ff80b0deeea59c8a08fcc6565b9aef5c98411297eb5",
+  "files": {
+    "d15_fixtures.json": "12ac6f4194a06d99a9e3b0eedbf0f09f8b9699addaf49ce855dafe31122291d4",
+    "d15_joint.npz": "2f36059344a7acf183bd7bcd5e9140e9afadf3169aa77c3e8a1c68ec525b2290",
+    "d15.html": "2ce29b3f765f09cf463d6290c55d1b58d861304f1817329ade7050328dd91364"
+  },
+  "versions": {
+    "stim": "1.16.0",
+    "numpy": "2.5.5",
+    "pymatching": "2.4.0"
+  }
+}

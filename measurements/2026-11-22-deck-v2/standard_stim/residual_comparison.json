@@ -1,0 +1,50 @@
+{
+  "complete": true,
+  "shots": 4096,
+  "target_shots": 4096,
+  "seed": 94629701,
+  "distance": 15,
+  "rounds": 15,
+  "noise": 0.005,
+  "basis": "z",
+  "circuit": "Surface Telescope full joint circuit",
+  "frontend": "gap3 rescue cycle model, not a new physical board capture",
+  "population": "4096 fresh full memory experiments; both telescopes preserve all FPGA accepts and decode only defers",
+  "comparison": "Original full joint syndrome versus memory-residual-substituted joint syndrome with FPGA frame XOR on defers",
+  "profile": "decoders/telescope/profiles/d15z-gap3-81mhz.json",
+  "profile_sha256": "427880aa889da4c837106680369c22b7386f73f20f3b21621dfcc0dfd3e17965",
+  "identity": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "46d811d8c74d9be9009706005ae1de9971c8cafdbd06d1150a563000f4aa78b9",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "runner_sha256": "aaf709acf598c5e5b709be61f3f69b7a73245d87a4d7d56a8d92d03e9368a243",
+  "fpga_accepts": 255,
+  "fpga_defers": 3841,
+  "batch_size": 256,
+  "seconds": 40.23651610000525,
+  "results": {
+    "original_telescope": {
+      "shots": 4096,
+      "errors": 1,
+      "ler": 0.000244140625,
+      "errors_on_defers": 1,
+      "errors_on_accepts": 0
+    },
+    "residual_plus_frame_telescope": {
+      "shots": 4096,
+      "errors": 152,
+      "ler": 0.037109375,
+      "errors_on_defers": 152,
+      "errors_on_accepts": 0
+    }
+  },
+  "residual_vs_original_telescope": {
+    "fixes": 0,
+    "regressions": 151,
+    "prediction_differences": 151
+  },
+  "fixture": "residual_inputs.npz",
+  "fixture_sha256": "cba8c3476b0cda72fe25cdb57378e6525ed737e3f2e013180d9cb6f95e993a5e"
+}

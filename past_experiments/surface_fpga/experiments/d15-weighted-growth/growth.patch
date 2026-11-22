@@ -1,0 +1,127 @@
+diff --git a/rtl/growth.sv b/rtl/growth.sv
+index e326022..854690d 100644
+--- a/rtl/growth.sv
++++ b/rtl/growth.sv
+@@ -24,7 +24,7 @@ module sc_growth #(
+     localparam logic [AGE-1:0] MAX_AGE = AGE'(`SC_GROW_MAXAGE);
+     localparam logic [AGE-1:0] INITIAL_AGE = AGE'(`SC_GROW_INITIAL_AGE);
+ 
+-    typedef enum logic [2:0] {IDLE, EPOCH, LATCH, SELECT, PICK, FIND, PARENT} phase_t;
++    typedef enum logic [2:0] {IDLE, EPOCH, LATCH, SELECT, PICK, FIND, PARENT, SNAPSHOT} phase_t;
+     phase_t phase;
+     logic [IX-1:0] layer, candidate_layer;
+     logic initial_epoch, frame_bit, conflict;
+@@ -33,6 +33,7 @@ module sc_growth #(
+     wire [W-1:0] member_en, last_en, winner_en, lost_en;
+     wire [ROWS-1:0] any_active;
+     localparam bit PACKED_TOUCH = W > 32;
++    localparam bit RAM_ACTIVITY = PACKED_TOUCH && !`SC_GROW_SHORT_UPDATES;
+     localparam bit PREFETCH_ROWS = `SC_GROW_PREFETCH_ROWS;
+     wire [IX-1:0] edge_layer = PREFETCH_ROWS ? candidate_layer : layer;
+ 
+@@ -40,7 +41,13 @@ module sc_growth #(
+     logic [W*AGE-1:0] age_q, older, aug_age;
+     logic [W-1:0] past_activity, activity_q;
+     wire [W*AGE-1:0] current_age;
+-    wire [W-1:0] activity = DUAL_PORT && PREFETCH_ROWS ? activity_q : frozen_row[layer];
++    logic [IX-1:0] snapshot_layer;
++    logic snapshot_has_active;
++    wire [W-1:0] snapshot_data;
++    logic [W-1:0] packed_activity;
++    wire packed_singleton_a, packed_singleton_b;
++    wire [W-1:0] activity = RAM_ACTIVITY ? packed_activity :
++                            DUAL_PORT && PREFETCH_ROWS ? activity_q : frozen_row[layer];
+     logic [W-1:0] pending [0:G-1];
+     wire [W-1:0] hit [0:G-1];
+     logic [G-1:0] family_hit;
+@@ -209,9 +216,9 @@ module sc_growth #(
+     logic terminal, side;
+     logic parent_mark;
+     localparam logic [META-1:0] SINGLETON = DUAL_PORT ? 0 : 1;
+-    wire singleton_a = PACKED_TOUCH ? frozen_row[a[A-1:S]][a[S-1:0]] :
++    wire singleton_a = RAM_ACTIVITY ? packed_singleton_a : PACKED_TOUCH ? frozen_row[a[A-1:S]][a[S-1:0]] :
+                        DUAL_PORT ? qa_raw : raw_row[a[A-1:S]][a[S-1:0]];
+-    wire singleton_b = PACKED_TOUCH ? frozen_row[b[A-1:S]][b[S-1:0]] :
++    wire singleton_b = RAM_ACTIVITY ? packed_singleton_b : PACKED_TOUCH ? frozen_row[b[A-1:S]][b[S-1:0]] :
+                        DUAL_PORT ? qb_raw : raw_row[b[A-1:S]][b[S-1:0]];
+     wire [RW-1:0] ra = valid_a ? qa : {1'b0, a, SINGLETON, singleton_a, 2'd0};
+     wire [RW-1:0] rb = valid_b ? qb : {1'b0, b, SINGLETON, singleton_b, 2'd0};
+@@ -264,7 +271,11 @@ module sc_growth #(
+     wire write_value = short_dequeue ? values[head_ix] : value;
+     wire finished_edge = phase == FIND && !link_a && !link_b && (same_root || accepted_merge);
+     wire drained = (phase == PICK && !available) || (DUAL_PORT && finished_edge && !(|nonempty));
+-    wire begin_epoch = phase == EPOCH && queued == 0 && !writing && |any_active;
++    wire ready_to_snapshot = phase == EPOCH && queued == 0 && !writing;
++    wire snapshot_end = phase == SNAPSHOT && snapshot_layer == ROWS-1;
++    wire epoch_ready = RAM_ACTIVITY ? snapshot_end : ready_to_snapshot;
++    wire epoch_active = RAM_ACTIVITY ? (snapshot_has_active || (|snapshot_data)) : (|any_active);
++    wire begin_epoch = epoch_ready && epoch_active;
+     wire advance_row = ((phase == LATCH && !any_hit) || drained) && layer != ROWS-1;
+     // No remaining candidate uses the age data after its row is latched.
+     // At the faster clock, issue the next SRAM read without waiting on hit.
+@@ -325,7 +336,36 @@ module sc_growth #(
+         assign winner_en[u] = winner[S-1:0] == u;
+         assign lost_en[u] = lost[S-1:0] == u;
+     end
+-    for (genvar t = 0; t < ROWS; t = t+1) begin : bit_planes
++    if (RAM_ACTIVITY) begin : activity_columns
++        wire loading = load && !busy;
++        wire store_activity = loading || (busy && writing);
++        wire [A-S-1:0] write_layer = loading ? (A-S)'(load_index) : write_head[A-1:S];
++        // Untouched sites retain their input singleton parity. Read it in
++        // parallel with each record lookup, and scan the epoch separately.
++        (* ram_style = "block", no_rw_check *) logic [W-1:0] input_rows [0:ROWS-1];
++        (* ram_style = "block", no_rw_check *) logic [W-1:0] epoch_rows [0:ROWS-1];
++        logic [W-1:0] input_a, input_b;
++        always_ff @(posedge clk) begin
++            if (loading) input_rows[load_index] <= load_row;
++            if (read_records) begin
++                input_a <= input_rows[req_a[A-1:S]];
++                input_b <= input_rows[req_b[A-1:S]];
++            end
++            if (phase == SNAPSHOT) epoch_rows[snapshot_layer] <= snapshot_data;
++            if (begin_epoch || read_next_row) packed_activity <= epoch_rows[scan_address];
++        end
++        assign packed_singleton_a = input_a[a[S-1:0]];
++        assign packed_singleton_b = input_b[b[S-1:0]];
++
++        for (genvar u = 0; u < W; u = u+1) begin : site
++            (* ram_style = "distributed" *) logic live [0:ROWS-1];
++            always_ff @(posedge clk) begin
++                if (store_activity && (loading || member_en[u]))
++                    live[write_layer] <= loading ? load_row[u] : write_value;
++            end
++            assign snapshot_data[u] = live[snapshot_layer];
++        end
++    end else for (genvar t = 0; t < ROWS; t = t+1) begin : bit_planes
+         assign any_active[t] = |live_row[t];
+         wire active_write = busy && (writing || short_dequeue) && write_head[A-1:S] == t;
+         wire last_write = short_dequeue && write_tail[A-1:S] == t;
+@@ -464,17 +504,24 @@ module sc_growth #(
+                         phase <= LATCH;
+                     end
+                 end else case (phase)
+-                    EPOCH: if (queued == 0 && !writing) begin
+-                        if (!(|any_active)) begin
++                    EPOCH, SNAPSHOT: begin
++                        if (RAM_ACTIVITY && ready_to_snapshot) begin
++                            snapshot_layer <= 0;
++                            snapshot_has_active <= 0;
++                            phase <= SNAPSHOT;
++                        end else if (epoch_ready && !epoch_active) begin
+                             success <= 1;
+                             logical_bit <= frame_bit;
+                             done <= 1;
+                             phase <= IDLE;
+-                        end else begin
++                        end else if (epoch_ready) begin
+                             layer <= 0;
+                             older <= 0;
+                             past_activity <= 0;
+                             phase <= LATCH;
++                        end else if (RAM_ACTIVITY && phase == SNAPSHOT) begin
++                            snapshot_layer <= snapshot_layer+1'b1;
++                            snapshot_has_active <= snapshot_has_active || (|snapshot_data);
+                         end
+                     end
+                     LATCH: begin

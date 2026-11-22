@@ -1,0 +1,61 @@
+{
+  "scope": "Small restoration smoke only; no unit tests or new LER/timing study",
+  "pymatching_version": "2.4.0",
+  "factory": "pymatching_tensor_decoder:build_decoder",
+  "historical_standard_stim_replay": {
+    "cases": 2,
+    "checks": {
+      "logical_predictions": true,
+      "competition_states": true,
+      "competition_margins": true
+    }
+  },
+  "surface_fixture_replay": {
+    "cases": 2,
+    "backend": "pymatching_tensor_decoder.decoder.TensorDecoder",
+    "checks": {
+      "logical_predictions": true,
+      "routed": true,
+      "changed": true,
+      "competition_checked": true,
+      "path_score": true,
+      "gain": true,
+      "competition_margin": true,
+      "conditioned_gap": true,
+      "competition_states": true,
+      "baseline_prediction": true,
+      "legacy_prediction": true,
+      "candidate_prediction": true,
+      "tensor_defers_use_original_syndrome": true
+    },
+    "logical": [
+      1,
+      0
+    ],
+    "stages": [
+      2,
+      2
+    ]
+  },
+  "native": {
+    "support.dll": {
+      "path": "C:\\Users\\ethan\\github\\bee\\NGDecoderMidQwest\\pymatching_decoder\\src\\pymatching_tensor_decoder\\native\\prebuilt\\windows\\support.dll",
+      "sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84"
+    },
+    "matching.dll": {
+      "path": "C:\\Users\\ethan\\github\\bee\\NGDecoderMidQwest\\pymatching_decoder\\src\\pymatching_tensor_decoder\\native\\prebuilt\\windows\\matching.dll",
+      "sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+    }
+  },
+  "frontend_source_unchanged": {
+    "surface-telescope\\host.py": true,
+    "surface-telescope\\reference.py": true,
+    "surface-telescope\\rescue.py": true,
+    "surface-telescope\\stencils.py": true,
+    "surface-telescope\\surface_model.py": true,
+    "surface-telescope\\exact.py": true,
+    "surface-telescope\\growth_reference.py": true,
+    "surface-telescope\\telescope_circuit.py": true
+  },
+  "current_decoder_sources_unchanged": true
+}

@@ -1,0 +1,23 @@
+{
+  "hard_cases": 1200,
+  "hard_prediction_mismatches": 0,
+  "diagnostic_mismatches": 0,
+  "fresh_d15_shots": 4096,
+  "fresh_seed": 4260427,
+  "fresh_d15_mismatches": 0,
+  "small_cases": {
+    "3": {
+      "shots": 128,
+      "mismatches": 0
+    },
+    "5": {
+      "shots": 128,
+      "mismatches": 0
+    },
+    "7": {
+      "shots": 128,
+      "mismatches": 0
+    }
+  },
+  "seconds": 43.58848370006308
+}

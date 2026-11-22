@@ -1,0 +1,23 @@
+{
+  "experiment": {
+    "distance": 5,
+    "rounds": 5,
+    "basis": "x",
+    "noise": 0.001
+  },
+  "seed": 3101,
+  "feature_version": "m31-local8-boundary2-family1-time1-v1",
+  "teacher": "PyMatching from decomposed DEM (uncorrelated mode)",
+  "pymatching": "2.4.0",
+  "shots": 512,
+  "training_data_sha256": "3d24ae6ea1a88627492333ef53082c11be7519abf2c74bc12633675da3c784b4",
+  "observed_signatures": 154,
+  "active_rom_entries": 61,
+  "exposures": 917,
+  "min_support": 3,
+  "training_seconds": 0.125,
+  "min_confidence": 0.95,
+  "sha256": "689bab64fde80285098f8bb6625b1ceeeb1e35c252bfddd8793a28bd3fa18457",
+  "rom_bytes": 4096,
+  "entry": "high nibble confidence/15; low nibble action+1; zero low nibble abstains"
+}

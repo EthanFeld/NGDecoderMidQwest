@@ -1,0 +1,31 @@
+{
+  "target_shots": 400000,
+  "shots_per_seed": 100000,
+  "seeds": [
+    2360427,
+    2460427,
+    2560427,
+    2660427
+  ],
+  "lanes": [
+    [
+      2360427,
+      2460427
+    ],
+    [
+      2560427,
+      2660427
+    ]
+  ],
+  "config": {
+    "ambiguous_gap": 8.0,
+    "min_margin": 3.0,
+    "iterations": 2,
+    "reverse_seed": true
+  },
+  "development_sources": [
+    "development.json",
+    "depth.json"
+  ],
+  "purpose": "Fixed-rule fresh paired validation. Original accuracy-v1 factory audits every changed answer and one fixed shot per 256. Concurrent timings are excluded."
+}

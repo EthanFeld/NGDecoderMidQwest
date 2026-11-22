@@ -1,0 +1,77 @@
+{
+  "circuit": "Surface Telescope joint rotated Z, d rounds, circuit-level noise",
+  "source": "cycle_model",
+  "rates": [
+    0.001,
+    0.002,
+    0.003,
+    0.004,
+    0.005,
+    0.006,
+    0.007,
+    0.0075,
+    0.008,
+    0.009,
+    0.01
+  ],
+  "distances": [
+    3,
+    7,
+    15
+  ],
+  "shots_small": 8192,
+  "shots_d15": 2048,
+  "requested_time_shots": 192,
+  "batch_size": 256,
+  "seed": 87223019,
+  "versions": {
+    "stim": "1.16.0",
+    "numpy": "2.5.5",
+    "pymatching": "2.4.0",
+    "relay_bp": "0.2.2",
+    "python": "3.12.5 (main, Aug 14 2024, 04:23:18) [MSC v.1929 64 bit (AMD64)]",
+    "host": "Windows-11-10.0.26300-SP0"
+  },
+  "tensor": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "59d2e8bfc2e51f64a7e5b430d2b9e5fd7c52b5af9013704d4e64c9eed27a6f71",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "script_sha256": "b28722baaac7cec50adcbd93d934dc106468e0412f65605b9c0ddbd7c7153041",
+  "profiles": {
+    "3": {
+      "profile": "surface-telescope/profiles/d3z.json",
+      "profile_sha256": "20f7565f153070b5f4e9a58e26560bd724884a7370621bf411a455faa1de1cc4",
+      "bitstream": "surface-telescope/bitstreams/surface-d3z-135mhz.fs",
+      "bitstream_sha256": "34a0412802874eba66fb2856a1d520a59381a1feb083c51936648782287bb0ca",
+      "image_tag": "8e29cf39",
+      "clock_mhz": 135,
+      "growth_topology_sha256": null,
+      "growth_model_sha256": null
+    },
+    "7": {
+      "profile": "surface-telescope/profiles/d7z-dual-p007-cut0-81mhz.json",
+      "profile_sha256": "9e848066d6e2b5d497db4b39b86e61ee55173bcd2ac1b404b6360dcdbfda74c2",
+      "bitstream": "surface-telescope/bitstreams/surface-d7z-dual-p007-cut0-81mhz.fs",
+      "bitstream_sha256": "e9cd6aa2bcde491eb74956edce1872327f96ab31d5bd1612d5249fd383e21a91",
+      "image_tag": "416f45ec",
+      "clock_mhz": 81,
+      "growth_topology_sha256": "36fe981c6313521b3d832260a9da86571efcaecf6854d43677d7a12643eba586",
+      "growth_model_sha256": "a60f2d03573c1d7220e99d8e601d8f12d248dbcac08e52133675a11909697b87"
+    },
+    "15": {
+      "profile": "surface-telescope/experiments/d15-weighted-growth/d15z-growth-cap4000.json",
+      "profile_sha256": "e1ff9207f560041259c1d2694e560426569dea66d062032cff8530daa47def6f",
+      "bitstream": "surface-telescope/experiments/d15-weighted-growth/surface-d15z-tilt-growth-27mhz.fs",
+      "bitstream_sha256": "175abafc40b3c9746a325a7e643901cc948e50a8177597d3ad1271fd9c576160",
+      "image_tag": "592e6076",
+      "clock_mhz": 27,
+      "growth_topology_sha256": "8521ca78982f90a94ebcaf8118236c7bd0450963b309f34098cfdcc3e700b067",
+      "growth_model_sha256": "72baf27c78a8f50a0048c14e79447c7a4ac7ba585be25ef4c303683fb1ae7955"
+    }
+  },
+  "fpga_only_defer_policy": "explicit host reporting proxy of logical zero, with zero software decoding",
+  "latency": "model core cycles plus measured host projection/completion; excludes UART, queue wait and sampling",
+  "timing_sample": "two random strata (accepted/deferred), minimum up to 32 per stratum, weighted to cohort shares"
+}

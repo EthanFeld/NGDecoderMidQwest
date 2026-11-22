@@ -1,0 +1,8 @@
+CRC test vector and all 64 single-bit reply corruptions passed
+clean passed
+single boundary fault passed
+dense passed
+damaged CRC passed
+clean after damaged CRC passed
+64-shot host loopback, tag wraparound and deferred rows and IDs passed
+Short, mis-tagged and damaged replies routed all affected shots to fallback

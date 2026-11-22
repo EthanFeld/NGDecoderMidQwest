@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FPGA decoder benchmark</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font: 16px/1.5 system-ui, sans-serif;
+      color: #17283a;
+      background: #f4f7fa;
+    }
+    main { max-width: 58rem; margin: 3rem auto; padding: 0 1.25rem; }
+    h1 { margin-bottom: 1rem; letter-spacing: -.035em; }
+    .controls, .output { border: 1px solid #cbd6e1; border-radius: .55rem; background: #fff; padding: 1rem; }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: .55rem 0; }
+    .status { margin: .8rem 0 .2rem; }
+    label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+    button, input, select { font: inherit; }
+    button, select, input[type=number] { color: inherit; border: 1px solid #91a5ba; border-radius: .35rem; background: #fff; padding: .35rem .6rem; }
+    button:enabled { cursor: pointer; }
+    button:disabled { opacity: .45; }
+    #start { background: #204e7d; border-color: #204e7d; color: #fff; }
+    input[type=number] { width: 5.5rem; }
+    progress { width: 100%; accent-color: #204e7d; }
+    .output { margin-top: 1rem; overflow: auto; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-variant-numeric: tabular-nums; }
+    th, td { padding: .4rem .6rem .4rem 0; border-bottom: 1px solid #e0e7ed; white-space: nowrap; }
+    th { font-size: .9rem; font-weight: 650; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: .82rem; }
+    summary { cursor: pointer; margin-top: .8rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>FPGA decoder benchmark</h1>
+  <section class="controls" aria-label="Benchmark controls">
+    <div class="row">
+      <button id="connect">Select COM6</button>
+      <span id="port-status">Select USB Debugger (COM6).</span>
+    </div>
+    <div class="row">
+      <label for="fixture">Fixtures</label>
+      <input type="file" id="fixture" accept="application/json,.json">
+      <span id="fixture-status">No fixtures loaded.</span>
+    </div>
+    <div class="row">
+      <label>Image in SRAM
+        <select id="mode">
+          <option value="surface">Surface Telescope d7</option>
+          <option value="tang">Tang d15 UART</option>
+          <option value="tang-telemetry">Tang d15 UART with cycle counters</option>
+        </select>
+      </label>
+      <label>Shots per rate <input type="number" id="shots" min="1" value="8192"></label>
+      <label>Noise rate <select id="rate"><option value="all">All rates</option></select></label>
+    </div>
+    <div class="row">
+      <button id="start" disabled>Run benchmark</button>
+      <button id="stop" disabled>Stop after current shot</button>
+      <button id="save" disabled>Save results JSON</button>
+    </div>
+    <p class="status" id="status" role="status">Ready when the board and fixtures are selected.</p>
+    <progress id="progress" max="1" value="0" aria-label="Benchmark progress"></progress>
+  </section>
+  <section class="output" aria-label="Benchmark results">
+    <table>
+      <thead><tr><th>Mode</th><th>Physical p</th><th>Shots</th><th>Defers</th><th>Logical errors</th><th>UART p50</th><th>FPGA core p50</th></tr></thead>
+      <tbody id="results"></tbody>
+    </table>
+    <details><summary>Machine-readable summary</summary><pre id="summary"></pre></details>
+    <p id="save-status" class="status" role="status"></p>
+  </section>
+</main>
+<!-- BENCHMARK_FIXTURES -->
+<script>
+'use strict';
+
+const ui = Object.fromEntries([
+  'connect', 'port-status', 'fixture', 'fixture-status', 'mode', 'shots', 'rate', 'start',
+  'stop', 'save', 'status', 'progress', 'results', 'summary', 'save-status',
+].map(id => [id, document.getElementById(id)]));
+const serialFilters = [{usbVendorId: 0x0403, usbProductId: 0x6010}];
+const warmupShots = 8;
+const surfaceTimeoutMs = 250;
+const tangTimeoutMs = 1500;
+const surfaceRetries = 2;
+const baudSettleMs = 50;
+const hdlcFlag = 0x7e;
+const hdlcEscape = 0x7d;
+const crc32Table = Uint32Array.from({length: 256}, (_, byte) => {
+  for (let bit = 0; bit < 8; bit += 1) {
+    byte = (byte >>> 1) ^ ((byte & 1) ? 0x82f63b78 : 0);
+  }
+  return byte;
+});
+const measurement = {
+  format: 'fpga-uart-benchmark-v1',
+  serial: 'Web Serial 8N1, one request in flight',
+  started_at: new Date().toISOString(),
+  columns: [
+    'truth', 'cpu_prediction', 'cpu_us', 'fpga_prediction', 'core_cycles', 'post_request_cycles',
+    'uart_round_trip_us', 'full_telemetry_round_trip_us', 'request_wire_bytes', 'reply_wire_bytes',
+    'fpga_status', 'reference_status', 'reference_cycles', 'retry_count', 'delivery_us',
+    'fpga_residual_hex', 'fpga_frame_bit',
+  ],
+  runs: [],
+};
+let fixtureData;
+let port;
+let running = false;
+let stopping = false;
+
+function crc32c(bytes) {
+  let value = 0xffffffff;
+  for (const byte of bytes) value = (value >>> 8) ^ crc32Table[(value ^ byte) & 255];
+  return (value ^ 0xffffffff) >>> 0;
+}
+
+function crc16(bytes) {
+  let value = 0xffff;
+  for (const byte of bytes) {
+    value ^= byte << 8;
+    for (let bit = 0; bit < 8; bit += 1) {
+      value = ((value << 1) ^ ((value & 0x8000) ? 0x1021 : 0)) & 0xffff;
+    }
+  }
+  return value;
+}
+
+function unpackHdlc(wire) {
+  const body = new Uint8Array(wire.length - 2);
+  let size = 0;
+  for (let index = 1; index < wire.length - 1; index += 1) {
+    let byte = wire[index];
+    if (byte === hdlcEscape) {
+      index += 1;
+      if (index >= wire.length - 1) throw Error('Truncated HDLC escape');
+      byte = wire[index] ^ 0x20;
+    }
+    body[size++] = byte;
+  }
+  const result = body.subarray(0, size);
+  if (result.length < 2 || crc16(result) !== 0) throw Error('Surface reply CRC mismatch');
+  return result.subarray(0, result.length - 2);
+}
+
+function surfaceDecoder(request, config) {
+  const sent = unpackHdlc(request);
+  const token = sent[1] | (sent[2] << 8);
+  const wire = [];
+  return (chunk, receivedAt) => {
+    for (const byte of chunk) {
+      if (wire.length === 0 && byte !== hdlcFlag) continue;
+      if (wire.length === 1 && byte === hdlcFlag) continue;
+      wire.push(byte);
+      if (wire.length > 520) throw Error('Surface reply exceeded the maximum frame size');
+      if (wire.length === 1 || byte !== hdlcFlag) continue;
+      const body = unpackHdlc(wire);
+      if (body.length < 12) throw Error('Short Surface reply');
+      const view = new DataView(body.buffer, body.byteOffset, body.byteLength);
+      const status = body[7];
+      const cycles = view.getUint16(8, true);
+      const bit = body[10];
+      const residual = body.subarray(12);
+      const rowBytes = Math.ceil(config.width / 8);
+      const wanted = status === 3 ? config.rows * rowBytes : 0;
+      if (body[0] !== 0x92 || view.getUint16(1, true) !== token ||
+          view.getUint32(3, true) !== config.image_tag || ![1, 3].includes(status) ||
+          cycles === 0 || cycles > config.max_cycles || bit > 1 ||
+          body[11] !== wanted || residual.length !== wanted) {
+        throw Error('Invalid Surface reply, token or loaded image');
+      }
+      if (wanted) {
+        const validLastByte = (1 << (config.width % 8 || 8)) - 1;
+        const invalid = residual.some((byte, index) => (
+          (byte & ~sent[7 + index]) !== 0 ||
+          ((index + 1) % rowBytes === 0 && (byte & ~validLastByte) !== 0)
+        ));
+        if (invalid || !residual.some(Boolean)) throw Error('Invalid Surface defer residual');
+      }
+      return {prediction: status === 3 ? null : bit, status, cycles, postRequestCycles: null,
+        receivedAt, telemetryAt: null, bytes: wire.length, frameBit: bit, residual};
+    }
+    return null;
+  };
+}
+
+function tangDecoder(request, telemetry) {
+  const token = request[2];
+  const frame = new Uint8Array(telemetry ? 16 : 8);
+  const view = new DataView(frame.buffer);
+  let offset = 0;
+  let prefixAt = null;
+  let status;
+  return (chunk, receivedAt) => {
+    if (offset + chunk.length > frame.length) throw Error('Unexpected trailing bytes in Tang reply');
+    frame.set(chunk, offset);
+    offset += chunk.length;
+    if (offset >= 8 && prefixAt === null) {
+      status = frame[3];
+      if (view.getUint16(0, true) !== 0xd15b || frame[2] !== token || status > 2 ||
+          view.getUint32(4, true) !== crc32c(frame.subarray(0, 4))) {
+        throw Error('Invalid Tang reply, token or CRC');
+      }
+      prefixAt = receivedAt;
+    }
+    if (offset < frame.length) return null;
+    let cycles = null;
+    let postRequestCycles = null;
+    if (telemetry) {
+      if (view.getUint32(12, true) !== crc32c(frame.subarray(8, 12))) {
+        throw Error('Tang telemetry CRC mismatch');
+      }
+      cycles = view.getUint16(8, true);
+      postRequestCycles = view.getUint16(10, true);
+      if (cycles === 0xffff) cycles = null;
+      if (postRequestCycles === 0xffff) postRequestCycles = null;
+    }
+    return {prediction: status === 0 ? null : status - 1, status, cycles, postRequestCycles,
+      receivedAt: prefixAt, telemetryAt: telemetry ? receivedAt : null, bytes: frame.length};
+  };
+}
+
+async function exchange(reader, writer, encoded, mode, config) {
+  const request = Uint8Array.from(atob(encoded), byte => byte.charCodeAt(0));
+  const decode = mode === 'surface' ? surfaceDecoder(request, config) :
+    tangDecoder(request, mode === 'tang-telemetry');
+  const start = performance.now();
+  let timedOut = false;
+  const timeoutMs = mode === 'surface' ? surfaceTimeoutMs : tangTimeoutMs;
+  const timer = setTimeout(() => {
+    timedOut = true;
+    reader.cancel().catch(() => {});
+  }, timeoutMs);
+  try {
+    await writer.write(request);
+    while (true) {
+      const {done, value} = await reader.read();
+      const receivedAt = performance.now();
+      if (done) throw Error('UART stream closed');
+      let packet;
+      try {
+        packet = decode(value, receivedAt);
+      } catch (error) {
+        throw Object.assign(error, {kind: 'protocol'});
+      }
+      if (packet) {
+        return {...packet, elapsedUs: (packet.receivedAt - start) * 1000,
+          telemetryUs: packet.telemetryAt === null ? null : (packet.telemetryAt - start) * 1000,
+          requestBytes: request.length};
+      }
+    }
+  } catch (error) {
+    if (timedOut) throw Object.assign(Error(`No validated reply within ${timeoutMs} ms`), {kind: 'timeout'});
+    throw error;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function latency(values) {
+  const sorted = values.filter(Number.isFinite).sort((left, right) => left - right);
+  if (!sorted.length) return null;
+  const percentile = proportion => sorted[Math.ceil(proportion * sorted.length) - 1];
+  return {count: sorted.length, min: sorted[0], mean: sorted.reduce((a, b) => a + b, 0) / sorted.length,
+    p50: percentile(.5), p90: percentile(.9), p95: percentile(.95), p99: percentile(.99), max: sorted.at(-1)};
+}
+
+function summarize(run) {
+  const accepted = run.rows.filter(row => row[3] !== null);
+  const deferred = run.rows.filter(row => row[3] === null);
+  const cycleUs = cycles => cycles === null ? null : cycles * 1e6 / run.clock_hz;
+  const countErrors = (rows, choose) => rows.filter(row => choose(row) !== row[0]).length;
+  const withoutTransfer = row => {
+    const cycles = cycleUs(row[4]);
+    return cycles === null ? null : cycles + (row[3] === null ? row[2] : 0);
+  };
+  return {
+    mode: run.mode, p: run.p, seed: run.seed, planned: run.planned, shots: run.rows.length,
+    warmup_shots: run.warmup_shots, complete: run.complete, fault: run.fault,
+    accepted: accepted.length, deferred: deferred.length,
+    fpga_errors: countErrors(accepted, row => row[3]),
+    hybrid_errors: countErrors(run.rows, row => row[3] ?? row[1]),
+    cpu_errors: countErrors(run.rows, row => row[1]),
+    status_mismatches: run.rows.filter(row => row[11] !== null && row[10] !== row[11]).length,
+    cycle_mismatches: run.rows.filter(row => row[12] !== null && row[4] !== row[12]).length,
+    retried_shots: run.rows.filter(row => row[13] > 0).length,
+    retry_attempts: run.rows.reduce((sum, row) => sum + (row[13] ?? 0), 0),
+    delivery_us: latency(run.rows.map(row => row[14] ?? row[6])),
+    uart_us: latency(run.rows.map(row => row[6])),
+    uart_accepted_us: latency(accepted.map(row => row[6])),
+    uart_deferred_us: latency(deferred.map(row => row[6])),
+    uart_wire_floor_us: latency(run.rows.map(row => 10e6 * (row[8] + row[9]) / run.baud_rate)),
+    full_telemetry_uart_us: latency(run.rows.map(row => row[7])),
+    core_us: latency(run.rows.map(row => cycleUs(row[4]))),
+    core_accepted_us: latency(accepted.map(row => cycleUs(row[4]))),
+    core_deferred_us: latency(deferred.map(row => cycleUs(row[4]))),
+    post_request_us: latency(run.rows.map(row => cycleUs(row[5]))),
+    cpu_us: latency(run.rows.map(row => row[2])),
+    defer_cpu_us: latency(deferred.map(row => row[2])),
+    estimated_hybrid_with_uart_us: latency(run.rows.map(row => row[6] + (row[3] === null ? row[2] : 0))),
+    estimated_hybrid_core_plus_cpu_us: latency(run.rows.map(withoutTransfer)),
+  };
+}
+
+function updateResults() {
+  const summaries = measurement.runs.map(summarize);
+  ui.results.replaceChildren();
+  const formatUs = stats => stats ? `${stats.p50.toFixed(2)} µs` : '—';
+  for (const item of summaries) {
+    const row = ui.results.insertRow();
+    for (const value of [item.mode, item.p, item.shots, item.deferred, item.hybrid_errors,
+      formatUs(item.uart_us), formatUs(item.core_us)]) {
+      row.insertCell().textContent = value;
+    }
+  }
+  ui.summary.textContent = summaries.map(item => JSON.stringify(item)).join('\n');
+}
+
+function activeConfig() {
+  return fixtureData?.[ui.mode.value === 'surface' ? 'surface' : 'tang'];
+}
+
+function setMode() {
+  const config = activeConfig();
+  ui.rate.replaceChildren(new Option('All rates', 'all'));
+  if (config) {
+    ui.rate.append(...config.cohorts.map(cohort => new Option(`p = ${cohort.p}`, String(cohort.p))));
+    const cap = Math.min(...config.cohorts.map(cohort => cohort.shots.length));
+    ui.shots.max = cap;
+    ui.shots.value = ui.mode.value === 'tang-telemetry' ? Math.min(cap, 256) : cap;
+  }
+  updateControls();
+}
+
+function updateControls() {
+  ui.connect.disabled = running || !navigator.serial;
+  for (const widget of [ui.fixture, ui.mode, ui.shots, ui.rate]) widget.disabled = running;
+  ui.start.disabled = running || !port || !activeConfig();
+  ui.stop.disabled = !running || stopping;
+  ui.save.disabled = running || !measurement.runs.length;
+}
+
+function setFixtures(data) {
+  if (!data?.surface && !data?.tang) throw Error('No benchmark fixtures supplied');
+  for (const name of ['surface', 'tang']) {
+    const config = data[name];
+    if (config && (!Number.isFinite(config.clock_hz) || !Number.isFinite(config.baud_rate) ||
+        !config.cohorts?.length || config.cohorts.some(cohort => !cohort.shots?.length))) {
+      throw Error(`Invalid ${name} benchmark fixtures`);
+    }
+  }
+  fixtureData = data;
+  for (const option of ui.mode.options) {
+    option.disabled = !data[option.value === 'surface' ? 'surface' : 'tang'];
+  }
+  if (ui.mode.selectedOptions[0].disabled) ui.mode.value = data.surface ? 'surface' : 'tang';
+  ui['fixture-status'].textContent = data.surface && data.tang ? 'Surface and Tang fixtures loaded.' :
+    data.surface ? 'Surface fixtures loaded.' : 'Tang fixtures loaded.';
+  setMode();
+}
+
+async function runBenchmark() {
+  const mode = ui.mode.value;
+  const config = activeConfig();
+  const rate = ui.rate.value;
+  const requested = ui.shots.valueAsNumber;
+  if (!port || !config || !Number.isInteger(requested) || requested < 1) {
+    ui.status.textContent = 'Select COM6, load fixtures and enter a positive shot count.';
+    return;
+  }
+  const selected = config.cohorts.filter(cohort => rate === 'all' || Number(rate) === cohort.p);
+  const total = selected.reduce((sum, cohort) => sum + Math.min(requested, cohort.shots.length), 0);
+  if (!total) return;
+  running = true;
+  stopping = false;
+  updateControls();
+  ui['save-status'].textContent = '';
+  ui.progress.max = total;
+  ui.progress.value = 0;
+  ui.status.textContent = `Opening the selected port at ${config.baud_rate.toLocaleString()} baud.`;
+  let opened = false;
+  let reader;
+  let writer;
+  let current;
+  let completed = 0;
+  let lastUpdate = performance.now();
+
+  async function openLink() {
+    await port.open({baudRate: config.baud_rate, dataBits: 8, stopBits: 1, parity: 'none', flowControl: 'none'});
+    opened = true;
+    reader = port.readable.getReader();
+    writer = port.writable.getWriter();
+    await new Promise(resolve => setTimeout(resolve, baudSettleMs));
+  }
+
+  async function closeLink() {
+    reader?.releaseLock();
+    writer?.releaseLock();
+    reader = writer = undefined;
+    if (opened) {
+      await port.close();
+      opened = false;
+    }
+  }
+
+  async function sendShot(encoded, shotIndex, warmup) {
+    const start = performance.now();
+    const retriesAllowed = mode === 'surface' ? surfaceRetries : 0;
+    for (let retry = 0; ; retry += 1) {
+      try {
+        const packet = await exchange(reader, writer, encoded, mode, config);
+        return {...packet, retries: retry,
+          deliveryUs: retry === 0 ? packet.elapsedUs : (packet.receivedAt - start) * 1000};
+      } catch (error) {
+        if (retry >= retriesAllowed) throw error;
+        const kind = error.kind ?? 'serial';
+        current.recoveries.push({shot: shotIndex + 1, warmup, attempt: retry + 1, kind, message: error.message});
+        ui.status.textContent = `${mode} at p=${current.p}. Reopening COM6 after ${kind} error on ` +
+          `${warmup ? 'warmup ' : ''}shot ${shotIndex + 1}. Retry ${retry + 1} of ${retriesAllowed}.`;
+        await closeLink();
+        await openLink();
+      }
+    }
+  }
+
+  try {
+    await openLink();
+    for (const cohort of selected) {
+      if (stopping) break;
+      current = {mode, p: cohort.p, seed: cohort.seed, clock_hz: config.clock_hz,
+        baud_rate: config.baud_rate, planned: Math.min(requested, cohort.shots.length),
+        warmup_shots: 0, complete: false, fault: null, recoveries: [], rows: []};
+      measurement.runs.push(current);
+      ui.status.textContent = `${mode} at p=${current.p}. Warming up the UART.`;
+      for (const [encoded] of cohort.shots.slice(0, warmupShots)) {
+        if (stopping) break;
+        await sendShot(encoded, current.warmup_shots, true);
+        current.warmup_shots += 1;
+      }
+      for (let index = 0; index < current.planned && !stopping; index += 1) {
+        const [encoded, truth, cpu, cpuUs, expectedStatus = null, expectedCycles = null] = cohort.shots[index];
+        const packet = await sendShot(encoded, index, false);
+        const residualHex = packet.residual?.length ?
+          Array.from(packet.residual, byte => byte.toString(16).padStart(2, '0')).join('') : null;
+        current.rows.push([truth, cpu, cpuUs, packet.prediction, packet.cycles, packet.postRequestCycles,
+          packet.elapsedUs, packet.telemetryUs, packet.requestBytes, packet.bytes, packet.status,
+          expectedStatus, expectedCycles, packet.retries, packet.deliveryUs, residualHex, packet.frameBit ?? null]);
+        completed += 1;
+        if (performance.now() - lastUpdate >= 250 || index + 1 === current.planned) {
+          lastUpdate = performance.now();
+          ui.progress.value = completed;
+          ui.status.textContent = `${mode} at p=${current.p}. Shot ${index + 1} of ${current.planned}. ` +
+            `${completed.toLocaleString()} of ${total.toLocaleString()} across selected rates.`;
+        }
+      }
+      current.complete = current.rows.length === current.planned;
+      updateResults();
+    }
+    ui.status.textContent = stopping ? `Stopped after ${completed.toLocaleString()} validated shots.` :
+      `Finished ${mode}. ${completed.toLocaleString()} validated shots.`;
+  } catch (error) {
+    if (current) current.fault = {kind: error.kind ?? 'serial', message: error.message,
+      validated_shots: current.rows.length};
+    ui.status.textContent = `${mode} stopped after ${completed.toLocaleString()} validated shots. ${error.message}.`;
+    updateResults();
+  } finally {
+    await closeLink().catch(() => {});
+    running = false;
+    updateControls();
+  }
+}
+
+ui.connect.onclick = async () => {
+  try {
+    port = await navigator.serial.requestPort({filters: serialFilters});
+    ui['port-status'].textContent = 'Port selected. It opens only while a test is running.';
+  } catch (error) {
+    ui['port-status'].textContent = error.message;
+  }
+  updateControls();
+};
+
+ui.fixture.onchange = async () => {
+  if (!ui.fixture.files[0]) return;
+  try {
+    setFixtures(JSON.parse(await ui.fixture.files[0].text()));
+  } catch (error) {
+    ui['fixture-status'].textContent = error.message;
+  }
+};
+
+ui.mode.onchange = setMode;
+ui.start.onclick = runBenchmark;
+ui.stop.onclick = () => {
+  stopping = true;
+  updateControls();
+};
+
+ui.save.onclick = async () => {
+  const filename = 'fpga-uart-measurements.json';
+  const blob = new Blob([JSON.stringify({...measurement, exported_at: new Date().toISOString(),
+    summaries: measurement.runs.map(summarize)})], {type: 'application/json'});
+  try {
+    if (window.showSaveFilePicker) {
+      const file = await window.showSaveFilePicker({id: 'fpga-benchmark', suggestedName: filename,
+        types: [{description: 'Benchmark results', accept: {'application/json': ['.json']}}]});
+      const output = await file.createWritable();
+      await output.write(blob);
+      await output.close();
+      ui['save-status'].textContent = `Saved ${file.name}.`;
+      return;
+    }
+  } catch (error) {
+    if (error.name === 'AbortError') return;
+    if (error.name !== 'SecurityError' && error.name !== 'NotAllowedError') {
+      ui['save-status'].textContent = error.message;
+      return;
+    }
+  }
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
+  ui['save-status'].textContent = `Downloaded ${filename}.`;
+};
+
+const embedded = document.getElementById('embedded-fixtures');
+if (embedded) {
+  try {
+    setFixtures(JSON.parse(embedded.textContent));
+  } catch (error) {
+    ui['fixture-status'].textContent = error.message;
+  }
+}
+if (!navigator.serial) {
+  ui['port-status'].textContent = 'Use desktop Chrome or Edge to connect to COM6.';
+} else {
+  navigator.serial.getPorts().then(ports => {
+    const granted = ports.filter(candidate => {
+      const info = candidate.getInfo();
+      return info.usbVendorId === 0x0403 && info.usbProductId === 0x6010;
+    });
+    if (!port && granted.length === 1) {
+      port = granted[0];
+      ui['port-status'].textContent = 'Reusing the previously selected FTDI port. Select COM6 to change it.';
+      updateControls();
+    }
+  }).catch(() => {});
+}
+updateControls();
+</script>
+</body>
+</html>

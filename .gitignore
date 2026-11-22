@@ -1,0 +1,14 @@
+# Local environments and generated files
+**/.venv/
+**/__pycache__/
+*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.build/
+**/build/
+.reorganization_baseline.json
+
+
+# Duplicate distribution bundles remain local; source and raw results are versioned.
+*.zip

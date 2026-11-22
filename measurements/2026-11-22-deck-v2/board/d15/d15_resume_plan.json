@@ -1,0 +1,33 @@
+{
+  "original_fixtures": "d15_fixtures.json",
+  "original_fixtures_sha256": "12ac6f4194a06d99a9e3b0eedbf0f09f8b9699addaf49ce855dafe31122291d4",
+  "original_joint": "d15_joint.npz",
+  "image_tag": 1496211574,
+  "completed_before_resume": 28484,
+  "remaining_validated_shots": 11516,
+  "segments": [
+    {
+      "p": 0.005,
+      "seed": 94625703,
+      "shot_start": 8484,
+      "shot_stop": 10000,
+      "planned": 1516,
+      "request_tokens_preserved": true
+    },
+    {
+      "p": 0.007,
+      "seed": 94625704,
+      "shot_start": 0,
+      "shot_stop": 10000,
+      "planned": 10000,
+      "request_tokens_preserved": true
+    }
+  ],
+  "page": "d15_resume.html",
+  "fixtures": "d15_resume_fixtures.json",
+  "capture_filename": "telescope-d15-deck-v2-resume.json",
+  "surface_timeout_ms": 1000,
+  "reopen_attempts": 5,
+  "reopen_delay_ms": 250,
+  "merge": "Append each resume run at shot_start in the matching original p/seed cohort; request bytes and original tokens are unchanged"
+}

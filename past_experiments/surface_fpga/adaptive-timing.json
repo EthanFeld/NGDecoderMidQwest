@@ -1,0 +1,126 @@
+{
+  "physical_board_tested": false,
+  "attempts": [
+    {
+      "profile": "d7x-cluster-p007-81mhz",
+      "run": "pipe-7x-007-3",
+      "programming_image": true,
+      "target_clock_mhz": 81,
+      "lut4": 5569,
+      "board_lut4": 20736,
+      "bsram": 6,
+      "fits": true,
+      "routed_clock_mhz": 92.14891052246094
+    },
+    {
+      "profile": "d7x-cluster-p007-108mhz",
+      "run": "pipe-7x-007-4",
+      "programming_image": false,
+      "target_clock_mhz": 108,
+      "lut4": 5755,
+      "board_lut4": 20736,
+      "bsram": 6,
+      "fits": true,
+      "routed_clock_mhz": 91.76
+    },
+    {
+      "profile": "d7z-cluster-p007-81mhz",
+      "run": "pipe-7z-007-3",
+      "programming_image": true,
+      "target_clock_mhz": 81,
+      "lut4": 5699,
+      "board_lut4": 20736,
+      "bsram": 6,
+      "fits": true,
+      "routed_clock_mhz": 91.06639099121094
+    },
+    {
+      "profile": "d7z-cluster-p007-108mhz",
+      "run": "pipe-7z-007-4",
+      "programming_image": false,
+      "target_clock_mhz": 108,
+      "lut4": 5696,
+      "board_lut4": 20736,
+      "bsram": 6,
+      "fits": true,
+      "routed_clock_mhz": 92.79
+    },
+    {
+      "profile": "d7x-cluster-p007-108mhz",
+      "run": "rows-7x-007-4",
+      "programming_image": false,
+      "target_clock_mhz": 108,
+      "lut4": 5781,
+      "board_lut4": 20736,
+      "bsram": 6,
+      "fits": true,
+      "routed_clock_mhz": 89.68
+    },
+    {
+      "profile": "d7z-cluster-p007-108mhz",
+      "run": "rows-7z-007-4",
+      "programming_image": false,
+      "target_clock_mhz": 108,
+      "lut4": 5517,
+      "board_lut4": 20736,
+      "bsram": 6,
+      "fits": true,
+      "routed_clock_mhz": 92.91
+    },
+    {
+      "profile": "d15z-cluster-p003-108mhz",
+      "run": "slim-15z-003-4",
+      "programming_image": false,
+      "target_clock_mhz": 108,
+      "lut4": 24692,
+      "board_lut4": 20736,
+      "bsram": 22,
+      "fits": false,
+      "routed_clock_mhz": null
+    }
+  ],
+  "closed_routes": {
+    "d7x-cluster-p007-81mhz": {
+      "achieved": 92.14891052246094,
+      "constraint": 81
+    },
+    "d7z-cluster-p007-81mhz": {
+      "achieved": 91.06639099121094,
+      "constraint": 81
+    }
+  },
+  "rtl_checks": {
+    "check-legacy-3z": [
+      "Surface core matched 505 reference shots and cycle counts",
+      "UART waveform matched 10 reference frames"
+    ],
+    "check-pipe-7x": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 33 reference frames"
+    ],
+    "check-pipe-7z": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 33 reference frames"
+    ],
+    "check-rows-7x": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 33 reference frames"
+    ],
+    "check-rows-7z": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 33 reference frames"
+    ],
+    "slim-check-15x": [
+      "Growth matched 151 shots and exact cycle counts (82 accepted, 69 declined)"
+    ],
+    "slim-check-15z": [
+      "Growth matched 151 shots and exact cycle counts (95 accepted, 56 declined)"
+    ],
+    "check-delivery-15z": [
+      "Surface core matched 772 reference shots and cycle counts"
+    ],
+    "check-delivery-15z-uart": [
+      "UART waveform matched 4 reference frames"
+    ]
+  }
+}

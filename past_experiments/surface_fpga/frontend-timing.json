@@ -1,0 +1,238 @@
+{
+  "physical_board_tested": false,
+  "route_attempts": [
+    {
+      "run": "area-15z",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 26529,
+      "bsram": 19,
+      "timing": null
+    },
+    {
+      "run": "area-7x",
+      "routed_fmax_mhz": 68.14,
+      "programming_image": false,
+      "lut4": 5721,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "area-7z",
+      "routed_fmax_mhz": 61.34,
+      "programming_image": false,
+      "lut4": 5848,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "compact-x-90",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 22567,
+      "bsram": 19,
+      "timing": null
+    },
+    {
+      "run": "compact-z-90",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 22605,
+      "bsram": 19,
+      "timing": null
+    },
+    {
+      "run": "guard-x-108",
+      "routed_fmax_mhz": 91.01,
+      "programming_image": false,
+      "lut4": 6024,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "guard-x-81",
+      "routed_fmax_mhz": 91.94556427001953,
+      "programming_image": true,
+      "lut4": 6112,
+      "bsram": 5,
+      "timing": {
+        "achieved": 91.94556427001953,
+        "constraint": 81
+      }
+    },
+    {
+      "run": "guard-x-90",
+      "routed_fmax_mhz": 87.41,
+      "programming_image": false,
+      "lut4": 6210,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "guard-z-108",
+      "routed_fmax_mhz": 93.8,
+      "programming_image": false,
+      "lut4": 6047,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "guard-z-81",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 6098,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "guard-z-90",
+      "routed_fmax_mhz": 90.4649887084961,
+      "programming_image": true,
+      "lut4": 6085,
+      "bsram": 5,
+      "timing": {
+        "achieved": 90.4649887084961,
+        "constraint": 90
+      }
+    },
+    {
+      "run": "latch-x-90",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 6028,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "latch-z-90",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 5992,
+      "bsram": 5,
+      "timing": null
+    },
+    {
+      "run": "q3-x-90",
+      "routed_fmax_mhz": 132.96104431152344,
+      "programming_image": true,
+      "lut4": 5833,
+      "bsram": 6,
+      "timing": {
+        "achieved": 132.96104431152344,
+        "constraint": 90
+      }
+    },
+    {
+      "run": "q3-z-90",
+      "routed_fmax_mhz": 131.2163848876953,
+      "programming_image": true,
+      "lut4": 5830,
+      "bsram": 6,
+      "timing": {
+        "achieved": 131.2163848876953,
+        "constraint": 90
+      }
+    },
+    {
+      "run": "scan-x-90",
+      "routed_fmax_mhz": 132.78448486328125,
+      "programming_image": true,
+      "lut4": 5514,
+      "bsram": 5,
+      "timing": {
+        "achieved": 132.78448486328125,
+        "constraint": 90
+      }
+    },
+    {
+      "run": "scan-z-90",
+      "routed_fmax_mhz": 99.3936996459961,
+      "programming_image": true,
+      "lut4": 5523,
+      "bsram": 5,
+      "timing": {
+        "achieved": 99.3936996459961,
+        "constraint": 90
+      }
+    },
+    {
+      "run": "size-x-81",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": null,
+      "bsram": null,
+      "timing": null
+    },
+    {
+      "run": "size-z-81",
+      "routed_fmax_mhz": null,
+      "programming_image": false,
+      "lut4": 20595,
+      "bsram": 19,
+      "timing": null
+    }
+  ],
+  "rtl_checks": {
+    "sim-15z": [
+      "Growth matched 151 shots and exact cycle counts (96 accepted, 55 declined)"
+    ],
+    "sim-7x": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 33 reference frames"
+    ],
+    "sim-7z": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 33 reference frames"
+    ],
+    "sim-compact-z": [
+      "Growth matched 151 shots and exact cycle counts (88 accepted, 63 declined)"
+    ],
+    "sim-final-compact-z": [
+      "Growth matched 151 shots and exact cycle counts (81 accepted, 70 declined)"
+    ],
+    "sim-final-x-q2": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 36 reference frames"
+    ],
+    "sim-final-x-q3": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 36 reference frames"
+    ],
+    "sim-final-z-q2": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 36 reference frames"
+    ],
+    "sim-final-z-q3": [
+      "Surface core matched 902 reference shots and cycle counts",
+      "UART waveform matched 36 reference frames"
+    ],
+    "sim-guard-x": [
+      "Surface core matched 900 reference shots and cycle counts",
+      "UART waveform matched 35 reference frames"
+    ],
+    "sim-guard-z": [
+      "Surface core matched 900 reference shots and cycle counts",
+      "UART waveform matched 35 reference frames"
+    ],
+    "sim-latch-x": [
+      "Surface core matched 900 reference shots and cycle counts",
+      "UART waveform matched 35 reference frames"
+    ],
+    "sim-latch-z": [
+      "Surface core matched 900 reference shots and cycle counts",
+      "UART waveform matched 35 reference frames"
+    ],
+    "sim-scan-x": [
+      "Surface core matched 900 reference shots and cycle counts",
+      "UART waveform matched 35 reference frames"
+    ],
+    "sim-scan-z": [
+      "Surface core matched 900 reference shots and cycle counts",
+      "UART waveform matched 35 reference frames"
+    ],
+    "sim-serial-7z": [
+      "Surface core matched 772 reference shots and cycle counts",
+      "UART waveform matched 30 reference frames"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# Accuracy comparison with full detector information and paper-scale search.
+# This preset does not certify the 1 ms median budget. Preflight memory first.
+distances = [3, 5, 7]
+rounds = "distance"
+noise = [0.003, 0.007]
+bases = ["z"]
+geometries = ["rotated"]
+noise_model = "circuit"
+decoders = ["pymatching", "surface_decoders.ibm_relay_bp:build_accuracy_decoder"]
+shots = 20000
+batch_size = 1024
+warmup_shots = 64
+workers = 1
+seed = 1229900
+output = "past_experiments/decoder_testing/results/ibm-relay-accuracy"

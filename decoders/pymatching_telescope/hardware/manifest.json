@@ -1,0 +1,39 @@
+[
+  {
+    "profile": "d15z-gap3-81mhz",
+    "distance": 15,
+    "basis": "z",
+    "rounds": 15,
+    "frontend": "rescue",
+    "p": 0.001,
+    "clock_mhz": 81,
+    "rescue_gap3_cuts": [
+      9,
+      9
+    ],
+    "image_tag": "39479c69",
+    "routed_fmax_mhz": 165.92,
+    "lut4": 5623,
+    "block_ram": 4,
+    "bitstream": "hardware/surface-d15z-gap3-81mhz.fs",
+    "bitstream_sha256": "466fcd1c8f59997cc2b4ddba15990e203b139e20d94aeb74f7f0fe7486da3f15",
+    "graph": "src/pymatching_tensor_decoder/telescope/profiles/d15z-gap3-81mhz.json",
+    "graph_sha256": "427880aa889da4c837106680369c22b7386f73f20f3b21621dfcc0dfd3e17965"
+  },
+  {
+    "profile": "d15z-growth-cap4000-27mhz",
+    "distance": 15,
+    "basis": "z",
+    "rounds": 15,
+    "frontend": "cluster",
+    "clock_mhz": 27,
+    "baud_rate": 500000,
+    "image_tag": "592e6076",
+    "graph": "hardware/d15z-growth-cap4000.json",
+    "graph_sha256": "e1ff9207f560041259c1d2694e560426569dea66d062032cff8530daa47def6f",
+    "bitstream": "hardware/surface-d15z-growth-27mhz.fs",
+    "bitstream_sha256": "dda305b761d7caa108b02ff80b0deeea59c8a08fcc6565b9aef5c98411297eb5",
+    "source": "past_experiments/surface_fpga/experiments/d15-weighted-growth",
+    "measurement": "measurements/2026-11-22-deck-v2/board/d15"
+  }
+]

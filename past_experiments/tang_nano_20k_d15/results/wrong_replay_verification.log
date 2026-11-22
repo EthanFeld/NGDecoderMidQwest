@@ -1,0 +1,3 @@
+10 RTL reference vectors matched. Direct framing, tags, stalls, and reset passed.
+Empty-frame result took 123 clocks from first word and 8 from final CRC word.
+10 GPIO vectors matched. 1856 single-bit corruptions rejected. Timeout and reset recovery passed.

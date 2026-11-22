@@ -1,0 +1,38 @@
+{
+  "requested_timing_points": [
+    {
+      "distance": 15,
+      "p": 0.003
+    },
+    {
+      "distance": 15,
+      "p": 0.005
+    },
+    {
+      "distance": 15,
+      "p": 0.0075
+    },
+    {
+      "distance": 7,
+      "p": 0.003
+    },
+    {
+      "distance": 7,
+      "p": 0.0075
+    }
+  ],
+  "accuracy_points": 13,
+  "requested_time_shots": 192,
+  "relay_requested_time_shots_d15": 24,
+  "unmeasured_latency_fields": "blank",
+  "runner_sha256": "9bc15f6ce3f21fc603377832b0197da4cc86a977155e8eaf5697af21085e2c1a",
+  "updated_utc": "2026-11-22T19:27:14.324093+00:00",
+  "additional_already_measured_points": [
+    "d15-p01000",
+    "d15-p02000",
+    "d15-p04000",
+    "d15-p06000",
+    "d15-p07000"
+  ],
+  "completed_utc": "2026-11-22T19:28:36.936126+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-11-22T19:34:54.224958+00:00",
+  "output": "TENSOR_TELESCOPE_DECK_V2_NUMBERS.md",
+  "output_sha256": "3faeea3cabf79d7e6285e29049caf0258840eaf61c1417903bebdb7af7d228fc",
+  "complete": true,
+  "interim": false,
+  "standard_stim_incomplete": false,
+  "board_incomplete": {
+    "7": false,
+    "15": false
+  },
+  "model_json_rows": 78,
+  "model_csv_rows": 78,
+  "board_csv_rows": 40,
+  "missing_model_points": [],
+  "model_timing_pending": [],
+  "requested_model_timing_points": [
+    [
+      15,
+      0.005
+    ],
+    [
+      7,
+      0.003
+    ],
+    [
+      7,
+      0.0075
+    ],
+    [
+      15,
+      0.003
+    ],
+    [
+      15,
+      0.0075
+    ]
+  ],
+  "sources": {
+    "measurements/2026-11-22-deck-v2/model/results.json": "86378d8f54efdf12549eb48601dc1260fefd2a3def18d2d2d2604edd64a95f9b",
+    "measurements/2026-11-22-deck-v2/model/results.csv": "bfde357a79fc9c082af3d15a2676d2cb022afbaf3c80b143aa2d8382851cbdab",
+    "measurements/2026-11-22-deck-v2/model/timing_scope.json": "c968c81d5f910440e60adc80ae548163c836d78224eadc241039da3dfe360fd3",
+    "measurements/2026-11-22-deck-v2/board/d7/score.json": "580af10186dce43cb41b8bbd83a441ac91865f4c60b6db23499e0fd7a699b7b6",
+    "measurements/2026-11-22-deck-v2/board/d15/score.json": "3028b4ef30f06244926608e2a61b274a18081573c1ceff140d4d6c74473faa9f",
+    "measurements/2026-11-22-deck-v2/standard_stim/comparison.json": "6c722fd820590c003624eea5927dd856a20854a366dbd5c3dae94c67a386cd0e",
+    "measurements/2026-11-22-deck-v2/standard_stim/residual_comparison.json": "c564a3fa6e031b6be8451b977f7d0c8efe64e779770dd098d380608fedad2354",
+    "measurements/2026-11-22-deck-v2/board_summary.csv": "5d6a0192b20daa133d4ba26433869a9be0808d60b12b75635a42df1485822ac6"
+  },
+  "source_constants": {
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/config.py": "b8414a90b157d6ab0205da5d9e9909f39101b79b0677c3f5b24f0a9593f406a4",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/_small/policy.py": "1133dce22d5726da30ba3aed19e9dfdea9d7ab0fe57961b1b3a4d5146b3c0614",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/stencils.py": "9dfc6696db0de4351b1f26c7ebdf36f0a0a45fcc32d26b7edbcd9b98d228d7d4",
+    "past_experiments/surface_fpga/profiles/d7z-dual-p007-cut0-81mhz.json": "9e848066d6e2b5d497db4b39b86e61ee55173bcd2ac1b404b6360dcdbfda74c2",
+    "past_experiments/surface_fpga/experiments/d15-weighted-growth/d15z-growth-cap4000.json": "e1ff9207f560041259c1d2694e560426569dea66d062032cff8530daa47def6f"
+  }
+}

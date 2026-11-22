@@ -1,0 +1,2270 @@
+{
+  "trials": 2400000,
+  "method": "paired original versus updated FPGA, same nominal 0.001 profile for each, with tested-p MWPM on defers",
+  "logical_error_rate": "wrong final logical decision per d-round memory shot",
+  "defer_rate": "fraction of shots sent to the CPU for a final answer",
+  "pooled": [
+    {
+      "distance": 3,
+      "p": 0.002,
+      "shots": 200000,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "ler_before": {
+        "events": 602,
+        "rate": 0.00301,
+        "wilson_95": [
+          0.002779275078124616,
+          0.0032598162213761483
+        ]
+      },
+      "ler_after": {
+        "events": 602,
+        "rate": 0.00301,
+        "wilson_95": [
+          0.002779275078124616,
+          0.0032598162213761483
+        ]
+      },
+      "ler_mwpm": {
+        "events": 613,
+        "rate": 0.003065,
+        "wilson_95": [
+          0.0028320989483387026,
+          0.0033169902384002905
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 602,
+        "wrong_fpga_after": 602
+      },
+      "d3_ler_map_at_tested_p": {
+        "events": 603,
+        "rate": 0.003015,
+        "wilson_95": [
+          0.0027840764251913517,
+          0.0032650146822401603
+        ]
+      }
+    },
+    {
+      "distance": 3,
+      "p": 0.003,
+      "shots": 200000,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "ler_before": {
+        "events": 1362,
+        "rate": 0.00681,
+        "wilson_95": [
+          0.006458920101918431,
+          0.0071800252249508865
+        ]
+      },
+      "ler_after": {
+        "events": 1362,
+        "rate": 0.00681,
+        "wilson_95": [
+          0.006458920101918431,
+          0.0071800252249508865
+        ]
+      },
+      "ler_mwpm": {
+        "events": 1417,
+        "rate": 0.007085,
+        "wilson_95": [
+          0.006726762932357053,
+          0.007462171830703409
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 1362,
+        "wrong_fpga_after": 1362
+      },
+      "d3_ler_map_at_tested_p": {
+        "events": 1369,
+        "rate": 0.006845,
+        "wilson_95": [
+          0.006493001107451338,
+          0.007215942874933217
+        ]
+      }
+    },
+    {
+      "distance": 3,
+      "p": 0.005,
+      "shots": 200000,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "ler_before": {
+        "events": 3370,
+        "rate": 0.01685,
+        "wilson_95": [
+          0.016295126011410206,
+          0.01742343364040129
+        ]
+      },
+      "ler_after": {
+        "events": 3370,
+        "rate": 0.01685,
+        "wilson_95": [
+          0.016295126011410206,
+          0.01742343364040129
+        ]
+      },
+      "ler_mwpm": {
+        "events": 3437,
+        "rate": 0.017185,
+        "wilson_95": [
+          0.016624637775694208,
+          0.01776390900747741
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 3370,
+        "wrong_fpga_after": 3370
+      },
+      "d3_ler_map_at_tested_p": {
+        "events": 3376,
+        "rate": 0.01688,
+        "wilson_95": [
+          0.016324632202433863,
+          0.01745392629696212
+        ]
+      }
+    },
+    {
+      "distance": 3,
+      "p": 0.007,
+      "shots": 200000,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "ler_before": {
+        "events": 6157,
+        "rate": 0.030785,
+        "wilson_95": [
+          0.030036936423800585,
+          0.031551087931005854
+        ]
+      },
+      "ler_after": {
+        "events": 6157,
+        "rate": 0.030785,
+        "wilson_95": [
+          0.030036936423800585,
+          0.031551087931005854
+        ]
+      },
+      "ler_mwpm": {
+        "events": 6302,
+        "rate": 0.03151,
+        "wilson_95": [
+          0.03075334754383972,
+          0.0322846489609252
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 6157,
+        "wrong_fpga_after": 6157
+      },
+      "d3_ler_map_at_tested_p": {
+        "events": 6147,
+        "rate": 0.030735,
+        "wilson_95": [
+          0.02998753283513354,
+          0.03150049344036542
+        ]
+      }
+    },
+    {
+      "distance": 7,
+      "p": 0.002,
+      "shots": 200000,
+      "defer_before": {
+        "events": 11470,
+        "rate": 0.05735,
+        "wilson_95": [
+          0.056339474255115436,
+          0.05837752963575563
+        ]
+      },
+      "defer_after": {
+        "events": 9223,
+        "rate": 0.046115,
+        "wilson_95": [
+          0.045204501744800125,
+          0.047042933725679976
+        ]
+      },
+      "ler_before": {
+        "events": 76,
+        "rate": 0.00038,
+        "wilson_95": [
+          0.0003036430112862868,
+          0.0004755493166409782
+        ]
+      },
+      "ler_after": {
+        "events": 78,
+        "rate": 0.00039,
+        "wilson_95": [
+          0.0003125335682546002,
+          0.000486658375534161
+        ]
+      },
+      "ler_mwpm": {
+        "events": 45,
+        "rate": 0.000225,
+        "wilson_95": [
+          0.00016817076362268688,
+          0.0003010275184513871
+        ]
+      },
+      "paired": {
+        "rescued": 2247,
+        "newly_wrong": 2,
+        "newly_right": 0,
+        "wrong_among_rescues": 4,
+        "wrong_fpga_before": 43,
+        "wrong_fpga_after": 47
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 7,
+      "p": 0.003,
+      "shots": 200000,
+      "defer_before": {
+        "events": 24021,
+        "rate": 0.120105,
+        "wilson_95": [
+          0.11868757311831359,
+          0.12153702011137683
+        ]
+      },
+      "defer_after": {
+        "events": 20301,
+        "rate": 0.101505,
+        "wilson_95": [
+          0.10018911184220931,
+          0.1028361958850982
+        ]
+      },
+      "ler_before": {
+        "events": 386,
+        "rate": 0.00193,
+        "wilson_95": [
+          0.001746980470532024,
+          0.002132152315927151
+        ]
+      },
+      "ler_after": {
+        "events": 395,
+        "rate": 0.001975,
+        "wilson_95": [
+          0.001789757270412396,
+          0.0021793737874235128
+        ]
+      },
+      "ler_mwpm": {
+        "events": 303,
+        "rate": 0.001515,
+        "wilson_95": [
+          0.0013538521455829643,
+          0.0016952965826241187
+        ]
+      },
+      "paired": {
+        "rescued": 3720,
+        "newly_wrong": 10,
+        "newly_right": 1,
+        "wrong_among_rescues": 14,
+        "wrong_fpga_before": 157,
+        "wrong_fpga_after": 171
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 7,
+      "p": 0.005,
+      "shots": 200000,
+      "defer_before": {
+        "events": 56827,
+        "rate": 0.284135,
+        "wilson_95": [
+          0.28216259608231004,
+          0.28611569612350246
+        ]
+      },
+      "defer_after": {
+        "events": 51502,
+        "rate": 0.25751,
+        "wilson_95": [
+          0.2555983175130212,
+          0.2594309974615576
+        ]
+      },
+      "ler_before": {
+        "events": 2278,
+        "rate": 0.01139,
+        "wilson_95": [
+          0.010934236121933623,
+          0.011864533269500953
+        ]
+      },
+      "ler_after": {
+        "events": 2316,
+        "rate": 0.01158,
+        "wilson_95": [
+          0.011120415569832672,
+          0.012058346522970328
+        ]
+      },
+      "ler_mwpm": {
+        "events": 1936,
+        "rate": 0.00968,
+        "wilson_95": [
+          0.009260218295725502,
+          0.01011861678339322
+        ]
+      },
+      "paired": {
+        "rescued": 5325,
+        "newly_wrong": 46,
+        "newly_right": 8,
+        "wrong_among_rescues": 72,
+        "wrong_fpga_before": 754,
+        "wrong_fpga_after": 826
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 7,
+      "p": 0.007,
+      "shots": 200000,
+      "defer_before": {
+        "events": 92066,
+        "rate": 0.46033,
+        "wilson_95": [
+          0.4581463842769982,
+          0.4625151396004464
+        ]
+      },
+      "defer_after": {
+        "events": 86732,
+        "rate": 0.43366,
+        "wilson_95": [
+          0.4314893618208831,
+          0.43583318655395115
+        ]
+      },
+      "ler_before": {
+        "events": 7215,
+        "rate": 0.036075,
+        "wilson_95": [
+          0.0352666142837346,
+          0.036901206861803336
+        ]
+      },
+      "ler_after": {
+        "events": 7259,
+        "rate": 0.036295,
+        "wilson_95": [
+          0.03548421563045848,
+          0.03712359706403237
+        ]
+      },
+      "ler_mwpm": {
+        "events": 6532,
+        "rate": 0.03266,
+        "wilson_95": [
+          0.031889943950838835,
+          0.03344800837799814
+        ]
+      },
+      "paired": {
+        "rescued": 5334,
+        "newly_wrong": 65,
+        "newly_right": 21,
+        "wrong_among_rescues": 124,
+        "wrong_fpga_before": 1862,
+        "wrong_fpga_after": 1986
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 15,
+      "p": 0.002,
+      "shots": 200000,
+      "defer_before": {
+        "events": 115947,
+        "rate": 0.579735,
+        "wilson_95": [
+          0.5775702250574782,
+          0.5818967120141617
+        ]
+      },
+      "defer_after": {
+        "events": 53561,
+        "rate": 0.267805,
+        "wilson_95": [
+          0.2658687848506762,
+          0.269750134653313
+        ]
+      },
+      "ler_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "ler_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "ler_mwpm": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          1.920692519040967e-05
+        ]
+      },
+      "paired": {
+        "rescued": 62386,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 0
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 15,
+      "p": 0.003,
+      "shots": 200000,
+      "defer_before": {
+        "events": 173049,
+        "rate": 0.865245,
+        "wilson_95": [
+          0.8637414883278748,
+          0.8667344812053429
+        ]
+      },
+      "defer_after": {
+        "events": 111439,
+        "rate": 0.557195,
+        "wilson_95": [
+          0.5550169996467493,
+          0.5593708032730782
+        ]
+      },
+      "ler_before": {
+        "events": 3,
+        "rate": 1.5e-05,
+        "wilson_95": [
+          5.101366456971543e-06,
+          4.410498252568242e-05
+        ]
+      },
+      "ler_after": {
+        "events": 7,
+        "rate": 3.5e-05,
+        "wilson_95": [
+          1.6954419049231815e-05,
+          7.225116165641453e-05
+        ]
+      },
+      "ler_mwpm": {
+        "events": 3,
+        "rate": 1.5e-05,
+        "wilson_95": [
+          5.101366456971543e-06,
+          4.410498252568242e-05
+        ]
+      },
+      "paired": {
+        "rescued": 61610,
+        "newly_wrong": 4,
+        "newly_right": 0,
+        "wrong_among_rescues": 4,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 4
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 15,
+      "p": 0.005,
+      "shots": 200000,
+      "defer_before": {
+        "events": 199205,
+        "rate": 0.996025,
+        "wilson_95": [
+          0.9957395475107259,
+          0.9962913982591391
+        ]
+      },
+      "defer_after": {
+        "events": 187310,
+        "rate": 0.93655,
+        "wilson_95": [
+          0.9354732405167242,
+          0.937609989916892
+        ]
+      },
+      "ler_before": {
+        "events": 371,
+        "rate": 0.001855,
+        "wilson_95": [
+          0.0016757443760931424,
+          0.002053391291404811
+        ]
+      },
+      "ler_after": {
+        "events": 380,
+        "rate": 0.0019,
+        "wilson_95": [
+          0.0017184770749738836,
+          0.0021006568639008022
+        ]
+      },
+      "ler_mwpm": {
+        "events": 371,
+        "rate": 0.001855,
+        "wilson_95": [
+          0.0016757443760931424,
+          0.002053391291404811
+        ]
+      },
+      "paired": {
+        "rescued": 11895,
+        "newly_wrong": 9,
+        "newly_right": 0,
+        "wrong_among_rescues": 9,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 9
+      },
+      "d3_ler_map_at_tested_p": null
+    },
+    {
+      "distance": 15,
+      "p": 0.007,
+      "shots": 200000,
+      "defer_before": {
+        "events": 199992,
+        "rate": 0.99996,
+        "wilson_95": [
+          0.9999210637410381,
+          0.9999797308703255
+        ]
+      },
+      "defer_after": {
+        "events": 199401,
+        "rate": 0.997005,
+        "wilson_95": [
+          0.9967557801601963,
+          0.9972351279640952
+        ]
+      },
+      "ler_before": {
+        "events": 4648,
+        "rate": 0.02324,
+        "wilson_95": [
+          0.02258879417859072,
+          0.023909520008716843
+        ]
+      },
+      "ler_after": {
+        "events": 4652,
+        "rate": 0.02326,
+        "wilson_95": [
+          0.02260851652861577,
+          0.02392979689041478
+        ]
+      },
+      "ler_mwpm": {
+        "events": 4648,
+        "rate": 0.02324,
+        "wilson_95": [
+          0.02258879417859072,
+          0.023909520008716843
+        ]
+      },
+      "paired": {
+        "rescued": 591,
+        "newly_wrong": 4,
+        "newly_right": 0,
+        "wrong_among_rescues": 6,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 6
+      },
+      "d3_ler_map_at_tested_p": null
+    }
+  ],
+  "per_basis": [
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "x",
+      "p": 0.002,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.002,
+      "shots": 100000,
+      "seed": 735280001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 58016,
+        "rate": 0.58016,
+        "wilson_95": [
+          0.5770980878006905,
+          0.5832157538091002
+        ]
+      },
+      "defer_after": {
+        "events": 26702,
+        "rate": 0.26702,
+        "wilson_95": [
+          0.2642869963938441,
+          0.26977090258009506
+        ]
+      },
+      "ler_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_mwpm": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "paired": {
+        "rescued": 31314,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 0
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 31812,
+        "78": 68188
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "x",
+      "p": 0.003,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.003,
+      "shots": 100000,
+      "seed": 735290001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 86695,
+        "rate": 0.86695,
+        "wilson_95": [
+          0.8648308953347735,
+          0.8690409132819018
+        ]
+      },
+      "defer_after": {
+        "events": 56044,
+        "rate": 0.56044,
+        "wilson_95": [
+          0.5573614857489763,
+          0.5635138708739748
+        ]
+      },
+      "ler_before": {
+        "events": 1,
+        "rate": 1e-05,
+        "wilson_95": [
+          1.7652477303783126e-06,
+          5.664709659040966e-05
+        ]
+      },
+      "ler_after": {
+        "events": 2,
+        "rate": 2e-05,
+        "wilson_95": [
+          5.484738516524055e-06,
+          7.292683754201227e-05
+        ]
+      },
+      "ler_mwpm": {
+        "events": 1,
+        "rate": 1e-05,
+        "wilson_95": [
+          1.7652477303783126e-06,
+          5.664709659040966e-05
+        ]
+      },
+      "paired": {
+        "rescued": 30651,
+        "newly_wrong": 1,
+        "newly_right": 0,
+        "wrong_among_rescues": 1,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 1
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 8773,
+        "78": 91227
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "x",
+      "p": 0.005,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.005,
+      "shots": 100000,
+      "seed": 735310001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 99608,
+        "rate": 0.99608,
+        "wilson_95": [
+          0.9956731911890421,
+          0.9964486968571776
+        ]
+      },
+      "defer_after": {
+        "events": 93747,
+        "rate": 0.93747,
+        "wilson_95": [
+          0.9359525092328868,
+          0.9389538815983899
+        ]
+      },
+      "ler_before": {
+        "events": 176,
+        "rate": 0.00176,
+        "wilson_95": [
+          0.0015186501988505136,
+          0.002039627699576234
+        ]
+      },
+      "ler_after": {
+        "events": 180,
+        "rate": 0.0018,
+        "wilson_95": [
+          0.001555726356107856,
+          0.002082548469269885
+        ]
+      },
+      "ler_mwpm": {
+        "events": 176,
+        "rate": 0.00176,
+        "wilson_95": [
+          0.0015186501988505136,
+          0.002039627699576234
+        ]
+      },
+      "paired": {
+        "rescued": 5861,
+        "newly_wrong": 4,
+        "newly_right": 0,
+        "wrong_among_rescues": 4,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 4
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 221,
+        "78": 99779
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "x",
+      "p": 0.007,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.007,
+      "shots": 100000,
+      "seed": 735330001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 99995,
+        "rate": 0.99995,
+        "wilson_95": [
+          0.9998829479231967,
+          0.9999786428055316
+        ]
+      },
+      "defer_after": {
+        "events": 99719,
+        "rate": 0.99719,
+        "wilson_95": [
+          0.9968422643664148,
+          0.997499538402695
+        ]
+      },
+      "ler_before": {
+        "events": 2317,
+        "rate": 0.02317,
+        "wilson_95": [
+          0.02225571517535213,
+          0.024120917873593814
+        ]
+      },
+      "ler_after": {
+        "events": 2319,
+        "rate": 0.02319,
+        "wilson_95": [
+          0.022275321708077243,
+          0.024141309804344195
+        ]
+      },
+      "ler_mwpm": {
+        "events": 2317,
+        "rate": 0.02317,
+        "wilson_95": [
+          0.02225571517535213,
+          0.024120917873593814
+        ]
+      },
+      "paired": {
+        "rescued": 276,
+        "newly_wrong": 2,
+        "newly_right": 0,
+        "wrong_among_rescues": 3,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 3
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 1,
+        "78": 99999
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "z",
+      "p": 0.002,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.002,
+      "shots": 100000,
+      "seed": 735280000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 57931,
+        "rate": 0.57931,
+        "wilson_95": [
+          0.5762472694812154,
+          0.5823666374308666
+        ]
+      },
+      "defer_after": {
+        "events": 26859,
+        "rate": 0.26859,
+        "wilson_95": [
+          0.2658518339562079,
+          0.27134594440055787
+        ]
+      },
+      "ler_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_mwpm": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "paired": {
+        "rescued": 31072,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 0
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 32086,
+        "78": 67914
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "z",
+      "p": 0.003,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.003,
+      "shots": 100000,
+      "seed": 735290000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 86354,
+        "rate": 0.86354,
+        "wilson_95": [
+          0.861398420423816,
+          0.8656536501702871
+        ]
+      },
+      "defer_after": {
+        "events": 55395,
+        "rate": 0.55395,
+        "wilson_95": [
+          0.5508671035119446,
+          0.5570287517132078
+        ]
+      },
+      "ler_before": {
+        "events": 2,
+        "rate": 2e-05,
+        "wilson_95": [
+          5.484738516524055e-06,
+          7.292683754201227e-05
+        ]
+      },
+      "ler_after": {
+        "events": 5,
+        "rate": 5e-05,
+        "wilson_95": [
+          2.1357194468385736e-05,
+          0.0001170520768033956
+        ]
+      },
+      "ler_mwpm": {
+        "events": 2,
+        "rate": 2e-05,
+        "wilson_95": [
+          5.484738516524055e-06,
+          7.292683754201227e-05
+        ]
+      },
+      "paired": {
+        "rescued": 30959,
+        "newly_wrong": 3,
+        "newly_right": 0,
+        "wrong_among_rescues": 3,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 3
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 9041,
+        "78": 90959
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "z",
+      "p": 0.005,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.005,
+      "shots": 100000,
+      "seed": 735310000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 99597,
+        "rate": 0.99597,
+        "wilson_95": [
+          0.9955578274663202,
+          0.9963440690307843
+        ]
+      },
+      "defer_after": {
+        "events": 93563,
+        "rate": 0.93563,
+        "wilson_95": [
+          0.9340921587794941,
+          0.9371343734120368
+        ]
+      },
+      "ler_before": {
+        "events": 195,
+        "rate": 0.00195,
+        "wilson_95": [
+          0.0016950412938400267,
+          0.0022432220076039396
+        ]
+      },
+      "ler_after": {
+        "events": 200,
+        "rate": 0.002,
+        "wilson_95": [
+          0.001741571593294688,
+          0.0022966878668380197
+        ]
+      },
+      "ler_mwpm": {
+        "events": 195,
+        "rate": 0.00195,
+        "wilson_95": [
+          0.0016950412938400267,
+          0.0022432220076039396
+        ]
+      },
+      "paired": {
+        "rescued": 6034,
+        "newly_wrong": 5,
+        "newly_right": 0,
+        "wrong_among_rescues": 5,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 5
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 239,
+        "78": 99761
+      }
+    },
+    {
+      "distance": 15,
+      "rounds": 15,
+      "basis": "z",
+      "p": 0.007,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.007,
+      "shots": 100000,
+      "seed": 735330000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 99997,
+        "rate": 0.99997,
+        "wilson_95": [
+          0.9999117919507483,
+          0.9999897972414555
+        ]
+      },
+      "defer_after": {
+        "events": 99682,
+        "rate": 0.99682,
+        "wilson_95": [
+          0.996451445335901,
+          0.9971503858589121
+        ]
+      },
+      "ler_before": {
+        "events": 2331,
+        "rate": 0.02331,
+        "wilson_95": [
+          0.022392964711694607,
+          0.02426365758157982
+        ]
+      },
+      "ler_after": {
+        "events": 2333,
+        "rate": 0.02333,
+        "wilson_95": [
+          0.022412572511381672,
+          0.02428404824536825
+        ]
+      },
+      "ler_mwpm": {
+        "events": 2331,
+        "rate": 0.02331,
+        "wilson_95": [
+          0.022392964711694607,
+          0.02426365758157982
+        ]
+      },
+      "paired": {
+        "rescued": 315,
+        "newly_wrong": 2,
+        "newly_right": 0,
+        "wrong_among_rescues": 3,
+        "wrong_fpga_before": 0,
+        "wrong_fpga_after": 3
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "39": 2,
+        "78": 99998
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "x",
+      "p": 0.002,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.002,
+      "shots": 100000,
+      "seed": 723280001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 286,
+        "rate": 0.00286,
+        "wilson_95": [
+          0.002547566934671842,
+          0.0032106264549072233
+        ]
+      },
+      "ler_after": {
+        "events": 286,
+        "rate": 0.00286,
+        "wilson_95": [
+          0.002547566934671842,
+          0.0032106264549072233
+        ]
+      },
+      "ler_mwpm": {
+        "events": 291,
+        "rate": 0.00291,
+        "wilson_95": [
+          0.0025946975822539386,
+          0.0032634919660138673
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 286,
+        "wrong_fpga_after": 286
+      },
+      "ler_matched_map": {
+        "events": 287,
+        "rate": 0.00287,
+        "wilson_95": [
+          0.002556991060433345,
+          0.0032212015608834685
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "x",
+      "p": 0.003,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.003,
+      "shots": 100000,
+      "seed": 723290001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 716,
+        "rate": 0.00716,
+        "wilson_95": [
+          0.006656029025373253,
+          0.0077018340114375985
+        ]
+      },
+      "ler_after": {
+        "events": 716,
+        "rate": 0.00716,
+        "wilson_95": [
+          0.006656029025373253,
+          0.0077018340114375985
+        ]
+      },
+      "ler_mwpm": {
+        "events": 746,
+        "rate": 0.00746,
+        "wilson_95": [
+          0.006945270263951662,
+          0.008012569724991639
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 716,
+        "wrong_fpga_after": 716
+      },
+      "ler_matched_map": {
+        "events": 720,
+        "rate": 0.0072,
+        "wilson_95": [
+          0.0066945814155096655,
+          0.00774327854825218
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "x",
+      "p": 0.005,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.005,
+      "shots": 100000,
+      "seed": 723310001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 1669,
+        "rate": 0.01669,
+        "wilson_95": [
+          0.01591436186691209,
+          0.01750276901597293
+        ]
+      },
+      "ler_after": {
+        "events": 1669,
+        "rate": 0.01669,
+        "wilson_95": [
+          0.01591436186691209,
+          0.01750276901597293
+        ]
+      },
+      "ler_mwpm": {
+        "events": 1694,
+        "rate": 0.01694,
+        "wilson_95": [
+          0.016158531287783166,
+          0.017758580388545563
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 1669,
+        "wrong_fpga_after": 1669
+      },
+      "ler_matched_map": {
+        "events": 1668,
+        "rate": 0.01668,
+        "wilson_95": [
+          0.01590459604063846,
+          0.01749253561050881
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "x",
+      "p": 0.007,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.007,
+      "shots": 100000,
+      "seed": 723330001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 3003,
+        "rate": 0.03003,
+        "wilson_95": [
+          0.02899011600740641,
+          0.031105990013634902
+        ]
+      },
+      "ler_after": {
+        "events": 3003,
+        "rate": 0.03003,
+        "wilson_95": [
+          0.02899011600740641,
+          0.031105990013634902
+        ]
+      },
+      "ler_mwpm": {
+        "events": 3056,
+        "rate": 0.03056,
+        "wilson_95": [
+          0.029511095273464502,
+          0.03164497002967747
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 3003,
+        "wrong_fpga_after": 3003
+      },
+      "ler_matched_map": {
+        "events": 2997,
+        "rate": 0.02997,
+        "wilson_95": [
+          0.028931142695347432,
+          0.031044967935267384
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "z",
+      "p": 0.002,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.002,
+      "shots": 100000,
+      "seed": 723280000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 316,
+        "rate": 0.00316,
+        "wilson_95": [
+          0.0028307087917311255,
+          0.00352746154998039
+        ]
+      },
+      "ler_after": {
+        "events": 316,
+        "rate": 0.00316,
+        "wilson_95": [
+          0.0028307087917311255,
+          0.00352746154998039
+        ]
+      },
+      "ler_mwpm": {
+        "events": 322,
+        "rate": 0.00322,
+        "wilson_95": [
+          0.0028874351790607,
+          0.0035907305530773056
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 316,
+        "wrong_fpga_after": 316
+      },
+      "ler_matched_map": {
+        "events": 316,
+        "rate": 0.00316,
+        "wilson_95": [
+          0.0028307087917311255,
+          0.00352746154998039
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "z",
+      "p": 0.003,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.003,
+      "shots": 100000,
+      "seed": 723290000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 646,
+        "rate": 0.00646,
+        "wilson_95": [
+          0.005982062957961785,
+          0.006975853857206682
+        ]
+      },
+      "ler_after": {
+        "events": 646,
+        "rate": 0.00646,
+        "wilson_95": [
+          0.005982062957961785,
+          0.006975853857206682
+        ]
+      },
+      "ler_mwpm": {
+        "events": 671,
+        "rate": 0.00671,
+        "wilson_95": [
+          0.006222607489781412,
+          0.007235290118830764
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 646,
+        "wrong_fpga_after": 646
+      },
+      "ler_matched_map": {
+        "events": 649,
+        "rate": 0.00649,
+        "wilson_95": [
+          0.006010918587972147,
+          0.007006995922409567
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "z",
+      "p": 0.005,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.005,
+      "shots": 100000,
+      "seed": 723310000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 1701,
+        "rate": 0.01701,
+        "wilson_95": [
+          0.01622690683661954,
+          0.01783019946187343
+        ]
+      },
+      "ler_after": {
+        "events": 1701,
+        "rate": 0.01701,
+        "wilson_95": [
+          0.01622690683661954,
+          0.01783019946187343
+        ]
+      },
+      "ler_mwpm": {
+        "events": 1743,
+        "rate": 0.01743,
+        "wilson_95": [
+          0.01663723307673242,
+          0.018259840954745983
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 1701,
+        "wrong_fpga_after": 1701
+      },
+      "ler_matched_map": {
+        "events": 1708,
+        "rate": 0.01708,
+        "wilson_95": [
+          0.016295285894042954,
+          0.017901815026614257
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 3,
+      "rounds": 3,
+      "basis": "z",
+      "p": 0.007,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.007,
+      "shots": 100000,
+      "seed": 723330000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "defer_after": {
+        "events": 0,
+        "rate": 0.0,
+        "wilson_95": [
+          0,
+          3.841311258303963e-05
+        ]
+      },
+      "ler_before": {
+        "events": 3154,
+        "rate": 0.03154,
+        "wilson_95": [
+          0.03047463859368257,
+          0.032641351419758734
+        ]
+      },
+      "ler_after": {
+        "events": 3154,
+        "rate": 0.03154,
+        "wilson_95": [
+          0.03047463859368257,
+          0.032641351419758734
+        ]
+      },
+      "ler_mwpm": {
+        "events": 3246,
+        "rate": 0.03246,
+        "wilson_95": [
+          0.031379443327890194,
+          0.03357647600542396
+        ]
+      },
+      "paired": {
+        "rescued": 0,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 3154,
+        "wrong_fpga_after": 3154
+      },
+      "ler_matched_map": {
+        "events": 3150,
+        "rate": 0.0315,
+        "wilson_95": [
+          0.030435304753780583,
+          0.03260068833270973
+        ]
+      },
+      "cycles": {
+        "2": 100000
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "x",
+      "p": 0.002,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.002,
+      "shots": 100000,
+      "seed": 727280001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 5705,
+        "rate": 0.05705,
+        "wilson_95": [
+          0.05562940097708428,
+          0.05850462919935304
+        ]
+      },
+      "defer_after": {
+        "events": 4566,
+        "rate": 0.04566,
+        "wilson_95": [
+          0.04438355837923723,
+          0.04697134684790473
+        ]
+      },
+      "ler_before": {
+        "events": 37,
+        "rate": 0.00037,
+        "wilson_95": [
+          0.00026846149010350385,
+          0.0005099231967762245
+        ]
+      },
+      "ler_after": {
+        "events": 39,
+        "rate": 0.00039,
+        "wilson_95": [
+          0.00028532233835603705,
+          0.0005330608119991879
+        ]
+      },
+      "ler_mwpm": {
+        "events": 23,
+        "rate": 0.00023,
+        "wilson_95": [
+          0.00015327308240416538,
+          0.0003451223601470861
+        ]
+      },
+      "paired": {
+        "rescued": 1139,
+        "newly_wrong": 2,
+        "newly_right": 0,
+        "wrong_among_rescues": 4,
+        "wrong_fpga_before": 18,
+        "wrong_fpga_after": 22
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 91649,
+        "62": 8351
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "x",
+      "p": 0.003,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.003,
+      "shots": 100000,
+      "seed": 727290001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 12141,
+        "rate": 0.12141,
+        "wilson_95": [
+          0.11940025941505385,
+          0.12344882622553181
+        ]
+      },
+      "defer_after": {
+        "events": 10225,
+        "rate": 0.10225,
+        "wilson_95": [
+          0.10038741760901208,
+          0.10414314002204773
+        ]
+      },
+      "ler_before": {
+        "events": 197,
+        "rate": 0.00197,
+        "wilson_95": [
+          0.0017136481334469253,
+          0.002264613631472537
+        ]
+      },
+      "ler_after": {
+        "events": 202,
+        "rate": 0.00202,
+        "wilson_95": [
+          0.0017601958807024534,
+          0.002318062042905751
+        ]
+      },
+      "ler_mwpm": {
+        "events": 161,
+        "rate": 0.00161,
+        "wilson_95": [
+          0.0013799217977157427,
+          0.0018783676246447798
+        ]
+      },
+      "paired": {
+        "rescued": 1916,
+        "newly_wrong": 6,
+        "newly_right": 1,
+        "wrong_among_rescues": 9,
+        "wrong_fpga_before": 76,
+        "wrong_fpga_after": 85
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 82891,
+        "62": 17109
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "x",
+      "p": 0.005,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.005,
+      "shots": 100000,
+      "seed": 727310001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 28333,
+        "rate": 0.28333,
+        "wilson_95": [
+          0.2805454732234229,
+          0.286131172714784
+        ]
+      },
+      "defer_after": {
+        "events": 25716,
+        "rate": 0.25716,
+        "wilson_95": [
+          0.2544604363455601,
+          0.25987822013495926
+        ]
+      },
+      "ler_before": {
+        "events": 1149,
+        "rate": 0.01149,
+        "wilson_95": [
+          0.010847972110853374,
+          0.01216955826840251
+        ]
+      },
+      "ler_after": {
+        "events": 1175,
+        "rate": 0.01175,
+        "wilson_95": [
+          0.01110062166758283,
+          0.012436888736854512
+        ]
+      },
+      "ler_mwpm": {
+        "events": 980,
+        "rate": 0.0098,
+        "wilson_95": [
+          0.009207999623168595,
+          0.010429660592407818
+        ]
+      },
+      "paired": {
+        "rescued": 2617,
+        "newly_wrong": 29,
+        "newly_right": 3,
+        "wrong_among_rescues": 43,
+        "wrong_fpga_before": 385,
+        "wrong_fpga_after": 428
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 62967,
+        "62": 37033
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "x",
+      "p": 0.007,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.007,
+      "shots": 100000,
+      "seed": 727330001,
+      "batch": 1024,
+      "defer_before": {
+        "events": 46148,
+        "rate": 0.46148,
+        "wilson_95": [
+          0.45839177364703093,
+          0.4645711856991626
+        ]
+      },
+      "defer_after": {
+        "events": 43471,
+        "rate": 0.43471,
+        "wilson_95": [
+          0.4316401249381649,
+          0.43778489104607626
+        ]
+      },
+      "ler_before": {
+        "events": 3605,
+        "rate": 0.03605,
+        "wilson_95": [
+          0.03491231817348459,
+          0.03722332535368122
+        ]
+      },
+      "ler_after": {
+        "events": 3627,
+        "rate": 0.03627,
+        "wilson_95": [
+          0.03512892247989118,
+          0.037446704145505084
+        ]
+      },
+      "ler_mwpm": {
+        "events": 3291,
+        "rate": 0.03291,
+        "wilson_95": [
+          0.031822097252687094,
+          0.034033787508825734
+        ]
+      },
+      "paired": {
+        "rescued": 2677,
+        "newly_wrong": 33,
+        "newly_right": 11,
+        "wrong_among_rescues": 62,
+        "wrong_fpga_before": 916,
+        "wrong_fpga_after": 978
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 43673,
+        "62": 56327
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "z",
+      "p": 0.002,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.002,
+      "shots": 100000,
+      "seed": 727280000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 5765,
+        "rate": 0.05765,
+        "wilson_95": [
+          0.056222299053629445,
+          0.05911168502707278
+        ]
+      },
+      "defer_after": {
+        "events": 4657,
+        "rate": 0.04657,
+        "wilson_95": [
+          0.045281319262600886,
+          0.04789351605267618
+        ]
+      },
+      "ler_before": {
+        "events": 39,
+        "rate": 0.00039,
+        "wilson_95": [
+          0.00028532233835603705,
+          0.0005330608119991879
+        ]
+      },
+      "ler_after": {
+        "events": 39,
+        "rate": 0.00039,
+        "wilson_95": [
+          0.00028532233835603705,
+          0.0005330608119991879
+        ]
+      },
+      "ler_mwpm": {
+        "events": 22,
+        "rate": 0.00022,
+        "wilson_95": [
+          0.00014529606695801265,
+          0.0003331001438554905
+        ]
+      },
+      "paired": {
+        "rescued": 1108,
+        "newly_wrong": 0,
+        "newly_right": 0,
+        "wrong_among_rescues": 0,
+        "wrong_fpga_before": 25,
+        "wrong_fpga_after": 25
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 91553,
+        "62": 8447
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "z",
+      "p": 0.003,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.003,
+      "shots": 100000,
+      "seed": 727290000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 11880,
+        "rate": 0.1188,
+        "wilson_95": [
+          0.11680926255727897,
+          0.12082002359975436
+        ]
+      },
+      "defer_after": {
+        "events": 10076,
+        "rate": 0.10076,
+        "wilson_95": [
+          0.09890965968256947,
+          0.10264101241956584
+        ]
+      },
+      "ler_before": {
+        "events": 189,
+        "rate": 0.00189,
+        "wilson_95": [
+          0.001639264217383291,
+          0.0021790036936341853
+        ]
+      },
+      "ler_after": {
+        "events": 193,
+        "rate": 0.00193,
+        "wilson_95": [
+          0.0016764416202058488,
+          0.002221823217762621
+        ]
+      },
+      "ler_mwpm": {
+        "events": 142,
+        "rate": 0.00142,
+        "wilson_95": [
+          0.0012049812105907954,
+          0.0016733228087525084
+        ]
+      },
+      "paired": {
+        "rescued": 1804,
+        "newly_wrong": 4,
+        "newly_right": 0,
+        "wrong_among_rescues": 5,
+        "wrong_fpga_before": 81,
+        "wrong_fpga_after": 86
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 83176,
+        "62": 16824
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "z",
+      "p": 0.005,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.005,
+      "shots": 100000,
+      "seed": 727310000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 28494,
+        "rate": 0.28494,
+        "wilson_95": [
+          0.2821506355117655,
+          0.28774588673621887
+        ]
+      },
+      "defer_after": {
+        "events": 25786,
+        "rate": 0.25786,
+        "wilson_95": [
+          0.25515800359720486,
+          0.2605805991049569
+        ]
+      },
+      "ler_before": {
+        "events": 1129,
+        "rate": 0.01129,
+        "wilson_95": [
+          0.01065368496290435,
+          0.011963860781596565
+        ]
+      },
+      "ler_after": {
+        "events": 1141,
+        "rate": 0.01141,
+        "wilson_95": [
+          0.01077025104034019,
+          0.012087285485013708
+        ]
+      },
+      "ler_mwpm": {
+        "events": 956,
+        "rate": 0.00956,
+        "wilson_95": [
+          0.008975454239377487,
+          0.010182224414492968
+        ]
+      },
+      "paired": {
+        "rescued": 2708,
+        "newly_wrong": 17,
+        "newly_right": 5,
+        "wrong_among_rescues": 29,
+        "wrong_fpga_before": 369,
+        "wrong_fpga_after": 398
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 62804,
+        "62": 37196
+      }
+    },
+    {
+      "distance": 7,
+      "rounds": 7,
+      "basis": "z",
+      "p": 0.007,
+      "fpga_prior_p": 0.001,
+      "cpu_prior_p": 0.007,
+      "shots": 100000,
+      "seed": 727330000,
+      "batch": 1024,
+      "defer_before": {
+        "events": 45918,
+        "rate": 0.45918,
+        "wilson_95": [
+          0.4560929965257569,
+          0.4622701395207544
+        ]
+      },
+      "defer_after": {
+        "events": 43261,
+        "rate": 0.43261,
+        "wilson_95": [
+          0.42954194783523036,
+          0.43568322948408367
+        ]
+      },
+      "ler_before": {
+        "events": 3610,
+        "rate": 0.0361,
+        "wilson_95": [
+          0.03496154541243928,
+          0.03727409427341528
+        ]
+      },
+      "ler_after": {
+        "events": 3632,
+        "rate": 0.03632,
+        "wilson_95": [
+          0.03517815233474238,
+          0.03749747044934264
+        ]
+      },
+      "ler_mwpm": {
+        "events": 3241,
+        "rate": 0.03241,
+        "wilson_95": [
+          0.0313302630162871,
+          0.03352566015833832
+        ]
+      },
+      "paired": {
+        "rescued": 2657,
+        "newly_wrong": 32,
+        "newly_right": 10,
+        "wrong_among_rescues": 62,
+        "wrong_fpga_before": 946,
+        "wrong_fpga_after": 1008
+      },
+      "ler_matched_map": null,
+      "cycles": {
+        "31": 44007,
+        "62": 55993
+      }
+    }
+  ]
+}

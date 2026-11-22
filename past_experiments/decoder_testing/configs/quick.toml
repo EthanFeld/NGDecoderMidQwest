@@ -1,0 +1,13 @@
+# From the repository root: python -m qecbench run --config past_experiments/decoder_testing/configs/quick.toml
+distances = [3, 5, 7]
+noise = [0.001, 0.005]
+bases = ["x", "z"]
+geometries = ["rotated"]
+rounds = "distance"
+noise_model = "circuit"
+decoders = ["pymatching", "zero"]
+shots = 10000
+batch_size = 4096
+workers = 1
+seed = 123
+output = "past_experiments/decoder_testing/results/quick"

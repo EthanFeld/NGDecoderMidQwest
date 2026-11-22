@@ -1,0 +1,10 @@
+distance = 5
+rounds = 5
+basis = "x"
+noise = 0.001
+shots = 100
+seed = 3101
+cache = "data/cache"
+output = "results/latest.json"
+max_seconds = 45.0
+max_expansions = 100000

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "morph31"
+version = "0.1.0"
+description = "Software-first compressed surface-code graph and sparse decoder"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "stim>=1.13,<2", "pymatching>=2.2,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.8,<1"]
+
+[project.scripts]
+morph31 = "morph31.benchmark:main"
+
+[tool.setuptools.packages.find]
+include = ["morph31*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = '-ra -m "not target"'
+markers = ["target: selective distance-31 graph verification"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

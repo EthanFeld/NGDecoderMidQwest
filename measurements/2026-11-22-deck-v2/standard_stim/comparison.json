@@ -1,0 +1,1095 @@
+{
+  "complete": true,
+  "factory": "pymatching_tensor_decoder:build_decoder",
+  "experiment": {
+    "distance": 15,
+    "rounds": 15,
+    "noise": 0.005,
+    "basis": "z",
+    "geometry": "rotated",
+    "noise_model": "circuit"
+  },
+  "config": {
+    "path_factor": 3.0,
+    "min_gain": 8.0,
+    "chunk_shots": 256,
+    "max_detectors": 4096,
+    "max_mechanisms": 100000,
+    "ambiguous_gap": 8.0,
+    "min_margin": 3.0,
+    "iterations": 2,
+    "reverse_seed": true
+  },
+  "circuit": "stim.Circuit.generated surface_code:rotated_memory_z",
+  "seeds": [
+    94628701,
+    94628702,
+    94628703,
+    94628704
+  ],
+  "shots_per_seed": 100000,
+  "target_shots": 400000,
+  "batch_size": 4096,
+  "identity": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "46d811d8c74d9be9009706005ae1de9971c8cafdbd06d1150a563000f4aa78b9",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "source_sha256": {
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/__init__.py": "a8be480a6e0b47192e4c5bf6f4abbe12e175102284dbf4a1298de27f1c472098",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/_build.py": "e3b44f83c3d6e44808f73379468e6c79afe917fb9c8166a713b5f05899181c0a",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/_small/__init__.py": "34d082b96033233e29600549392452f778ab3f49dee7e8c2a695e132f5b6b355",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/_small/certificates.py": "c834506f9909c2f76f1ba88975c59da9bd434567e948805813531f620c39d4e6",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/_small/frontier.py": "df87154ae61f0b3c21ef123517079efc90c623dfe0aad0a9861cf9ab01eee020",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/_small/policy.py": "1133dce22d5726da30ba3aed19e9dfdea9d7ab0fe57961b1b3a4d5146b3c0614",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/baseline.py": "bc8a1076d70282631d8a82db58f3f1a23a1e2a902ab6f0b5c1fcf5dd30c935fd",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/build_native.py": "9911bfba2fde80df23394efd029c6f1dc5b4f3d5adb049538b371600e5cafe58",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/conditioned.py": "8035a0ef556072c8ac9e8aee60f53672c21793ba9e7554d9aec5e6e3bf5e0a0c",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/config.py": "b8414a90b157d6ab0205da5d9e9909f39101b79b0677c3f5b24f0a9593f406a4",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/context.py": "c0087fd97fca9ae3973330bab51666c2686753386c03cac9c8c5973120f13b2d",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/correlated_cuda.py": "147b2d355e56a4195a699f141ba30c0c63919845a9b644d3be6dcc2f5197978c",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/correlated_graph.py": "5dae952a1d9afd20cf65ff498fadc7f7544deb8adc781a1df0e083f9fa50bcfc",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/correlated_source.py": "c21e760e75947cd2dd1028609e0cb394e6c8f26ac5536f7be63771066c59a5a5",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/decoder.py": "bbddb102b5fbed2cb18afd9895581c5b8fda88c75d7c49e5a267dc516eb13268",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/gpu.py": "71a39b523a9aa9d126a54c3949dca1c571b143ac796c0db3bb2ae351c9a572e8",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/matching.py": "27792414be2e115b8978fef1b11e5c29227b72eaf98c11ffc3495d19cbc58377",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/model.py": "f2d6c8ce89bcb206487c1be8c52fa67ee5c65ee9cb376a8ed238aaf1511b7aeb",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/native.py": "ba960ed77aba56ac82aea1e2b851f102fd0fa39e666dfd500d91f029448f29c4",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/path.py": "b60eeddf8f8d2210c55b9a4ceb7874369450d90a747d42137a4cecdd0f8a0178",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/__init__.py": "6a66429a4275add89b5b70e565529a8a7da35c0696c0ca69f6c892e00e453e46",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/__main__.py": "df683f4211089fa3fade0788e0a97216ba95e85670b317d4b38beaf47fcc7b81",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/decoder.py": "4eebcdabd3be506776695b7c873c4e3900bb6b4c008e5b7d06dbb7cf22e25500",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/exact.py": "a59e9620b409aa89d585f699502dc4ce8262204faa33400c061c8bf4a4872bd2",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/growth_reference.py": "7e8eefba4f4acf48891d43476f55cdbd055618950a567ee0dc58f5a909f8f71a",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/host.py": "9cfeb05199f9e67c4b25574e90a00d40f3e78037439ceae06577f60b9a044b77",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/reference.py": "90bb649fb5c8301d72184f29faffa81fb7811bee01fcc991833769999a1a9a46",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/rescue.py": "f95fbd367689e92eb9a324b6ba5c87bf2b83fa9ac9b8f0222de3832b8ebc27bb",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/stencils.py": "9dfc6696db0de4351b1f26c7ebdf36f0a0a45fcc32d26b7edbcd9b98d228d7d4",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/surface_model.py": "548d4fd3d0414b1d87f0192a272e38534657c343c32dd5c3c70b32b220e0bb2e",
+    "decoders/pymatching_telescope/src/pymatching_tensor_decoder/telescope/telescope_circuit.py": "8c6792a70a9562b6749e77c4f3cc02e46953af979c85117b7481d1ff77c57e67"
+  },
+  "runner_sha256": "c5c12ad4c41a30adbb0602b359f6ccb4027722069b117b0adcaf38ecc192adb9",
+  "versions": {
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "scipy": "1.18.1"
+  },
+  "environment": {
+    "python": "3.12.5 (main, Aug 14 2024, 04:23:18) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "interpretation": "Per complete memory experiment; accuracy study elapsed time is not decoder latency",
+  "coordinator_pid": 28604,
+  "worker_pids": [
+    12160,
+    15396,
+    15224,
+    23304
+  ],
+  "streams": [
+    {
+      "seed": 94628701,
+      "pid": 12160,
+      "complete": true,
+      "paused": false,
+      "shots": 100000,
+      "target_shots": 100000,
+      "batch_size": 4096,
+      "decoder_errors": 27,
+      "correlated_matching_errors": 40,
+      "fixes": 14,
+      "regressions": 1,
+      "both_wrong": 26,
+      "chunks": [
+        {
+          "start": 0,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 4096,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 8192,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 6,
+          "fixes": 3,
+          "regressions": 0,
+          "both_wrong": 3
+        },
+        {
+          "start": 12288,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 16384,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 3,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 3
+        },
+        {
+          "start": 20480,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 3,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 24576,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 28672,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 32768,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 36864,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 40960,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 45056,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 3,
+          "fixes": 3,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 49152,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 53248,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 57344,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 61440,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 65536,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 69632,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 73728,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 3,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 77824,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 3,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 3
+        },
+        {
+          "start": 81920,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 2,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 86016,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 90112,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 94208,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 4,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 3
+        },
+        {
+          "start": 98304,
+          "shots": 1696,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        }
+      ],
+      "events_sha256": "2e2bd8f7d14cf0ef7497cb2ec75663f126dbafcba53a8d91f3e3594a8be6ff6f",
+      "truth_sha256": "735af3919bfa6654003f3ef05b12af34a5686fcf6c2212ab6eb3c4fba6d6033e",
+      "seconds": 820.8564972999739
+    },
+    {
+      "seed": 94628702,
+      "pid": 15396,
+      "complete": true,
+      "paused": false,
+      "shots": 100000,
+      "target_shots": 100000,
+      "batch_size": 4096,
+      "decoder_errors": 22,
+      "correlated_matching_errors": 37,
+      "fixes": 18,
+      "regressions": 3,
+      "both_wrong": 19,
+      "chunks": [
+        {
+          "start": 0,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 4096,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 8192,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 12288,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 5,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 3
+        },
+        {
+          "start": 16384,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 20480,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 3,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 24576,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 28672,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 2,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 32768,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 36864,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 40960,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 45056,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 2,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 49152,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 53248,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 57344,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 61440,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 65536,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 69632,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 73728,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 77824,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 81920,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 86016,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 90112,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 94208,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 1,
+          "both_wrong": 1
+        },
+        {
+          "start": 98304,
+          "shots": 1696,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        }
+      ],
+      "events_sha256": "bbace4dddfaf724ad4536154bcb59805a42214e7282d1acd38196f843f36b687",
+      "truth_sha256": "b7f2372554a09bc61383178d1ab6cfa1c4efd5e6f3cbc53959a0655a0147f65d",
+      "seconds": 823.335935600102
+    },
+    {
+      "seed": 94628703,
+      "pid": 15224,
+      "complete": true,
+      "paused": false,
+      "shots": 100000,
+      "target_shots": 100000,
+      "batch_size": 4096,
+      "decoder_errors": 16,
+      "correlated_matching_errors": 30,
+      "fixes": 16,
+      "regressions": 2,
+      "both_wrong": 14,
+      "chunks": [
+        {
+          "start": 0,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 4096,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 4,
+          "fixes": 3,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 8192,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 12288,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 16384,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 20480,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 24576,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 28672,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 32768,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 36864,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 40960,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 45056,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 49152,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 53248,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 3,
+          "fixes": 1,
+          "regressions": 1,
+          "both_wrong": 2
+        },
+        {
+          "start": 57344,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 3,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 61440,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 65536,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 69632,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 73728,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 77824,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 81920,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 2,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 86016,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 90112,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 94208,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 98304,
+          "shots": 1696,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        }
+      ],
+      "events_sha256": "9688f9062e21c0f40a457b51bde0264fb5fbf9e25e1c33a476a5466ec12a02d6",
+      "truth_sha256": "4d4252a14ef3d4292c4938650881a5f604c10ecda923c8598c7f828d9e7aeb22",
+      "seconds": 819.4185990999686
+    },
+    {
+      "seed": 94628704,
+      "pid": 23304,
+      "complete": true,
+      "paused": false,
+      "shots": 100000,
+      "target_shots": 100000,
+      "batch_size": 4096,
+      "decoder_errors": 27,
+      "correlated_matching_errors": 33,
+      "fixes": 13,
+      "regressions": 7,
+      "both_wrong": 20,
+      "chunks": [
+        {
+          "start": 0,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 4096,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 3,
+          "fixes": 1,
+          "regressions": 1,
+          "both_wrong": 2
+        },
+        {
+          "start": 8192,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 12288,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 16384,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 1,
+          "both_wrong": 1
+        },
+        {
+          "start": 20480,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 24576,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 2,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 28672,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 32768,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 36864,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 3,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 40960,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 3,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 3
+        },
+        {
+          "start": 45056,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 1,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 49152,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 1,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 53248,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 2
+        },
+        {
+          "start": 57344,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 2,
+          "fixes": 2,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 61440,
+          "shots": 4096,
+          "decoder_errors": 2,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 1,
+          "both_wrong": 1
+        },
+        {
+          "start": 65536,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 69632,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 73728,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 77824,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 2,
+          "fixes": 1,
+          "regressions": 0,
+          "both_wrong": 1
+        },
+        {
+          "start": 81920,
+          "shots": 4096,
+          "decoder_errors": 1,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 1,
+          "both_wrong": 0
+        },
+        {
+          "start": 86016,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 90112,
+          "shots": 4096,
+          "decoder_errors": 3,
+          "correlated_matching_errors": 2,
+          "fixes": 0,
+          "regressions": 1,
+          "both_wrong": 2
+        },
+        {
+          "start": 94208,
+          "shots": 4096,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        },
+        {
+          "start": 98304,
+          "shots": 1696,
+          "decoder_errors": 0,
+          "correlated_matching_errors": 0,
+          "fixes": 0,
+          "regressions": 0,
+          "both_wrong": 0
+        }
+      ],
+      "events_sha256": "6031f37819fd91d43061d1c6217adbc199284d28ef2b09a9cf70753fecf19b67",
+      "truth_sha256": "d5fc4bc000404b72a8a6d2975ca630d228163168d6027890da8c9aeeb2a942ea",
+      "seconds": 820.3340324000455
+    }
+  ],
+  "shots": 400000,
+  "decoder_errors": 92,
+  "correlated_matching_errors": 140,
+  "fixes": 61,
+  "regressions": 13,
+  "both_wrong": 79,
+  "seconds": 855.2947241999209,
+  "ler": 0.00023,
+  "correlated_matching_ler": 0.00035,
+  "ler_wilson95": [
+    0.0001875624492929704,
+    0.0002820366878943956
+  ],
+  "correlated_matching_ler_wilson95": [
+    0.0002966340580931816,
+    0.0004129627742410268
+  ],
+  "worker_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "paired_exact_p": 1.3936467518320873e-08
+}

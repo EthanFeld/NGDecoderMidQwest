@@ -1,0 +1,227 @@
+{
+  "experiment": {
+    "distance": 5,
+    "rounds": 5,
+    "basis": "x",
+    "noise": 0.001
+  },
+  "seed": 3102,
+  "requested_shots": 100,
+  "completed_shots": 100,
+  "bounded_run_truncated": false,
+  "environment": {
+    "python": "3.12.5",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "source_sha256": "1941e1977f6dc62172db762afd71a04c292689646e6c4383ec9e89bc58f93f9e"
+  },
+  "cache_key": "fc2c6470f8cba2910c8e",
+  "sample_sha256": "e75e5688667ff4446fe0422f3ec6aa0fde782e6139b2ae6684bed401aa19be3e",
+  "num_detectors": 120,
+  "num_observables": 1,
+  "data_qubits": 25,
+  "syndrome_ancillas": 24,
+  "stim_num_qubits_including_index_gaps": 64,
+  "graph": {
+    "graph_rom_bytes": 4049,
+    "templates": 87,
+    "edge_descriptors": 151,
+    "weight_classes": 65,
+    "exception_table_bytes": 0,
+    "classifier_bytes": 952,
+    "average_neighbor_generation_operations": 18.366666666666667,
+    "neighbor_operation_definition": "map accesses + interval comparisons + emitted edges; coordinate arithmetic excluded",
+    "weight_quantization_error": 0.0,
+    "coordinate_bits": 9,
+    "explicit_packed_bytes": 14622,
+    "compression_ratio": 3.611262040009879,
+    "edges": 502
+  },
+  "projection": {
+    "projection": "independent separator components; identical labels parity-merged",
+    "correlations_preserved": false,
+    "dem_error_instructions": 1958,
+    "correlated_error_instructions": 1456,
+    "projected_components": 3718,
+    "zero_probability_instructions": 0,
+    "identity_components": 0,
+    "undetectable_logical_edges": 0
+  },
+  "prepare_seconds": 0.013397700036875904,
+  "reference": {
+    "shots": 100,
+    "logical_errors": 0,
+    "logical_error_rate": 0.0,
+    "ci95_wilson": [
+      3.469446951953614e-18,
+      0.03699349820698568
+    ],
+    "decoder": "PyMatching, uncorrelated DEM mode",
+    "decode_seconds_full_requested_batch": 0.0007055000169202685
+  },
+  "decoders": {
+    "conventional": {
+      "shots": 100,
+      "logical_errors": 0,
+      "logical_error_rate": 0.0,
+      "ci95_wilson": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "disagreements_with_pymatching": 0,
+      "decode_seconds": 0.0140943992882967,
+      "mean_operations": 118.96,
+      "mean_operation_counts": {
+        "neighbor_requests": 0.93,
+        "neighbor_generation": 24.94,
+        "edge_examinations": 1.05,
+        "memory_reads": 46.31,
+        "memory_writes": 16.02,
+        "queue_operations": 7.74,
+        "cluster_merges": 0.73,
+        "find_steps": 1.46,
+        "ml_lookups": 0.0,
+        "recovery_operations": 2.94,
+        "validation_operations": 16.84,
+        "total": 118.96
+      },
+      "peak_working_bytes": 890,
+      "graph_rom_bytes": 4049,
+      "model_rom_bytes": 0,
+      "peak_total_packed_bytes": 4939,
+      "peak_records": {
+        "active": 8,
+        "clusters": 8,
+        "vertices": 16,
+        "frontier": 15,
+        "forest": 15,
+        "recovery": 16
+      },
+      "mean_ml_accepted": 0.0,
+      "cycles": {
+        "mean_cycles": 183.87,
+        "median_cycles": 169.0,
+        "p95_cycles": 525.65,
+        "worst_observed_cycles": 825,
+        "mean_cycles_per_round": 36.774,
+        "estimated_us_per_round": 0.459675,
+        "assumptions": {
+          "clock_mhz": 80.0,
+          "memory_ports": 1,
+          "read_latency": 2,
+          "coordinate_arithmetic_cycles_per_request": 20,
+          "overlap": false
+        },
+        "status": "software estimate, not measured FPGA latency or a worst-case bound"
+      },
+      "limits": {
+        "working_bytes": 65536,
+        "max_vertices": 8192,
+        "max_frontier": 8191,
+        "max_clusters": 4096,
+        "max_expansions": 100000,
+        "max_seconds": 10.0
+      },
+      "memory_note": "Analytical packed layout, not measured Python heap; growth storage is reused in recovery. Static ROMs are additional to working memory."
+    },
+    "motif": {
+      "shots": 100,
+      "logical_errors": 0,
+      "logical_error_rate": 0.0,
+      "ci95_wilson": [
+        3.469446951953614e-18,
+        0.03699349820698568
+      ],
+      "disagreements_with_pymatching": 0,
+      "decode_seconds": 0.017786200740374625,
+      "mean_operations": 110.65,
+      "mean_operation_counts": {
+        "neighbor_requests": 1.4,
+        "neighbor_generation": 29.22,
+        "edge_examinations": 1.29,
+        "memory_reads": 50.57,
+        "memory_writes": 5.89,
+        "queue_operations": 2.37,
+        "cluster_merges": 0.19,
+        "find_steps": 0.38,
+        "ml_lookups": 1.17,
+        "recovery_operations": 1.31,
+        "validation_operations": 16.86,
+        "total": 110.65
+      },
+      "peak_working_bytes": 1008,
+      "graph_rom_bytes": 4049,
+      "model_rom_bytes": 4096,
+      "peak_total_packed_bytes": 9153,
+      "peak_records": {
+        "active": 8,
+        "clusters": 4,
+        "vertices": 25,
+        "frontier": 22,
+        "forest": 27,
+        "recovery": 25
+      },
+      "mean_ml_accepted": 0.72,
+      "cycles": {
+        "mean_cycles": 189.22,
+        "median_cycles": 126.0,
+        "p95_cycles": 710.0999999999999,
+        "worst_observed_cycles": 1251,
+        "mean_cycles_per_round": 37.844,
+        "estimated_us_per_round": 0.47305,
+        "assumptions": {
+          "clock_mhz": 80.0,
+          "memory_ports": 1,
+          "read_latency": 2,
+          "coordinate_arithmetic_cycles_per_request": 20,
+          "overlap": false
+        },
+        "status": "software estimate, not measured FPGA latency or a worst-case bound"
+      },
+      "limits": {
+        "working_bytes": 65536,
+        "max_vertices": 8192,
+        "max_frontier": 8191,
+        "max_clusters": 4096,
+        "max_expansions": 100000,
+        "max_seconds": 10.0
+      },
+      "memory_note": "Analytical packed layout, not measured Python heap; growth storage is reused in recovery. Static ROMs are additional to working memory."
+    }
+  },
+  "accuracy_note": "Full-circuit samples; small pilot intervals do not establish accuracy improvements or equivalence. Conventional is unweighted.",
+  "motif_comparison": {
+    "operation_reduction_fraction": 0.06985541358439806,
+    "added_failures": 0,
+    "removed_failures": 0,
+    "default": "conventional",
+    "decision": "Keep conventional default; this pilot alone cannot establish accuracy preservation. Policy remains explicitly opt-in.",
+    "policy_metadata": {
+      "experiment": {
+        "distance": 5,
+        "rounds": 5,
+        "basis": "x",
+        "noise": 0.001
+      },
+      "seed": 3101,
+      "feature_version": "m31-local8-boundary2-family1-time1-v1",
+      "teacher": "PyMatching from decomposed DEM (uncorrelated mode)",
+      "pymatching": "2.4.0",
+      "shots": 512,
+      "training_data_sha256": "3d24ae6ea1a88627492333ef53082c11be7519abf2c74bc12633675da3c784b4",
+      "observed_signatures": 154,
+      "active_rom_entries": 61,
+      "exposures": 917,
+      "min_support": 3,
+      "training_seconds": 0.125,
+      "min_confidence": 0.95,
+      "sha256": "689bab64fde80285098f8bb6625b1ceeeb1e35c252bfddd8793a28bd3fa18457",
+      "rom_bytes": 4096,
+      "entry": "high nibble confidence/15; low nibble action+1; zero low nibble abstains"
+    },
+    "policy_sha256": "689bab64fde80285098f8bb6625b1ceeeb1e35c252bfddd8793a28bd3fa18457"
+  },
+  "wall_seconds": 0.4386091000633314
+}

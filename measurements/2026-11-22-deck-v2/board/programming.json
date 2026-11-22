@@ -1,0 +1,49 @@
+{
+  "d7": {
+    "mode": "volatile SRAM",
+    "device": "GW2AR-18C",
+    "programmer": "Gowin V1.9.11.03 Education (64-bit) build2536",
+    "cable": "USB Debugger A",
+    "cable_index": 4,
+    "channel": 0,
+    "image": "past_experiments/surface_fpga/build/gowin-images/surface-d7z-dual-p007-cut0-81mhz-gowin.fs",
+    "image_sha256": "071d2e9caace7dbc9717537c9d58c07fe7346cdb44e88117623870ab5cc033be",
+    "programmer_exit": 0,
+    "user_code": "0x0000C4E1",
+    "status_code": "0x00006020",
+    "programmer_console": "d7/programmer-console.txt",
+    "programmer_finished_utc": "2026-11-22T18:52:34.553806+00:00",
+    "uart": "COM6",
+    "uart_interface": "FTDI serial2025030317B",
+    "other_interface": "COM5, FTDI serial2025030317A; CRC errors on UART requests",
+    "transport": "Chrome Web Serial through desktop computer controls",
+    "run_start_confirmed_utc": "2026-11-22T18:55:05Z",
+    "validated_shots_at_start_confirmation": 1314
+  },
+  "d15": {
+    "mode": "volatile SRAM",
+    "device": "GW2AR-18C",
+    "programmer": "Gowin V1.9.11.03 Education (64-bit) build2536",
+    "cable": "USB Debugger A",
+    "cable_index": 4,
+    "channel": 0,
+    "image": "past_experiments/surface_fpga/build/gowin-images/surface-d15z-tilt-growth-27mhz-debug-gowin.fs",
+    "saved_image": "d15/loaded_image.fs",
+    "image_sha256": "dda305b761d7caa108b02ff80b0deeea59c8a08fcc6565b9aef5c98411297eb5",
+    "programmer_exit": 0,
+    "user_code": "0x00000683",
+    "status_code": "0x00006020",
+    "programmer_console": "d15/programmer-console.txt",
+    "programmer_finished_utc": "2026-11-22T19:07:16.151903+00:00",
+    "uart": "COM6",
+    "uart_baud": 500000,
+    "clock_mhz": 27,
+    "profile_tag": "0x592e6076",
+    "transport": "Chrome Web Serial through desktop computer controls",
+    "sampling": "four fresh independent 10000-shot full-joint Surface memory-Z cohorts",
+    "seed_range": [
+      94625701,
+      94625704
+    ]
+  }
+}

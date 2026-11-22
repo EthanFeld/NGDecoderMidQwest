@@ -1,0 +1,294 @@
+{
+  "noise_model": "one circuit-level projected rotated surface-code memory experiment per basis",
+  "latency_clock_mhz": 135,
+  "core_measurement": "RTL clock cycles from start with syndrome RAM already loaded to done",
+  "cpu_measurement": "warm PyMatching decode_batch on the defer subsets",
+  "pymatching": "2.4.0",
+  "cohorts": {
+    "d3x": {
+      "distance": 3,
+      "basis": "x",
+      "rounds": 3,
+      "frontend": "map",
+      "p": 0.001,
+      "shots": 100000,
+      "seed": 713021,
+      "detectors": 16,
+      "fault_edges": 55,
+      "graph_fault_distance": 3,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 100000,
+          "wrong_accepted": 79
+        },
+        "fpga_with_tilt": {
+          "accepted": 100000,
+          "wrong_accepted": 79
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 79
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 79
+        },
+        "cpu_on_original": {
+          "wrong": 80
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "2": 100000
+      },
+      "fpga_worst_us": 0.014814814814814815,
+      "median_active_before_defer": null,
+      "median_active_after_defer": null,
+      "mean_cpu_matching_us_on_original_defers": null,
+      "mean_cpu_matching_us_on_residual_defers": null
+    },
+    "d3z": {
+      "distance": 3,
+      "basis": "z",
+      "rounds": 3,
+      "frontend": "map",
+      "p": 0.001,
+      "shots": 100000,
+      "seed": 713022,
+      "detectors": 16,
+      "fault_edges": 55,
+      "graph_fault_distance": 3,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 100000,
+          "wrong_accepted": 67
+        },
+        "fpga_with_tilt": {
+          "accepted": 100000,
+          "wrong_accepted": 67
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 67
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 67
+        },
+        "cpu_on_original": {
+          "wrong": 77
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "2": 100000
+      },
+      "fpga_worst_us": 0.014814814814814815,
+      "median_active_before_defer": null,
+      "median_active_after_defer": null,
+      "mean_cpu_matching_us_on_original_defers": null,
+      "mean_cpu_matching_us_on_residual_defers": null
+    },
+    "d7x": {
+      "distance": 7,
+      "basis": "x",
+      "rounds": 7,
+      "frontend": "tilt",
+      "p": 0.001,
+      "shots": 100000,
+      "seed": 717021,
+      "detectors": 192,
+      "fault_edges": 883,
+      "graph_fault_distance": 7,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 97687,
+          "wrong_accepted": 1
+        },
+        "fpga_with_tilt": {
+          "accepted": 98431,
+          "wrong_accepted": 2
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 29
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 5
+        },
+        "cpu_on_original": {
+          "wrong": 5
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "31": 97687,
+        "62": 2313
+      },
+      "fpga_worst_us": 0.45925925925925926,
+      "median_active_before_defer": 6.0,
+      "median_active_after_defer": 2.0,
+      "mean_cpu_matching_us_on_original_defers": 13.903957298206159,
+      "mean_cpu_matching_us_on_residual_defers": 8.769583816204468
+    },
+    "d7z": {
+      "distance": 7,
+      "basis": "z",
+      "rounds": 7,
+      "frontend": "tilt",
+      "p": 0.001,
+      "shots": 100000,
+      "seed": 717022,
+      "detectors": 192,
+      "fault_edges": 883,
+      "graph_fault_distance": 7,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 97628,
+          "wrong_accepted": 5
+        },
+        "fpga_with_tilt": {
+          "accepted": 98439,
+          "wrong_accepted": 5
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 39
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 7
+        },
+        "cpu_on_original": {
+          "wrong": 3
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "31": 97628,
+        "62": 2372
+      },
+      "fpga_worst_us": 0.45925925925925926,
+      "median_active_before_defer": 5.0,
+      "median_active_after_defer": 2.0,
+      "mean_cpu_matching_us_on_original_defers": 3.4214490678574245,
+      "mean_cpu_matching_us_on_residual_defers": 6.439076230617677
+    },
+    "d15x": {
+      "distance": 15,
+      "basis": "x",
+      "rounds": 15,
+      "frontend": "tilt",
+      "p": 0.001,
+      "shots": 100000,
+      "seed": 715021,
+      "detectors": 1792,
+      "fault_edges": 9451,
+      "graph_fault_distance": 15,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 73799,
+          "wrong_accepted": 0
+        },
+        "fpga_with_tilt": {
+          "accepted": 81441,
+          "wrong_accepted": 0
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 0
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 0
+        },
+        "cpu_on_original": {
+          "wrong": 0
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "39": 73799,
+        "78": 26201
+      },
+      "fpga_worst_us": 0.5777777777777777,
+      "median_active_before_defer": 32.0,
+      "median_active_after_defer": 3.0,
+      "mean_cpu_matching_us_on_original_defers": 9.964244625889133,
+      "mean_cpu_matching_us_on_residual_defers": 5.562057331048236
+    },
+    "d15z": {
+      "distance": 15,
+      "basis": "z",
+      "rounds": 15,
+      "frontend": "tilt",
+      "p": 0.001,
+      "shots": 100000,
+      "seed": 715022,
+      "detectors": 1792,
+      "fault_edges": 9451,
+      "graph_fault_distance": 15,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 73743,
+          "wrong_accepted": 0
+        },
+        "fpga_with_tilt": {
+          "accepted": 81258,
+          "wrong_accepted": 0
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 0
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 0
+        },
+        "cpu_on_original": {
+          "wrong": 0
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "39": 73743,
+        "78": 26257
+      },
+      "fpga_worst_us": 0.5777777777777777,
+      "median_active_before_defer": 32.0,
+      "median_active_after_defer": 3.0,
+      "mean_cpu_matching_us_on_original_defers": 9.651491836896962,
+      "mean_cpu_matching_us_on_residual_defers": 5.37306728150107
+    },
+    "d15z-p002": {
+      "distance": 15,
+      "basis": "z",
+      "rounds": 15,
+      "frontend": "tilt",
+      "p": 0.002,
+      "shots": 50000,
+      "seed": 2357815,
+      "detectors": 1792,
+      "fault_edges": 9451,
+      "graph_fault_distance": 15,
+      "counts": {
+        "fpga_only_flat": {
+          "accepted": 16037,
+          "wrong_accepted": 0
+        },
+        "fpga_with_tilt": {
+          "accepted": 21053,
+          "wrong_accepted": 0
+        },
+        "fpga_and_cpu_on_residual": {
+          "wrong": 28
+        },
+        "fpga_and_cpu_on_original": {
+          "wrong": 0
+        },
+        "cpu_on_original": {
+          "wrong": 0
+        }
+      },
+      "fpga_clock_mhz": 135,
+      "fpga_cycle_histogram": {
+        "39": 16037,
+        "78": 33963
+      },
+      "fpga_worst_us": 0.5777777777777777,
+      "median_active_before_defer": 59.0,
+      "median_active_after_defer": 4.0,
+      "mean_cpu_matching_us_on_original_defers": 16.04709776485518,
+      "mean_cpu_matching_us_on_residual_defers": 7.597440943752625
+    }
+  }
+}

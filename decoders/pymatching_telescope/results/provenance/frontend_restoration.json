@@ -1,0 +1,62 @@
+{
+  "source_snapshot": "20261122T171631759966Z",
+  "backend": "PyMatching 2.4.0 + preserved native FixedMatching",
+  "original_joint_syndrome_on_defer": true,
+  "frontend_sources": [
+    {
+      "source": "surface-telescope\\host.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\host.py",
+      "source_sha256": "da1d2257f80b1ea5b673f6d966ec104b0dc25e0653b025ddccfeb5e906f60dfe",
+      "restored_sha256": "9cfeb05199f9e67c4b25574e90a00d40f3e78037439ceae06577f60b9a044b77"
+    },
+    {
+      "source": "surface-telescope\\reference.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\reference.py",
+      "source_sha256": "b038748d6852e8f13d341dc37babc678fc0581efeb3cd51ac800abe47039ec16",
+      "restored_sha256": "90bb649fb5c8301d72184f29faffa81fb7811bee01fcc991833769999a1a9a46"
+    },
+    {
+      "source": "surface-telescope\\rescue.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\rescue.py",
+      "source_sha256": "da339587f0a8c28d76feb33eb1913d3738c09d0385a61542de85fa68605c4b73",
+      "restored_sha256": "f95fbd367689e92eb9a324b6ba5c87bf2b83fa9ac9b8f0222de3832b8ebc27bb"
+    },
+    {
+      "source": "surface-telescope\\stencils.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\stencils.py",
+      "source_sha256": "36aca2237e473bbcb966d731e1e3e1f040db801df362faed25c611ac234a7658",
+      "restored_sha256": "9dfc6696db0de4351b1f26c7ebdf36f0a0a45fcc32d26b7edbcd9b98d228d7d4"
+    },
+    {
+      "source": "surface-telescope\\surface_model.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\surface_model.py",
+      "source_sha256": "2abffbae621f4cedfd29004c1585058559ffa6df7fd4bc6f1ad0f6145d67e992",
+      "restored_sha256": "548d4fd3d0414b1d87f0192a272e38534657c343c32dd5c3c70b32b220e0bb2e"
+    },
+    {
+      "source": "surface-telescope\\exact.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\exact.py",
+      "source_sha256": "39156466a7bc28533aead1bddc135b2e5cd3d69df8f648d00ade9828a4cf9587",
+      "restored_sha256": "a59e9620b409aa89d585f699502dc4ce8262204faa33400c061c8bf4a4872bd2"
+    },
+    {
+      "source": "surface-telescope\\growth_reference.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\growth_reference.py",
+      "source_sha256": "2c96cf0c1833b4354c1b67604dba51c4190cc9c088ccd9a53c4e60175013f2d7",
+      "restored_sha256": "7e8eefba4f4acf48891d43476f55cdbd055618950a567ee0dc58f5a909f8f71a"
+    },
+    {
+      "source": "surface-telescope\\telescope_circuit.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\telescope_circuit.py",
+      "source_sha256": "bf570d62f321154fd82b425e117d76cef56d227391edb700f4badb9b2a4d92da",
+      "restored_sha256": "8c6792a70a9562b6749e77c4f3cc02e46953af979c85117b7481d1ff77c57e67"
+    },
+    {
+      "source": "tensor_decoder\\results\\runs\\owned_profile_20261122T171631759966Z\\baseline_sources\\surface-telescope\\telescope.py",
+      "destination": "src\\pymatching_tensor_decoder\\telescope\\decoder.py",
+      "source_sha256": "3b7cc4d5d31fb0c75228d049d676ec69e26a058dce7e6969127f751b70130f6e",
+      "restored_sha256": "4eebcdabd3be506776695b7c873c4e3900bb6b4c008e5b7d06dbb7cf22e25500"
+    }
+  ],
+  "historical_result_files_copied_without_changes": true
+}

@@ -1,0 +1,150 @@
+{
+  "circuit": "Surface Telescope joint rotated Z, d rounds, circuit-level noise",
+  "source": "cycle_model",
+  "backend_namespace": "pymatching_tensor_decoder",
+  "points": [
+    {
+      "distance": 15,
+      "p": 0.001,
+      "shots": 2048,
+      "seed": 109624701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.002,
+      "shots": 2048,
+      "seed": 109625701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.003,
+      "shots": 2048,
+      "seed": 109626701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.004,
+      "shots": 2048,
+      "seed": 109627701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.005,
+      "shots": 2048,
+      "seed": 109628701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.006,
+      "shots": 2048,
+      "seed": 109629701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.007,
+      "shots": 2048,
+      "seed": 109630701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.0075,
+      "shots": 2048,
+      "seed": 109631201,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.008,
+      "shots": 2048,
+      "seed": 109631701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.009,
+      "shots": 2048,
+      "seed": 109632701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 15,
+      "p": 0.01,
+      "shots": 2048,
+      "seed": 109633701,
+      "relay_shots": 64
+    },
+    {
+      "distance": 7,
+      "p": 0.003,
+      "shots": 8192,
+      "seed": 101626701,
+      "relay_shots": 8192
+    },
+    {
+      "distance": 7,
+      "p": 0.0075,
+      "shots": 8192,
+      "seed": 101631201,
+      "relay_shots": 1024
+    }
+  ],
+  "seed_base": 94623701,
+  "requested_time_shots": 192,
+  "batch_size": 256,
+  "telescope_batch_timing_prefix": 1024,
+  "relay_requested_time_shots_d15": 24,
+  "fpga_only_defer_policy": "explicit host reporting proxy of logical zero; no software decode",
+  "latency": "model core cycles plus measured host projection/completion; excludes UART, queue wait and sampling",
+  "timing_sample": "random accepted/deferred strata weighted back to cohort shares; Relay uses its accuracy prefix",
+  "phase_separation": "all accuracy cohorts finish before separately scheduled single-shot timing",
+  "versions": {
+    "python": "3.12.5 (main, Aug 14 2024, 04:23:18) [MSC v.1929 64 bit (AMD64)]",
+    "host": "Windows-11-10.0.26300-SP0",
+    "numpy": "2.5.5",
+    "stim": "1.16.0",
+    "pymatching": "2.4.0",
+    "relay_bp": "0.2.2"
+  },
+  "tensor": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "46d811d8c74d9be9009706005ae1de9971c8cafdbd06d1150a563000f4aa78b9",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "relay": {
+    "upstream_commit": "72341ef85cd45779e6483c338aef7ba85094eac1",
+    "relay_bp_version": "0.2.2",
+    "upstream_python_native_sha256": "e9db74f63d10acdd503cc55bf6ac9b8c3fb64ab03ea17399943b1f372af8022f"
+  },
+  "script_sha256": "ac6c02885ceef1c629c3830eea45a8abacc4be274a6979d1dc756a28dab9db77",
+  "harness_sha256": "1bacbd9477afd9b8e685b048bcef5695a132e110f097e6963f34abe01e7e31cf",
+  "profiles": {
+    "7": {
+      "profile": "past_experiments/surface_fpga/profiles/d7z-dual-p007-cut0-81mhz.json",
+      "profile_sha256": "9e848066d6e2b5d497db4b39b86e61ee55173bcd2ac1b404b6360dcdbfda74c2",
+      "bitstream": "past_experiments/surface_fpga/bitstreams/surface-d7z-dual-p007-cut0-81mhz.fs",
+      "bitstream_sha256": "e9cd6aa2bcde491eb74956edce1872327f96ab31d5bd1612d5249fd383e21a91",
+      "image_tag": "416f45ec",
+      "clock_mhz": 81,
+      "growth_topology_sha256": "36fe981c6313521b3d832260a9da86571efcaecf6854d43677d7a12643eba586",
+      "growth_model_sha256": "a60f2d03573c1d7220e99d8e601d8f12d248dbcac08e52133675a11909697b87"
+    },
+    "15": {
+      "profile": "past_experiments/surface_fpga/experiments/d15-weighted-growth/d15z-growth-cap4000.json",
+      "profile_sha256": "e1ff9207f560041259c1d2694e560426569dea66d062032cff8530daa47def6f",
+      "bitstream": "past_experiments/surface_fpga/experiments/d15-weighted-growth/surface-d15z-tilt-growth-27mhz.fs",
+      "bitstream_sha256": "175abafc40b3c9746a325a7e643901cc948e50a8177597d3ad1271fd9c576160",
+      "image_tag": "592e6076",
+      "clock_mhz": 27,
+      "growth_topology_sha256": "8521ca78982f90a94ebcaf8118236c7bd0450963b309f34098cfdcc3e700b067",
+      "growth_model_sha256": "72baf27c78a8f50a0048c14e79447c7a4ac7ba585be25ef4c303683fb1ae7955"
+    }
+  }
+}

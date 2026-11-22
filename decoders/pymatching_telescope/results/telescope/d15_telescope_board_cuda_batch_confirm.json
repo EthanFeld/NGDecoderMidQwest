@@ -1,0 +1,562 @@
+{
+  "frontend_sha256": "427880aa889da4c837106680369c22b7386f73f20f3b21621dfcc0dfd3e17965",
+  "telescope_sha256": "62ad0e45401dc4b5adb006b044556fd0310b79df100f19257ec1e623a682e11c",
+  "tensor": {
+    "implementation": "validated-d15-sector-search-v2",
+    "python_sha256": "df277e78356a81049a367bef4c91787cf57b2141d937c8d002dd525a6f817480",
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "stim": "1.16.0",
+  "numpy": "2.5.5",
+  "host": "Windows-11-10.0.26300-SP0",
+  "stage1_source": "COM capture",
+  "batch_size": 256,
+  "cuda_mode": "cuda-batch",
+  "accuracy_only": false,
+  "cohorts": [
+    {
+      "p": 0.003,
+      "seed": 51915031,
+      "shots": 1024,
+      "fpga_accepts": 511,
+      "fpga_accept_errors": 0,
+      "fpga_defers": 513,
+      "selected_detectors": 1792,
+      "joint_detectors": 3360,
+      "deferred_raw_weight": {
+        "p50": 86.0,
+        "p99": 113.75999999999999,
+        "p999": 120.44000000000028
+      },
+      "deferred_residual_weight": {
+        "p50": 7.0,
+        "p99": 14.879999999999995,
+        "p999": 17.46400000000017
+      },
+      "fpga_core_us": {
+        "p50": 0.9629629629629629,
+        "p99": 0.9629629629629629,
+        "p999": 0.9629629629629629
+      },
+      "fpga_uart_us": {
+        "p50": 16899.999976158142,
+        "p99": 17200.00002026558,
+        "p999": 17793.10006988051
+      },
+      "quality": {
+        "tensor_cpu": {
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.0037374040400176777
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 645.76416015625,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": null
+        },
+        "telescope_cpu": {
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.0037374040400176777
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 336.21875,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 511,
+            "residual_check": 0,
+            "tensor": 513
+          }
+        },
+        "telescope_cuda": {
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.0037374040400176777
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 314.90439453125,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 511,
+            "residual_check": 0,
+            "tensor": 513
+          }
+        },
+        "telescope_confirm_cuda": {
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.0037374040400176777
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 548.484765625,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 291,
+            "residual_check": 0,
+            "tensor": 733
+          }
+        }
+      },
+      "timing": {
+        "host_projection_us": {
+          "p50": 23.9,
+          "p99": 62.7699999999997,
+          "p999": 115.80150000000016
+        },
+        "timed_shots": 256,
+        "tensor_cpu": {
+          "host_completion_us": {
+            "p50": 697.0,
+            "p99": 1553.6049999999907,
+            "p999": 2475.7665000000206
+          }
+        },
+        "telescope_cpu": {
+          "host_completion_us": {
+            "p50": 568.2,
+            "p99": 1938.9199999999958,
+            "p999": 2431.230000000008
+          },
+          "hybrid_without_uart_us": {
+            "p50": 591.062962962963,
+            "p99": 1964.502962962959,
+            "p999": 2453.7249629629714
+          },
+          "deferred_host_us": {
+            "p50": 723.0,
+            "p99": 2214.98,
+            "p999": 2463.4880000000035
+          },
+          "hybrid_with_uart_us": {
+            "p50": 17279.89990463257,
+            "p99": 18863.540041723245,
+            "p999": 19378.262071048743
+          }
+        },
+        "telescope_cuda": {
+          "host_completion_us": {
+            "p50": 590.9000000000001,
+            "p99": 1028.2999999999993,
+            "p999": 1105.7275000000006
+          },
+          "hybrid_without_uart_us": {
+            "p50": 614.012962962963,
+            "p99": 1066.1629629629624,
+            "p999": 1136.7154629629638
+          },
+          "deferred_host_us": {
+            "p50": 744.3,
+            "p99": 1082.828,
+            "p999": 1108.2040000000004
+          },
+          "hybrid_with_uart_us": {
+            "p50": 17317.200035762788,
+            "p99": 18022.900084638597,
+            "p999": 18043.523523841857
+          }
+        },
+        "telescope_confirm_cuda": {
+          "host_completion_us": {
+            "p50": 702.65,
+            "p99": 1164.4549999999983,
+            "p999": 3048.1785000000755
+          },
+          "hybrid_without_uart_us": {
+            "p50": 726.912962962963,
+            "p99": 1196.3012962962948,
+            "p999": 3084.672462963036
+          },
+          "deferred_host_us": {
+            "p50": 720.2,
+            "p99": 1055.3359999999998,
+            "p999": 3301.0416000000364
+          },
+          "hybrid_with_uart_us": {
+            "p50": 17625.700035762788,
+            "p99": 18150.665082254407,
+            "p999": 20058.209493920403
+          }
+        }
+      }
+    },
+    {
+      "p": 0.005,
+      "seed": 51915032,
+      "shots": 1024,
+      "fpga_accepts": 80,
+      "fpga_accept_errors": 1,
+      "fpga_defers": 944,
+      "selected_detectors": 1792,
+      "joint_detectors": 3360,
+      "deferred_raw_weight": {
+        "p50": 136.0,
+        "p99": 172.13999999999987,
+        "p999": 179.05700000000013
+      },
+      "deferred_residual_weight": {
+        "p50": 13.0,
+        "p99": 24.0,
+        "p999": 30.05700000000013
+      },
+      "fpga_core_us": {
+        "p50": 0.9629629629629629,
+        "p99": 0.9629629629629629,
+        "p999": 0.9629629629629629
+      },
+      "fpga_uart_us": {
+        "p50": 16899.999976158142,
+        "p99": 17200.000047683716,
+        "p999": 18783.90007042891
+      },
+      "quality": {
+        "tensor_cpu": {
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.0037374040400176777
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 1524.6626953125,
+          "vs_cpu_telescope_differences": 1,
+          "stage_counts": null
+        },
+        "telescope_cpu": {
+          "errors": 1,
+          "ler": 0.0009765625,
+          "ci95": [
+            0.0001724080656205127,
+            0.005510821357131506
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 1,
+          "prediction_differences": 1,
+          "amortized_us_per_shot": 1292.8806640624998,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 80,
+            "residual_check": 0,
+            "tensor": 944
+          }
+        },
+        "telescope_cuda": {
+          "errors": 1,
+          "ler": 0.0009765625,
+          "ci95": [
+            0.0001724080656205127,
+            0.005510821357131506
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 1,
+          "prediction_differences": 1,
+          "amortized_us_per_shot": 1232.7421875,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 80,
+            "residual_check": 0,
+            "tensor": 944
+          }
+        },
+        "telescope_confirm_cuda": {
+          "errors": 0,
+          "ler": 0.0,
+          "ci95": [
+            0.0,
+            0.0037374040400176777
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 1367.3935546875,
+          "vs_cpu_telescope_differences": 1,
+          "stage_counts": {
+            "prior_tilt": 44,
+            "residual_check": 0,
+            "tensor": 980
+          }
+        }
+      },
+      "timing": {
+        "host_projection_us": {
+          "p50": 21.9,
+          "p99": 47.00499999999999,
+          "p999": 122.67450000000133
+        },
+        "timed_shots": 256,
+        "tensor_cpu": {
+          "host_completion_us": {
+            "p50": 975.85,
+            "p99": 6217.179999999998,
+            "p999": 23730.735000000765
+          }
+        },
+        "telescope_cpu": {
+          "host_completion_us": {
+            "p50": 969.25,
+            "p99": 6246.159999999995,
+            "p999": 6802.506000000009
+          },
+          "hybrid_without_uart_us": {
+            "p50": 994.3629629629629,
+            "p99": 6269.807962962957,
+            "p999": 6828.521462962972
+          },
+          "deferred_host_us": {
+            "p50": 993.5,
+            "p99": 6352.911999999999,
+            "p999": 6809.67720000001
+          },
+          "hybrid_with_uart_us": {
+            "p50": 17942.199988079068,
+            "p99": 23123.84501907348,
+            "p999": 24051.058464475653
+          }
+        },
+        "telescope_cuda": {
+          "host_completion_us": {
+            "p50": 1027.0,
+            "p99": 6062.049999999997,
+            "p999": 6670.756500000016
+          },
+          "hybrid_without_uart_us": {
+            "p50": 1049.6629629629633,
+            "p99": 6085.79796296296,
+            "p999": 6698.0724629629785
+          },
+          "deferred_host_us": {
+            "p50": 1039.2,
+            "p99": 6127.09,
+            "p999": 6682.365300000017
+          },
+          "hybrid_with_uart_us": {
+            "p50": 17970.550000000003,
+            "p99": 23048.97999165535,
+            "p999": 23893.04396447566
+          }
+        },
+        "telescope_confirm_cuda": {
+          "host_completion_us": {
+            "p50": 961.1,
+            "p99": 5994.9699999999975,
+            "p999": 20508.473000000624
+          },
+          "hybrid_without_uart_us": {
+            "p50": 983.912962962963,
+            "p99": 6019.44796296296,
+            "p999": 20534.51846296359
+          },
+          "deferred_host_us": {
+            "p50": 977.55,
+            "p99": 5902.999,
+            "p999": 6309.222100000009
+          },
+          "hybrid_with_uart_us": {
+            "p50": 17940.29998807907,
+            "p99": 22906.99002980232,
+            "p999": 37610.055487841266
+          }
+        }
+      }
+    },
+    {
+      "p": 0.0075,
+      "seed": 51915033,
+      "shots": 1024,
+      "fpga_accepts": 0,
+      "fpga_accept_errors": 0,
+      "fpga_defers": 1024,
+      "selected_detectors": 1792,
+      "joint_detectors": 3360,
+      "deferred_raw_weight": {
+        "p50": 197.0,
+        "p99": 235.76999999999998,
+        "p999": 249.9770000000001
+      },
+      "deferred_residual_weight": {
+        "p50": 23.0,
+        "p99": 35.0,
+        "p999": 39.95400000000018
+      },
+      "fpga_core_us": {
+        "p50": 0.9629629629629629,
+        "p99": 0.9629629629629629,
+        "p999": 0.9629629629629629
+      },
+      "fpga_uart_us": {
+        "p50": 16899.999976158142,
+        "p99": 17200.000047683716,
+        "p999": 17399.999976158142
+      },
+      "quality": {
+        "tensor_cpu": {
+          "errors": 3,
+          "ler": 0.0029296875,
+          "ci95": [
+            0.0009968475014902932,
+            0.008578032686730408
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 8275.094921875,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": null
+        },
+        "telescope_cpu": {
+          "errors": 3,
+          "ler": 0.0029296875,
+          "ci95": [
+            0.0009968475014902932,
+            0.008578032686730408
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 8140.1421875,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 0,
+            "residual_check": 0,
+            "tensor": 1024
+          }
+        },
+        "telescope_cuda": {
+          "errors": 3,
+          "ler": 0.0029296875,
+          "ci95": [
+            0.0009968475014902932,
+            0.008578032686730408
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 7535.04833984375,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 0,
+            "residual_check": 0,
+            "tensor": 1024
+          }
+        },
+        "telescope_confirm_cuda": {
+          "errors": 3,
+          "ler": 0.0029296875,
+          "ci95": [
+            0.0009968475014902932,
+            0.008578032686730408
+          ],
+          "paired_fixes": 0,
+          "paired_regressions": 0,
+          "prediction_differences": 0,
+          "amortized_us_per_shot": 7718.820703124999,
+          "vs_cpu_telescope_differences": 0,
+          "stage_counts": {
+            "prior_tilt": 0,
+            "residual_check": 0,
+            "tensor": 1024
+          }
+        }
+      },
+      "timing": {
+        "host_projection_us": {
+          "p50": 26.5,
+          "p99": 92.39499999999988,
+          "p999": 142.02350000000067
+        },
+        "timed_shots": 256,
+        "tensor_cpu": {
+          "host_completion_us": {
+            "p50": 5944.95,
+            "p99": 36173.32,
+            "p999": 41812.72900000005
+          }
+        },
+        "telescope_cpu": {
+          "host_completion_us": {
+            "p50": 5739.95,
+            "p99": 34467.66499999999,
+            "p999": 36293.95550000001
+          },
+          "hybrid_without_uart_us": {
+            "p50": 5765.662962962962,
+            "p99": 34501.16796296296,
+            "p999": 36323.98146296298
+          },
+          "deferred_host_us": {
+            "p50": 5739.95,
+            "p99": 34467.66499999999,
+            "p999": 36293.95550000001
+          },
+          "hybrid_with_uart_us": {
+            "p50": 22654.75001192093,
+            "p99": 51335.20502622603,
+            "p999": 53148.51848879433
+          }
+        },
+        "telescope_cuda": {
+          "host_completion_us": {
+            "p50": 5815.45,
+            "p99": 35632.289999999986,
+            "p999": 39188.0905000001
+          },
+          "hybrid_without_uart_us": {
+            "p50": 5856.662962962962,
+            "p99": 35667.942962962945,
+            "p999": 39215.60196296306
+          },
+          "deferred_host_us": {
+            "p50": 5815.45,
+            "p99": 35632.289999999986,
+            "p999": 39188.0905000001
+          },
+          "hybrid_with_uart_us": {
+            "p50": 22719.300047683715,
+            "p99": 52476.98007390975,
+            "p999": 56165.63898831758
+          }
+        },
+        "telescope_confirm_cuda": {
+          "host_completion_us": {
+            "p50": 5794.450000000001,
+            "p99": 35478.27999999999,
+            "p999": 37190.315500000026
+          },
+          "hybrid_without_uart_us": {
+            "p50": 5826.662962962962,
+            "p99": 35506.61296296295,
+            "p999": 37219.550962962996
+          },
+          "deferred_host_us": {
+            "p50": 5794.450000000001,
+            "p99": 35478.27999999999,
+            "p999": 37190.315500000026
+          },
+          "hybrid_with_uart_us": {
+            "p50": 22646.500035762787,
+            "p99": 52460.65004291534,
+            "p999": 54044.08795839598
+          }
+        }
+      }
+    }
+  ]
+}

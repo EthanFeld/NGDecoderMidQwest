@@ -1,0 +1,16 @@
+{
+  "phase": "accuracy_complete",
+  "updated_utc": "2026-11-22T19:15:44.302458+00:00",
+  "original_pid": 33088,
+  "original_stopped_after": "d15-p09000",
+  "worker_pids": {
+    "d15-p10000": 30316,
+    "d7-p03000-and-p07500": 20356
+  },
+  "wrapper_sha256": "5c2b22bb1be44efd94f9539d60622b658e3ab78202b1d4831394cc63203df8ca",
+  "aggregation": "Independent workers publish point checkpoints; coordinator writes shared tables after both workers exit.",
+  "handoff_completed_points": 10,
+  "completed_points": 13,
+  "all_accuracy_workers_exited": true,
+  "completed_utc": "2026-11-22T19:19:48.625290+00:00"
+}

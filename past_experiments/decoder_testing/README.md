@@ -1,0 +1,5 @@
+# Decoder benchmarks and baseline implementations
+
+The qecbench harness generates packed Stim syndromes, runs paired decoder comparisons and records logical error rates and completed-call latency. `src/surface_decoders/` contains the NumPy Relay-BP decoder, the IBM native Relay-BP adapter and the exact logical-ML lookup decoder. Ordinary PyMatching and the zero predictor are built-in baselines. Configurations, examples and historical measurements are retained in their corresponding folders.
+
+Python 3.11+ is required. From the repository root, install with `python -m pip install -e ./past_experiments/decoder_testing` and run `python -m qecbench --help`. Install `"./past_experiments/decoder_testing[ibm-relay]"` for the pinned upstream Rust Relay-BP implementation; building it requires Rust. Decoder factories accept a context containing `experiment`, `circuit` and `dem`, and return an object implementing `decode_batch(events)`. Events and predictions are little-endian packed `uint8` arrays; true logical labels are used only by the benchmark scorer.

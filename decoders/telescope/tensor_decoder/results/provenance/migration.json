@@ -1,0 +1,45 @@
+{
+  "source_factory": "neural_tn.optimized:build_candidate_decoder",
+  "destination_factory": "tensor_decoder:build_decoder",
+  "organization_only": true,
+  "original_package_sha256": {
+    "accuracy.py": "0bd10cea63207e84034c3b385fcaaf1baafc646f5f678e0cf5026b200faebb63",
+    "accuracy_experiment.py": "d350d9d6640a118f99d6e53d9796c81b10fdf30dc15e16475d2996f7bea5eb80",
+    "build_native.py": "442077682b0936f0de8f6cd0f39231f56a671263560d7ee88626199e1590b66d",
+    "cascade.py": "c7ca919cb69f5ea8da38c126b1a7db76fbbbcc5dae23fcbad8d899f08266de89",
+    "certificates.py": "1e80935777608f6aad5fdec9b3801e8b28c87346464af1620bb650a7aaa07bf8",
+    "compressor.py": "f5171608db67f896592119d4f70d433fbe75e97dddf025617d5c1ab7c85cdd2b",
+    "conditioned.py": "df847d4e95893c5c9f71fafc62144e90d04ccc73e56e8509bb7b8786b07e9d7f",
+    "d15_experiment.py": "736e7172b0525d487c40a6701bb35ea30553c5a94a24898870ef0289dd8c1519",
+    "decoder.py": "f9478dd118589b551ee9faf2c3d9f49954319ad1477ea86caf756ce7ca023633",
+    "experiment.py": "f01b3cee39bfbd20cae598af721e2aa6a1b81ebfe89141b09f8bd40a75b5caf6",
+    "frontier.py": "451623d1e1109a1a93e5c083b6850d18fbb547877e633d1199abb7e1d4fbabc7",
+    "frontier_experiment.py": "c23086c9d9b97ce3ea8a849c0741bab77b73a0d82bad83a607c463e382861c00",
+    "large.py": "303afbaf3fdb7b18b9238b752a7b1f55617aa191e3b969079afde0e750d25421",
+    "latency_native.py": "0da04c3a24d590cc02ad02b9f1c7982bfbc8a711752599912da7ccfdf49b1605",
+    "logical_gap.py": "151fa10926e9d99caef3c55ff30fd4956e604becdcbca19655407e9220284b13",
+    "median_experiment.py": "946553238beb94284ec3a1d024abbf3c3eaf0f244cd9d95c96bd3d9762f6a98e",
+    "native.py": "f506acf9e616d002d2a985184ac0b77dd5ddeb16b00c5caf19a916fab6749d67",
+    "optimization_experiment.py": "3fbbc7d3bfba9c2578b61ddf5fb034930329e11d2bdb6230690c131ab86560a4",
+    "optimized.py": "921d4ac8e7cbd35ee6e46ec1aae54bd28998dc4eccbba2613714ba67f9465554",
+    "path_proxy.py": "621e86c8c3e4ca347c92ddbfce91351fcbd2f23783db5b8543255899749130ed",
+    "perturb.py": "97486fa42a1fbbe43016927f09d19ffc3cb44bc08056378598a1e54a8a815796",
+    "quantized.py": "c9f117dc2aac5573e9f5eb0d9d80161e4c0478aca39dfef072e0c0707df42d29",
+    "scaling_experiment.py": "35daae42f73a9f65465bc8f6a7ca4ced81911585a79de3876fc5e422901ec535",
+    "sector_experiment.py": "f3234effa4fe2ec31f28be2c3006cc854bbfd09028d10ff19b8dc3dc69ad7feb",
+    "stability.py": "964a128483a48299a2ad451094815ba8243699424721c17a1d7b20f9e2a3eae9",
+    "__init__.py": "ad9b97fae39c76c28812be376ccfbca6c754c04c6cdd5e0ab6f3221cea44d2fd"
+  },
+  "preserved_records_sha256": {
+    "results\\latency.json": "aeb98df1bbda7351dceb62c9c825cdaf7ec3919c8e9187483f53c1b38524f539",
+    "results\\validation\\validation.json": "f48db6ea271a64adb5cd179776cb09e934ac77ea3f396b3cfbda419c100e8d6d",
+    "results\\validation\\validation_a.json": "a15f169119e64d0b9f7a97e700c51733fbcf625e370d6ea99211c3022a4e52fc",
+    "results\\validation\\validation_b.json": "5e363e46dcfd78ba5a1c22061fab33f1a5045fe9b7cd28b41c003ab39bf1eb9b",
+    "results\\validation\\validation_protocol.json": "655365bd3c14793b29fe54c1e372001de5b44a8ce58306ea7971c22d79d06f6c"
+  },
+  "original_native_sha256": {
+    "path_native_sha256": "6b95122cc6b8fae7cdcd874d8bce1a6da5552651156c298185957c9f54da2c84",
+    "matching_native_sha256": "a9182775e9dddb948f968883514cb47e4461322c74d141dd46df7c733ead250a"
+  },
+  "historical_paths": "Paths in original JSON refer to the previous layout. Only the selected validated study and its timing record are retained."
+}
