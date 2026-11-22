@@ -7,9 +7,11 @@ syndromes; the host tensor search completes deferred shots using both check base
 
 ## Performance
 
-The **PyMatching telescope** provides the project headline measurements.
-Fresh physical-board results at **d15, 15 rounds, p = 0.005**, Surface memory-Z,
-weighted growth at **27 MHz**, and plain telescope routing:
+The **PyMatching telescope** provides the project headline measurements. We included our
+own implmentation of a PyMatching style algorithim that was similar but 8 times slower and
+a GPU version that was about at parity with PyMatching.Fresh physical-board results at
+**d15, 15 rounds, p = 0.005**, Surface memory-Z, weighted growth at **27 MHz**, and plain 
+telescope routing:
 
 | Metric | Measured result |
 | --- | ---: |
