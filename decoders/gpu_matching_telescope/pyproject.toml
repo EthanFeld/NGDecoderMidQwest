@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qec-gpu-matching-telescope"
+version = "1.0.0"
+description = "FPGA-assisted tensor telescope with legacy CUDA correlated matching"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26,<3",
+    "scipy>=1.11,<2",
+    "stim>=1.13,<2",
+    "pymatching==2.4.0",
+]
+
+[project.optional-dependencies]
+fpga = ["pyserial>=3.5,<4"]
+
+[project.scripts]
+gpu-matching-telescope = "gpu_matching_telescope.telescope.decoder:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["gpu_matching_telescope*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+gpu_matching_telescope = [
+    "native/*.c",
+    "native/*.cc",
+    "native/*.cu",
+    "native/*.cuh",
+    "native/prebuilt/windows/*",
+    "native/vendor/pymatching_2_4_0/LICENSE",
+    "native/vendor/pymatching_2_4_0/README.md",
+    "native/vendor/pymatching_2_4_0/ORIGIN.json",
+    "native/vendor/pymatching_2_4_0/src/**/*.h",
+    "native/vendor/pymatching_2_4_0/src/**/*.inl",
+    "native/vendor/pymatching_2_4_0/src/**/*.cc",
+    "telescope/profiles/*.json",
+    "telescope/tools/*.cpp",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
